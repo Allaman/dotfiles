@@ -1,0 +1,228 @@
+alias filediff='grep -v -F -x -f' # file1 file2 shows what is in 2 but not 1
+alias replace_ws_with_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
+#-------- Package Management  {{{
+#------------------------------------------------------
+version=$(cat /etc/issue)
+if [[ $version =~ "Manjaro" ]]
+then
+    alias pacup='${AUR_MANAGER:-pacman} -Syu'
+    alias pacin='${AUR_MANAGER:-pacman} -S'
+    alias pacls='${AUR_MANAGER:-pacman} -Q'
+    alias pacse='${AUR_MANAGER:-pacman} -Ss'
+    alias pacrm='${AUR_MANAGER:-pacman} -Rss'
+    alias paccl='${AUR_MANAGER:-pacman} -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
+elif [[ $version =~ "SUSE" ]]
+then
+    alias pacup='sudo zypper up'
+    alias pacin='sudo zypper in'
+    alias pacls='rpm -qa'
+    alias pacshow='sudo rpm -qi'
+    alias pacfiles='sudo rpm -ql'
+    alias pacse='zypper se'
+    alias pacrm='sudo zypper rm -u'
+    alias pacdisup='sudo zypper dup'
+	  alias pacrepos='sudo zypper lr'
+else
+    alias pacup='sudo apt-get update && sudo apt-get upgrade'
+    alias pacin='sudo apt-get install'
+    alias pacls='dpkg --get-selections'
+    alias pacse='sudo apt-cache search'
+    alias pacrm='sudo apt-get remove'
+    alias pacautorm='sudo apt-get autoremove'
+    alias pacdisup='sudo apt-get update && sudo apt-get dist-upgrade'
+    alias pacpurge='sudo apt-get purge'
+fi
+#}}}
+#-------- Desktop Environement  {{{
+#------------------------------------------------------
+alias clearkscreen='rm .kde/share/apps/kscreen/*'
+alias kwinrc='$EDITOR /$HOME/.config/kwinrc'
+alias restart-unity='unity &> /dev/null &disown'
+alias startubuntuserver='VBoxManage startvm UbuntuServer --type headless'
+alias lidnothing=' gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action nothing'
+alias lidsuspend=' gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action suspend'
+alias treeviewnautilus='gsettings set org.gnome.nautilus.window-state side-pane-view "tree"'
+alias placesviewnautilus='gsettings set org.gnome.nautilus.window-state side-pane-view "places"'
+alias plasmarestart='killall plasmashell && kstart plasmashell'
+#}}}
+#-------- git  {{{
+#------------------------------------------------------
+alias gst='git status'
+alias gc='git commit'
+alias gpush='git push'
+alias gpull='git pull'
+alias gd='git diff'
+#}}}
+
+#-------- Configs  {{{
+#------------------------------------------------------
+alias srcbash='source $HOME/.bashrc'
+alias srczsh='source $HOME/.zshrc'
+alias cbashrc='$EDITOR $HOME/.bashrc'
+alias czshrc='$EDITOR $HOME/.zshrc'
+alias cfuncs='$EDITOR $HOME/.funcs'
+alias cvimrc='$EDITOR $HOME/.vimrc'
+alias calias='$EDITOR $HOME/.aliases'
+alias cmbsync='$EDITOR $HOME/.mbsyncrc'
+alias cmsmtp='$EDITOR $HOME/.msmtprc'
+alias cmuttrc='$EDITOR $HOME/.muttrc'
+alias ctmux='$EDITOR $HOME/.tmux.conf'
+alias cspacemacs='$EDITOR $HOME/.spacemacs'
+alias cfstab='sudo $EDITOR /etc/fstab'
+alias cssh='$EDITOR ~/.ssh/config'
+alias ci3='$EDITOR ~/.i3/config'
+alias ci3status='$EDITOR ~/.config/i3status/config'
+alias ci3blocks='$EDITOR ~/.config/i3blocks/config'
+alias crofi='$EDITOR ~/.config/rofi/config'
+alias cdunst='$EDITOR ~/.config/dunst/dunstrc'
+alias ctermite='$EDITOR ~/.config/termite/config'
+alias cranger='$EDITOR ~/.config/ranger/rc.conf'
+alias csxhkdrc='$EDITOR ~/.config/sxhkd/sxhkdrc'
+alias ledgerfile='$EDITOR $LEDGER_FILE'
+#}}}
+
+#-------- PIM  {{{
+#------------------------------------------------------
+alias sync-all='mbsync -a && notmuch new && vdirsyncer sync'
+alias sync-pim='vdirsyncer sync'
+alias mutt-sync-all='cd ~ && mbsync google:Inbox sbs_bund:Inbox supersu:Inbox outlook:Inbox && vdirsyncer sync && notmuch new && mutt'
+alias list-mailboxes='\find ~/data/pim/mail/ -type d -name cur -printf '"'"'%h '"'"' | sed -e '"'"'s_/home/michael/data/pim/mail/_+_g'"'"' | sed -e '"'"'s_ +_ \\\n+_g'"'"''
+alias agenda='khal list yesterday tomorrow'
+alias cal='khal calendar yesterday tomorrow'
+#}}}
+
+#-------- SSH  {{{
+#------------------------------------------------------
+alias openconnections='sudo netstat -tulpn'
+alias get-ssl-cert='echo Q |openssl s_client -connect'
+alias get-ssl-fingerprint='openssl x509 -in cert.pem -sha1 -noout -fingerprint'
+alias mount-knowledge='sshfs rootknecht:/var/www/knowledge ~/sshfs -o allow_other -o idmap=user -o uid=$(id -u) -o gid=$(id -g)'
+#}}}
+
+#-------- PDF stuff {{{
+#------------------------------------------------------
+alias pdfkomp='gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -r150 -sOutputFile=AUSGANG.pdf'
+alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf *.pdf'
+alias genhandout='pdfjam --nup 2x3 --frame true --noautoscale false --delta "0.2cm 0.3cm" --scale 0.95'
+#}}}
+
+#-------- Navigation {{{
+#------------------------------------------------------
+alias cls="clear"
+alias ..='cd ..'
+alias ....='cd ../..'
+alias cd3='cd ../../..'
+alias cd4='cd ../../../..'
+alias cd5='cd ../../../../../'
+alias cdl='cd /$HOME/Downloads/'
+alias cdot='cd /$HOME/.dotfiles/'
+alias cws='cd /$HOME/workspace/'
+#}}}
+
+#-------- System Stuff {{{
+#------------------------------------------------------
+alias display-size='xdpyinfo | grep -B2 resolution'
+alias list-fonts='fc-list | cut -d: -f2 | sort -h | uniq'
+alias daemons='ls /var/run/daemons/'
+alias rcconf='sudo $EDITOR /etc/rc.conf'
+alias thinkconf='sudo $EDITOR /etc/thinkfan.conf'
+alias internal='xrandr --output LVDS1 --auto && xrandr --output VGA1 --off'
+alias rb='sudo shutdown -r now'
+alias freq='watch grep \"cpu MHz\" /proc/cpuinfo'
+alias biosversion='sudo dmidecode | grep BIOS'
+alias distriversion='lsb_release -a'
+alias externalip='echo $(curl -ss http://ipecho.net/plain)'
+alias psaux='ps aux | grep'
+alias dstatadv='dstat -talmvf -C total'
+alias size='ncdu --color dark -rr -x'
+alias tree1='tree -L 1'
+alias tree2='tree -L 2'
+alias pipupgrade='sudo pip freeze --local | grep -v '"'"'^\-e'"'"' | cut -d = -f 1  | xargs -n1 sudo pip install -U'
+alias rm='echo "This is not the command you are looking for."; false' # real use with \rm file
+alias df='df -h'
+alias dos2unix-folder='find . -type f -print0 | xargs -0 dos2unix'
+which pretty-ping > /dev/null && alias ping='pretty-ping --nolegend'
+which neomutt > /dev/null && alias mutt='neomutt'
+which nvim > /dev/null && alias vim='nvim'
+which nvim > /dev/null && alias vimdiff="nvim -d"
+which lsd > /dev/null && alias ls='lsd --group-dirs first'
+which exa > /dev/null && alias ls='exa --group-directories-first'
+alias SS="sudo systemctl"
+alias v="$EDITOR"
+alias sv="sudo $EDITOR"
+alias v.="vim ."
+if [ "${NVIM_LISTEN_ADDRESS}." != "." ]; then
+  alias h='nvr -o'
+  alias s='nvr -O'
+  alias t='nvr --remote-tab'
+fi
+alias mount='mount | column -t'
+alias cp='cp -i'
+alias mv='mv -i'
+alias less='less -R'
+#}}}
+
+#-------- Media {{{
+#------------------------------------------------------
+alias livestreamer='livestreamer --http-header Client-ID=jzkbprff40iqj646a697cyrvl0zt2m6' # https://github.com/chrippa/livestreamer/issues/1478
+alias yt='youtube-dl --add-metadata ic --restrict-filenames'
+alias yta='youtube-dl --add-metadata --audio-format mp3 --restrict-filenames -xic'
+alias yt-sync-pl='youtube-dl -k -w --no-post-overwrites -i --proxy socks5://127.0.0.1:9050/ -o '"'"'%(title)s.%(ext)s'"'"' --extract-audio --audio-format mp3 --restrict-filenames https://www.youtube.com/playlist\?list\=PLdUJ0OYPYY8KzN3YiRP94pxUVzLBPDusa'
+alias list-printer='lpstat -l -p'
+alias default_printer='lpoptions -d'
+#}}}
+
+#-------- Listings {{{
+#------------------------------------------------------
+# enable color support of ls and also add handy aliases
+alias ls='ls -hN --color=auto --group-directories-first'
+alias ll='ls -lh'
+alias lsym='ls -l `\find . -maxdepth 1 -type l -print`'
+#}}}
+
+#-------- Blizzard {{{
+#------------------------------------------------------
+alias dia3='setarch i386 -3 /opt/cxoffice/bin/cxrun --bottle=Diablo_III --command=/$HOME/.cxoffice/Diablo_III/drive_c/Program\ Files/Diablo\ III//Diablo\ III.exe &'
+alias dia32='setarch i386 -L -B -R -3 /opt/cxoffice/bin/wine --bottle Battle.net --cx-app "Diablo III.exe" -launch -opengl'
+alias sc2='/opt/cxoffice/bin/wine --bottle Battlenet --cx-app "SC2Switcher.exe" -launch -opengl'
+alias sc22='setarch i386 -L -B -R -3 /opt/cxoffice/bin/wine --bottle Battlenet --cx-app "SC2Switcher.exe" -launch -opengl'
+alias hots='setarch i386 -L -B -R -3 /opt/cxoffice/bin/wine --bottle Heroes_of_the_Storm  --cx-app "Heros of the Storm.exe" -launch -opengl'
+#}}}
+
+#-------- Apps {{{
+#------------------------------------------------------
+alias emacs-debug='emacs --debug-init --timed-requires'
+alias ec='emacsclient'
+alias newsbeuter='newsboat -C $HOME/dotfiles/.newsbeuterrc'
+alias xo='mimeopen'
+alias xos='mimeopen -d'
+#}}}
+
+#-------- Openbox {{{
+#------------------------------------------------------
+alias autostart='subl /$HOME/.config/openbox/autostart'
+alias rcxml='subl /$HOME/.config/openbox/rc.xml'
+#}}}
+
+#-------- Docker {{{
+#------------------------------------------------------
+alias docker-stop-all='docker stop $(docker ps -a -q)'
+alias docker-remove-all-container='docker rm $(docker ps -a -q)'
+alias docker-remove-all-images='docker rmi $(docker images -q)'
+#}}}
+
+
+#-------- Openstack {{{
+#------------------------------------------------------
+alias so='source ~/.os_rc_file'
+alias os='source $HOME/scripts/os'
+#}}}
+
+#-------- CLI search {{{
+#------------------------------------------------------
+alias sr='sr -browser=$BROWSERCLI'
+alias surfraw='surfraw -browser=$BROWSER'
+alias weather-garching='curl wttr.in/"Garching b. München"\?1\&lang=de'
+alias weather-eching='curl wttr.in/"Eching"\?1\&lang=de'
+alias weather-neuburg='curl wttr.in/"Neuburg an der Donau"\?1\&lang=de'
+#}}}
