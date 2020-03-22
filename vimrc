@@ -13,7 +13,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Expand region
 Plug 'terryma/vim-expand-region'
 " 100+ lazy loading syntax
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " fzf integration
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -39,7 +39,7 @@ Plug 'airblade/vim-gitgutter'
 " Tags
 " Plug 'majutsushi/tagbar'
 " Markdown addon
-" Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 " Plug 'nelstrom/vim-markdown-folding'
 " For formating md tables
 " Plug 'godlygeek/tabular'
@@ -71,7 +71,7 @@ Plug 'andymass/vim-matchup'
 " Terraform
 Plug 'hashivim/vim-terraform'
 " bufkill
-" Plug 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 call plug#end()
 " }}}
 " Colors {{{
@@ -143,6 +143,7 @@ vmap J :m +1<CR>gv
 vmap K :m -2<CR>gv
 " open previously opened file
 nnoremap <Leader><tab> :e#<CR>
+" duplicate file
 nnoremap <silent> <Leader>fd :clear<bar>silent exec "!cp '%:p' '%:p:h/%:t:r-copy.%:e'"<bar>redraw<bar>echo "Copied " . expand('%:t') . ' to ' . expand('%:t:r') . '-copy.' . expand('%:e')<cr>
 " Change behaviour of Y similar to C and D
 nnoremap Y y$
@@ -153,8 +154,6 @@ vmap < <gv
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Toogle whitespace
 nnoremap <Leader>tw :set list!<CR>
-" Folding
-nnoremap <F9> za
 " Resizing
 nnoremap <Left> :vertical resize +1<CR>
 nnoremap <Right> :vertical resize -1<CR>
@@ -164,8 +163,9 @@ nnoremap <Down> :resize +1<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
-nnoremap <Leader>bd :bd<CR>
-nnoremap <Leader>bk :bd!<CR>
+nnoremap <Leader>bd :BD<CR>
+nnoremap <Leader>bk :BD!<CR>
+nnoremap <leader>bs :w<CR>
 " FZF
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>rg :Rg<CR>
@@ -264,6 +264,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " open NERDTree automatically
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree
+" Jump to the main window after Nerdtree is open
+autocmd VimEnter * wincmd p
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
