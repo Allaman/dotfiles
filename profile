@@ -23,7 +23,7 @@ export MAIL=/usr/bin/neomutt
 [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
 [ -f /usr/lib/ssh/ksshaskpass ] && export SSH_ASKPASS=/usr/lib/ssh/ksshaskpass
 export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
-export AUR_MANAGER=yay
+command -v yay >/dev/null 2>&1 && export AUR_MANAGER=yay
 command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/workspace/go
 command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
 
