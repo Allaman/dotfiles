@@ -3,7 +3,7 @@ alias replace_ws_with_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
 #-------- Package Management  {{{
 #------------------------------------------------------
 version=$(cat /etc/issue)
-if [[ $version =~ "Manjaro" ]]
+if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
 then
     alias pacup='${AUR_MANAGER:-pacman} -Syu'
     alias pacin='${AUR_MANAGER:-pacman} -S'
