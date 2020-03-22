@@ -105,7 +105,7 @@ endif
 set hidden
 set history=100
 set nocompatible
-set autochdir " set pwd always to current file
+"set autochdir " set pwd always to current file
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 set backupdir=$HOME/.vim/swp/
