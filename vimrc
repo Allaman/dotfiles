@@ -290,6 +290,8 @@ let g:limelight_conceal_guifg = '#777777'
 " }}}
 " Snippets {{{
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " }}}
 " Gitgutter {{{
 let g:gitgutter_map_keys = 0
@@ -308,6 +310,7 @@ nnoremap <leader>; :BLines<CR>
 nnoremap <leader>: :BTags<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>ft :Filetypes<CR>
+nnoremap <leader>s :Snippets<CR>
 " }}}
 " Indenting {{{
 " }}}
