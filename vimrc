@@ -122,14 +122,12 @@ set ignorecase          " ignore case in search patterns
 " highlight last inserted text
 nnoremap gV `[v`]
 " }}}
-" Mappings {{{
+" Default Mappings {{{
 let mapleader=" "
 " replace currently selected text with default register without yanking it
 vnoremap p "_dP
 " write file with sudo
 cnoreabbrev w!! w !sudo tee > /dev/null %|
-" only show focused window
-nnoremap <leader>on :on<CR>
 " move vertically by visual line when used withput count
 " and move by physical line when used with count
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -155,11 +153,6 @@ vmap < <gv
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Toogle whitespace
 nnoremap <Leader>tw :set list!<CR>
-" Resizing
-nnoremap <Left> :vertical resize +1<CR>
-nnoremap <Right> :vertical resize -1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
 " Buffer handling
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>bn :bn<CR>
@@ -167,15 +160,6 @@ nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bd :BD<CR>
 nnoremap <Leader>bk :BD!<CR>
 nnoremap <leader>bs :w<CR>
-" FZF
-nnoremap <C-p> :Files<CR>
-nnoremap <leader>rg :Rg<CR>
-nnoremap <leader>fr :History<CR>
-nnoremap <leader>w :Windows<CR>
-nnoremap <leader>; :BLines<CR>
-nnoremap <leader>: :BTags<CR>
-nnoremap <leader>c :Commits<CR>
-nnoremap <leader>ft :Filetypes<CR>
 " Undotree
 nmap <leader>u :UndotreeShow<CR>
 nmap <leader>u :UndotreeShow<CR>
@@ -206,7 +190,9 @@ let g:strip_whitelines_at_eof=1
 " characters for whitespaces
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 " }}}
-" Switching window {{{
+" Windows handling {{{
+" only show focused window
+nnoremap <leader>on :on<CR>
 " Terminal mode:
 tnoremap <C-h> <c-\><c-n><c-w>h
 tnoremap <C-j> <c-\><c-n><c-w>j
@@ -227,6 +213,11 @@ nnoremap <C-h> <c-w>h
 nmap <C-j> <c-w>j
 nnoremap <C-k> <c-w>k
 nnoremap <C-l> <c-w>l
+" Resizing
+nnoremap <Left> :vertical resize +1<CR>
+nnoremap <Right> :vertical resize -1<CR>
+nnoremap <Up> :resize -1<CR>
+nnoremap <Down> :resize +1<CR>
 " }}}
 " Lightline {{{
 set laststatus=2
@@ -307,6 +298,24 @@ nmap <Leader>hp <Plug>(GitGutterPrevHunk)
 nmap <Leader>hs <Plug>(GitGutterStageHunk)
 nmap <Leader>hu <Plug>(GitGutterUndoHunk)
 nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
+" }}}
+" FZF {{{
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>fr :History<CR>
+nnoremap <leader>w :Windows<CR>
+nnoremap <leader>; :BLines<CR>
+nnoremap <leader>: :BTags<CR>
+nnoremap <leader>c :Commits<CR>
+nnoremap <leader>ft :Filetypes<CR>
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
 " }}}
 " Indenting {{{
 " }}}
