@@ -2,10 +2,11 @@
 call plug#begin()
 " Nerdtree
 Plug 'preservim/nerdtree'
-"Nerdtree git plugin
+" Nerdtree git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Autocompletion
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Colorscheme
 Plug 'morhetz/gruvbox'
 " Whitespace
@@ -175,9 +176,6 @@ nnoremap <leader>; :BLines<CR>
 nnoremap <leader>: :BTags<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>ft :Filetypes<CR>
-" Toggle NERDTree
-nnoremap <Leader>pt :NERDTreeToggle<Enter>
-nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 " Undotree
 nmap <leader>u :UndotreeShow<CR>
 nmap <leader>u :UndotreeShow<CR>
@@ -186,17 +184,6 @@ nmap <leader>u :UndotreeShow<CR>
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=2      " 10 nested fold max
-" }}}
-" Goyo and limelight {{{
-" Goyo and limelight integration
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-" Limelight Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-" Limelight Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
 " }}}
 " Indenting {{{
 set nowrap
@@ -259,6 +246,9 @@ function! LightlineFilename()
   return expand('%:p:h')
 endfunction" }}}
 " Nerdtree {{{
+" Toggle NERDTree
+nnoremap <Leader>pt :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 " quit vim if Nerdtree is the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " open NERDTree automatically
@@ -296,11 +286,27 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 " }}}
-" Coc {{{
+" Goyo and limelight {{{
+" Goyo and limelight integration
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" Limelight Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+" Limelight Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
 " }}}
-" Indenting {{{
+" Snippets {{{
+let g:UltiSnipsExpandTrigger="<tab>"
 " }}}
-" Indenting {{{
+" Gitgutter {{{
+let g:gitgutter_map_keys = 0
+nmap <Leader>hn <Plug>(GitGutterNextHunk)
+nmap <Leader>hp <Plug>(GitGutterPrevHunk)
+nmap <Leader>hs <Plug>(GitGutterStageHunk)
+nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
 " }}}
 " Indenting {{{
 " }}}
