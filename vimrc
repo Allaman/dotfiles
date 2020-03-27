@@ -291,6 +291,7 @@ let g:limelight_conceal_guifg = '#777777'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 " }}}
 " Gitgutter {{{
 let g:gitgutter_map_keys = 0
