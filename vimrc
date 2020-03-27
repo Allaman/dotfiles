@@ -113,7 +113,6 @@ set backupdir=$HOME/.vim/swp/
 set directory=$HOME/.vim/swp/
 set timeoutlen=1000
 set ttimeoutlen=10
-autocmd BufEnter * lcd %:p:h " change dir according to open file
 " }}}
 " Search {{{
 set incsearch           " search as characters are entered
