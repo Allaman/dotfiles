@@ -113,8 +113,9 @@ bindkey -M isearch . self-insert # history search fix
 command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
-command -v aws >/dev/null 2>&1 && source $HOME/.local/bin/aws_zsh_completer.sh
 command -v fuck > /dev/null 2>&1 && eval $(thefuck --alias)
+[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
+[ -f $HOME/.local/bin/aws_zsh_competer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
 [ -f $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
