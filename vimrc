@@ -76,7 +76,7 @@ Plug 'qpkorr/vim-bufkill'
 call plug#end()
 " }}}
 " Colors {{{
-colorscheme gruvbox
+silent! colorscheme gruvbox
 syntax enable
 " Follow transperancy from temrinal
 hi Normal guibg=NONE ctermbg=NONE
