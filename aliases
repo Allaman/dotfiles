@@ -5,12 +5,12 @@ alias replace_ws_with_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
 version=$(cat /etc/issue)
 if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
 then
-    alias pacup='${AUR_MANAGER:-pacman} -Syu'
-    alias pacin='${AUR_MANAGER:-pacman} -S'
+    alias pacup='sudo ${AUR_MANAGER:-pacman} -Syu'
+    alias pacin='$sudo {AUR_MANAGER:-pacman} -S'
     alias pacls='${AUR_MANAGER:-pacman} -Q'
     alias pacse='${AUR_MANAGER:-pacman} -Ss'
-    alias pacrm='${AUR_MANAGER:-pacman} -Rss'
-    alias paccl='${AUR_MANAGER:-pacman} -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
+    alias pacrm='sudo ${AUR_MANAGER:-pacman} -Rss'
+    alias paccl='sudo ${AUR_MANAGER:-pacman} -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
 elif [[ $version =~ "SUSE" ]]
 then
     alias pacup='sudo zypper up'
