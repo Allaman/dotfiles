@@ -112,6 +112,8 @@ bindkey -M isearch . self-insert # history search fix
 # source app
 command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+alias k=kubectl
+complete -o default -F __start_kubectl k
 command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
 command -v fuck > /dev/null 2>&1 && eval $(thefuck --alias)
 [ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
