@@ -130,3 +130,5 @@ bindkey '^ ' autosuggest-accept
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

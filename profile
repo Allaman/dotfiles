@@ -16,9 +16,10 @@ if [ "$0" = "/etc/lightdm/Xsession" -a "$DESKTOP_SESSION" = "i3" ]; then
 fi
 export BROWSERCLI=lynx
 export BROWER=firefox
-export TERMINAL=termite
-export TERM=rxvt-unicode-256color
-export EDITOR=vim
+export TERMINAL=konsole
+#export TERM=rxvt-unicode-256color
+command -v vim >/dev/null 2>&1 && export EDITOR=vim
+command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 export MAIL=/usr/bin/neomutt
 [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
 [ -f /usr/lib/ssh/ksshaskpass ] && export SSH_ASKPASS=/usr/lib/ssh/ksshaskpass

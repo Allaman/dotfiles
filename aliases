@@ -5,12 +5,12 @@ alias replace_ws_with_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
 version=$(cat /etc/issue)
 if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
 then
-    alias pacup='sudo ${AUR_MANAGER:-pacman} -Syu'
-    alias pacin='$sudo {AUR_MANAGER:-pacman} -S'
-    alias pacls='${AUR_MANAGER:-pacman} -Q'
-    alias pacse='${AUR_MANAGER:-pacman} -Ss'
-    alias pacrm='sudo ${AUR_MANAGER:-pacman} -Rss'
-    alias paccl='sudo ${AUR_MANAGER:-pacman} -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
+    alias pacup='${AUR_MANAGER:-sudo pacman} -Syu'
+    alias pacin='${AUR_MANAGER:-sudo pacman} -S'
+    alias pacls='${AUR_MANAGER:-sudo pacman} -Q'
+    alias pacse='${AUR_MANAGER:-sudo pacman} -Ss'
+    alias pacrm='${AUR_MANAGER:-sudo pacman} -Rss'
+    alias paccl='${AUR_MANAGER:-sudo pacman} -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
 elif [[ $version =~ "SUSE" ]]
 then
     alias pacup='sudo zypper up'
@@ -43,7 +43,7 @@ alias lidnothing=' gsettings set org.gnome.settings-daemon.plugins.power lid-clo
 alias lidsuspend=' gsettings set org.gnome.settings-daemon.plugins.power lid-close-battery-action suspend'
 alias treeviewnautilus='gsettings set org.gnome.nautilus.window-state side-pane-view "tree"'
 alias placesviewnautilus='gsettings set org.gnome.nautilus.window-state side-pane-view "places"'
-alias plasmarestart='killall plasmashell && kstart plasmashell'
+alias plasmarestart='killall plasmashell && kstart5 plasmashell'
 #}}}
 #-------- git  {{{
 #------------------------------------------------------
