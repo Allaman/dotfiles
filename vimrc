@@ -24,6 +24,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
 " Plug 'vim-voom/VOoM'
+" Kubernetes itegration
+Plug 'andrewstuart/vim-kubernetes'
 " Visualize undo tree
 Plug 'mbbill/undotree'
 " Vim prettier

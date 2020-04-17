@@ -307,3 +307,6 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+
+# Print kubectl_aliases alias before executing
+#function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }

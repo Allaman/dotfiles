@@ -218,6 +218,12 @@ alias so='source ~/.os_rc_file'
 alias os='source $HOME/scripts/os'
 #}}}
 
+#-------- Kubernetes {{{
+#------------------------------------------------------
+alias kx='kubectx'
+alias kns='kubens'
+#}}}
+
 #-------- CLI search {{{
 #------------------------------------------------------
 alias sr='sr -browser=$BROWSERCLI'
