@@ -8,6 +8,12 @@ This repo contains dotfiles for
 - [Powershell10k](https://github.com/romkatv/powerlevel10k)
 - tmux
 - NeoVim (might work with Vim > 8)
+- ranger
+- vifm
+- i3{status,blocks}
+- rofi
+
+**Be aware that some configs require applications scripts not in this repo -> adjust accordingly**
 
 Zsh configuration includes but not limited to:
 
