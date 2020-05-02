@@ -79,6 +79,7 @@ alias ctermite='$EDITOR ~/.config/termite/config'
 alias cranger='$EDITOR ~/.config/ranger/rc.conf'
 alias csxhkdrc='$EDITOR ~/.config/sxhkd/sxhkdrc'
 alias ledgerfile='$EDITOR $LEDGER_FILE'
+alias caws='$EDITOR -p $HOME/.aws/{credentials,config}'
 #}}}
 
 #-------- PIM  {{{
@@ -138,7 +139,8 @@ alias size='ncdu --color dark -rr -x'
 alias tree1='tree -L 1'
 alias tree2='tree -L 2'
 alias pipupgrade='sudo pip freeze --local | grep -v '"'"'^\-e'"'"' | cut -d = -f 1  | xargs -n1 sudo pip install -U'
-alias rm='echo "This is not the command you are looking for."; false' # real use with \rm file
+#alias rm='echo "This is not the command you are looking for."; false' # real use with \rm file
+command -v trash > /dev/null && alias rm='trash' # real use with \rm file
 alias df='df -h'
 alias dos2unix-folder='find . -type f -print0 | xargs -0 dos2unix'
 which pretty-ping > /dev/null && alias ping='pretty-ping --nolegend'
