@@ -1,0 +1,4 @@
+icon-theme "Numix-Circle"
+cmd        "mimeopen -n"
+oc-cmd     "termite -e nnn"
+oc-cmd     "masterpdfeditor5"

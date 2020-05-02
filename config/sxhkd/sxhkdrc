@@ -1,0 +1,60 @@
+# reload sxhd config
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# super + h
+#   konsole -e 'less .config/sxhkd/sxhkdrc'
+
+# launcher
+# super + space
+# 	rofi -show run
+
+# calendar
+super + c
+	notify-send "$(khal list yesterday tomorrow)"
+
+# traslator
+super + t
+	translator.sh
+
+# super + l
+#   betterlockscreen -l dim
+
+# snippets
+super + shift + s
+	clipboard-snippets.sh
+
+# sync mail
+super + m
+	sync-pim.sh main
+
+# sync all pim
+super + shift + p
+	sync-pim.sh all
+
+# sync all dav
+super + d
+	sync-pim.sh dav
+
+# Applications
+super + shift + m
+	konsole -e neomutt
+# super + e
+#   konsole -e vifmrun
+super + shift + l
+	konsole -e "nvim /home/michael/data/buchhaltung/ledger/main.ledger"
+super + shift + h
+	konsole -e "hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger"
+super + shift + t
+	konsole -e htop
+# super + shift + c
+# 	rofi -show calc -modi calc -no-show-match -no-sort
+# super + shift + s
+# 	$HOME/workspace/scripts/rofi-web-search.sh
+# super + shift + w
+# 	networkmanager_dmenu
+# super + shift + f
+#   fd -H -t f . data mjp workspace Downloads .dotfiles | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden
+# super + shift + d
+#  fd -H -t d . $HOME | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden -file-browser-no-descend

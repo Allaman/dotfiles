@@ -1,0 +1,9 @@
+rofi.theme:            solarized
+rofi.font:             hack 12
+rofi.modi:             combi
+rofi.terminal:         termite
+rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
+rofi.kb-accept-entry:  Return,KP_Enter
+rofi.kb-remove-to-eol: Control+m
+rofi.kb-row-up:        Control+k
+rofi.kb-row-down:      Control+j
