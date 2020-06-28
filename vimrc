@@ -264,6 +264,10 @@ function! SyncTree()
 endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
+" Automatically delete the buffer of the deleted file 
+let NERDTreeAutoDeleteBuffer = 1
+" Remove help message
+let NERDTreeMinimalUI = 1
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
