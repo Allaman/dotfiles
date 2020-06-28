@@ -1,3 +1,5 @@
+# Profiling zsh start
+#zmodload zsh/zprof
 stty -ixon                                                      # disable ctrl-s and ctrl-q
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -110,15 +112,15 @@ bindkey -M isearch . self-insert # history search fix
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source app
-command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
-command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+#command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 alias k=kubectl
-complete -o default -F __start_kubectl k
-command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
+#complete -o default -F __start_kubectl k
+#command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
+#command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
+#[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
+#[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
+command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
 command -v fuck > /dev/null 2>&1 && eval $(thefuck --alias)
-command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
-[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
-[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
 [ -f $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -127,6 +129,7 @@ command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
 [ -f $HOME/.shell/zsh-completions/ ] &&  fpath=($HOME/.shell/zsh-completions/src $fpath)
 [ -f $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme ] && source $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme
 [ -d $HOME/.local/sdkman/ ] && export SDKMAN_DIR="$HOME/.local/sdkman" && source $HOME/.local/sdkman/bin/sdkman-init.sh
+[ -d $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
@@ -136,3 +139,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Profiling zsh
+#zprof
