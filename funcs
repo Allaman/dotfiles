@@ -130,7 +130,7 @@ lsl() {
 #}}}
 
 #-------- lazy git function {{{
-lazygit() {
+lg() {
   git status 2> /dev/null
   if [ $? -ne 0 ]; then
     echo "Not in a git repo"
