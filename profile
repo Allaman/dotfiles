@@ -11,9 +11,14 @@ export LESS=-r
 # Apps and Paths
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+# i3wm SSH keys
 if [ "$0" = "/etc/lightdm/Xsession" -a "$DESKTOP_SESSION" = "i3" ]; then
   export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gnupg)
 fi
+# KDE SSH keys
+[ -S /run/user/1000/ssh-agent.socket ] && export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+[ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
+[ -f /usr/bin/ksshaskpass ] && export GIT_ASKPASS=/usr/bin/ksshaskpass
 export BROWSERCLI=lynx
 export BROWER=firefox
 export TERMINAL=konsole
@@ -21,8 +26,6 @@ export TERMINAL=konsole
 command -v vim >/dev/null 2>&1 && export EDITOR=vim
 command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 export MAIL=/usr/bin/neomutt
-[ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
-[ -f /usr/lib/ssh/ksshaskpass ] && export SSH_ASKPASS=/usr/lib/ssh/ksshaskpass
 export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
 command -v yay >/dev/null 2>&1 && export AUR_MANAGER=yay
 command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/workspace/go
