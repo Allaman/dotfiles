@@ -48,9 +48,9 @@
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
       direnv                  # direnv status (https://direnv.net/)
-      virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+      #virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       #anaconda                # conda environment (https://conda.io/)
-      pyenv                   # python environment (https://github.com/pyenv/pyenv)
+      #pyenv                   # python environment (https://github.com/pyenv/pyenv)
       #nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       #nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       #nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
@@ -885,7 +885,7 @@
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
   # Only show kubecontext when one of the specified commands is type
-  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito|kx|kns|k9s'
 }
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
