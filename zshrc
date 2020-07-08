@@ -36,6 +36,7 @@ zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:
 zstyle ":completion:*" menu select=long
 zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 zstyle ":completion:*" verbose true
+zstyle ':completion:*' hosts off # ignore hosts file for ssh/scp autocompletion
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
