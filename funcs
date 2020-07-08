@@ -308,5 +308,8 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+# grep for processes
+function pg { pgrep -fa "$1" | grep -E --color "$1"; }
+
 # Print kubectl_aliases alias before executing
 #function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
