@@ -163,6 +163,10 @@ alias mount='mount | column -t'
 alias cp='cp -i'
 alias mv='mv -i'
 alias less='less -R'
+# pipe into ccopy --> clipboard
+alias ccopy='xclip -selection clipboard'
+# paste with cpaste
+alias cpaste='xclip -selection clipboard -o'
 #}}}
 
 #-------- Media {{{
