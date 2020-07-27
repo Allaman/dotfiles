@@ -105,7 +105,7 @@ bindkey -M isearch . self-insert # history search fix
 
 # source files
 [ -f $HOME/.profile ] && source $HOME/.profile
-[ -f $HOME/.zshenv ] && source $HOME/.zshenv
+[ -f $HOME/.shell/zshenv ] && source $HOME/.shell/zshenv
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 [ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
 
@@ -121,7 +121,8 @@ alias k=kubectl
 #[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
 #[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
 command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
-command -v fuck > /dev/null 2>&1 && eval $(thefuck --alias)
+command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
+command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
 [ -f $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

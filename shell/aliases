@@ -102,7 +102,7 @@ alias mount-knowledge='sshfs rootknecht:/var/www/knowledge ~/sshfs -o allow_othe
 
 #-------- PDF stuff {{{
 #------------------------------------------------------
-alias pdfkomp='gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -r150 -sOutputFile=AUSGANG.pdf'
+alias pdfkomp='gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -r150 -sOutputFile=AUSGANG.pdf'
 alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf *.pdf'
 alias genhandout='pdfjam --nup 2x3 --frame true --noautoscale false --delta "0.2cm 0.3cm" --scale 0.95'
 #}}}
