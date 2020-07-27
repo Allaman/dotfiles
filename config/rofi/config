@@ -1,9 +1,22 @@
 rofi.theme:            solarized
 rofi.font:             hack 12
 rofi.modi:             combi
-rofi.terminal:         termite
+rofi.terminal:         konsole
 rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
 rofi.kb-accept-entry:  Return,KP_Enter
 rofi.kb-remove-to-eol: Control+m
 rofi.kb-row-up:        Control+k
 rofi.kb-row-down:      Control+j
+rofi.padding: 40
+rofi.opacity: 80
+rofi.border: 2px
+rofi.line-margin: 10
+rofi.lines: 10
+rofi.separator-style: none
+rofi.columns: 1
+rofi.font: Coda Bold 11
+rofi.bw: 4
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.auto-select: false
