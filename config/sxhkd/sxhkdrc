@@ -7,8 +7,8 @@ super + Escape
 #   konsole -e 'less .config/sxhkd/sxhkdrc'
 
 # launcher
-# super + space
-# 	rofi -show run
+alt + d
+ 	rofi -combi-modi window,drun,ssh -show combi -sidebar-mode -cycle
 
 # calendar
 super + c
@@ -57,4 +57,4 @@ super + shift + t
 # super + shift + f
 #   fd -H -t f . data mjp workspace Downloads .dotfiles | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden
 # super + shift + d
-#  fd -H -t d . $HOME | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden -file-browser-no-descend
+#  fd -H -t d . $HOME | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden -file-browser-no-desc
