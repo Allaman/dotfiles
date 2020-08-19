@@ -23,7 +23,7 @@ super + t
 
 # snippets
 super + shift + s
-	clipboard-snippets.sh
+	$HOME/workspace/scripts/clipboard-snippets.sh
 
 # sync mail
 super + m
@@ -39,15 +39,15 @@ super + d
 
 # Applications
 super + shift + m
-	konsole -e neomutt
+	alacritty -e neomutt
 # super + e
 #   konsole -e vifmrun
 super + shift + l
-	konsole -e "nvim /home/michael/data/buchhaltung/ledger/main.ledger"
+	alacritty -e nvim /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + h
-	konsole -e "hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger"
+	alacritty -e hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + t
-	konsole -e htop
+	alacritty -e htop
 # super + shift + c
 # 	rofi -show calc -modi calc -no-show-match -no-sort
 # super + shift + s
