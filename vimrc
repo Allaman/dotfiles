@@ -19,13 +19,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Fast movement in vim
-" Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " Aligment
 " Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
 " Plug 'vim-voom/VOoM'
 " Kubernetes itegration
-Plug 'andrewstuart/vim-kubernetes'
+" Plug 'andrewstuart/vim-kubernetes'
 " Visualize undo tree
 Plug 'mbbill/undotree'
 " Vim prettier
@@ -235,7 +235,7 @@ let g:lightline = {
       \ }
       \ }
 function! LightlineFilename()
-  return expand('%:p:h')
+  return expand('%:p')
 endfunction" }}}
 " Nerdtree {{{
 " Toggle NERDTree
@@ -244,8 +244,8 @@ nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
 " quit vim if Nerdtree is the last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " open NERDTree automatically
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * NERDTree
 " Jump to the main window after Nerdtree is open
 autocmd VimEnter * wincmd p
 " sync open file with NERDTree
@@ -256,15 +256,16 @@ endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+"function! SyncTree()
+"  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+"    NERDTreeFind
+"    wincmd p
+"  endif
+"endfunction
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
-" Automatically delete the buffer of the deleted file 
+"autocmd BufEnter * call SyncTree()
+
+" Automatically delete the buffer of the deleted file
 let NERDTreeAutoDeleteBuffer = 1
 " Remove help message
 let NERDTreeMinimalUI = 1
@@ -311,14 +312,25 @@ nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>fr :History<CR>
-nnoremap <leader>w :Windows<CR>
+"nnoremap <leader>w :Windows<CR>
 nnoremap <leader>; :BLines<CR>
 nnoremap <leader>: :BTags<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>ft :Filetypes<CR>
 nnoremap <leader>s :Snippets<CR>
 " }}}
-" Indenting {{{
+" EasyMotion {{{
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+" emulate vim-sneak
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
 " }}}
 " Indenting {{{
 " }}}
