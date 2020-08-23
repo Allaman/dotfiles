@@ -19,6 +19,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Fast movement in vim
+" Color preview
+Plug 'ap/vim-css-color'
 Plug 'easymotion/vim-easymotion'
 " Aligment
 " Plug 'junegunn/vim-easy-align'
@@ -95,7 +97,7 @@ set scrolloff=3
 set sidescrolloff=5
 set wildmenu wildmode=full
 set wildignorecase
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**     " MacOSX/Linux
 set encoding=utf-8
 set showmatch           " highlight matching [{()}]
 " }}}
@@ -115,6 +117,8 @@ set backupdir=$HOME/.vim/swp/
 set directory=$HOME/.vim/swp/
 set timeoutlen=1000
 set ttimeoutlen=10
+" Disables automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " }}}
 " Search {{{
 set incsearch           " search as characters are entered
@@ -122,6 +126,10 @@ set hlsearch            " highlight matches
 set ignorecase          " ignore case in search patterns
 " highlight last inserted text
 nnoremap gV `[v`]
+" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+if &diff
+    highlight! link DiffText MatchParen
+endif
 " }}}
 " Default Mappings {{{
 let mapleader=" "
@@ -330,7 +338,6 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 " emulate vim-sneak
 nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
 " }}}
 " Indenting {{{
 " }}}
