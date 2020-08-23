@@ -12,6 +12,8 @@
 - vifm
 - i3{status,blocks}
 - rofi
+- Alacritty
+- sxhkd
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
 
