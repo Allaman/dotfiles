@@ -69,5 +69,5 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute:vim {} > /dev/tty'"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # Preview directories with tree
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"'
+command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*,target/*}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
