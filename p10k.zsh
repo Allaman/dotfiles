@@ -33,10 +33,11 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       #os_icon                 # os identifier
+      status                  # exit code of the last command
       context
       dir                     # current directory
       vcs                     # git status
-      # prompt_char           # prompt symbol
+       prompt_char           # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -44,7 +45,6 @@
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-      status                  # exit code of the last command
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
       direnv                  # direnv status (https://direnv.net/)
@@ -72,7 +72,7 @@
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
-      time                    # current time
+      # time                    # current time
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery
