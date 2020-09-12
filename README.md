@@ -4,16 +4,16 @@
 
 ### This repo contains dotfiles for
 
-- zsh (zshrc, zshenv, profile, aliases, funcs)
+- Zsh (zshrc, zshenv, profile, aliases, funcs)
 - [Powershell10k](https://github.com/romkatv/powerlevel10k)
-- tmux
+- Tmux
 - NeoVim (might work with Vim > 8)
-- ranger
-- vifm
-- i3{status,blocks}
-- rofi
+- Ranger
+- Vifm
+- I3{status,blocks}
+- Rofi
 - Alacritty
-- sxhkd
+- Sxhkd
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
 
@@ -21,13 +21,13 @@ This repo works with the [RCM](https://github.com/thoughtbot/rcm) dotfiles manag
 
 ### Zsh configuration includes but not limited to:
 
+- beautiful, fast and informative prompt with Powershell10k
+- a sane [fzf](https://github.com/junegunn/fzf) configuration also for shell autocompletion
 - Fish like experience with [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) and [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - variuos exports based on available commands, e.g. awscli autocompletion
 - history configuration
 - key bindings
-- beautiful, fast and informative prompt with Powershell10k
 - some useful aliases and bash functions
-- a sane [fzf](https://github.com/junegunn/fzf) configuration also for shell autocompletion
 
 ### Neovim configuration includes but not limited to:
 
