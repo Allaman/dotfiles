@@ -97,7 +97,7 @@ set scrolloff=3
 set sidescrolloff=5
 set wildmenu wildmode=full
 set wildignorecase
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**,**/target/**     " MacOSX/Linux
 set encoding=utf-8
 set showmatch           " highlight matching [{()}]
 " }}}
