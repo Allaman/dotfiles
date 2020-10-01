@@ -460,7 +460,7 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Open console in current directory
-nnoremap ,t :!termite &<cr>
+nnoremap ,t :!alacritty &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
@@ -491,7 +491,7 @@ set grepprg='rg --files --no-ignore-vcs --hidden %i %a %s'
 
 " Add additional place to look for executables
 "
-" let $PATH = $HOME.'/bin/fuse:'.$PATH
+let $PATH = $HOME.'/workspace/scripts:'.$PATH
 
 " Block particular shortcut
 "
