@@ -9,12 +9,13 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 " Whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Expand region
 Plug 'terryma/vim-expand-region'
 " 100+ lazy loading syntax
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 " fzf integration
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -40,7 +41,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Surround
-" Plug 'tpope/vim-surround'
+ Plug 'tpope/vim-surround'
 " Tags
 " Plug 'majutsushi/tagbar'
 " Markdown addon
@@ -80,7 +81,9 @@ Plug 'qpkorr/vim-bufkill'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme gruvbox
+silent! colorscheme dracula
+" to work better with dracula
+"let g:polyglot_disabled = ['yaml']
 syntax enable
 " Follow transperancy from temrinal
 hi Normal guibg=NONE ctermbg=NONE
@@ -232,7 +235,7 @@ nnoremap <Down> :resize +1<CR>
 set laststatus=2
 set noshowmode " do not show mode because it is shown in the status line
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'spell' ] ]
@@ -278,7 +281,7 @@ let NERDTreeAutoDeleteBuffer = 1
 " Remove help message
 let NERDTreeMinimalUI = 1
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -334,10 +337,10 @@ let g:EasyMotion_do_mapping = 0
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader>W <Plug>(easymotion-bd-w)
+nmap <Leader>W <Plug>(easymotion-overwin-w)
 " emulate vim-sneak
-nmap s <Plug>(easymotion-s2)
+nmap <leader>S <Plug>(easymotion-s2)
 " }}}
 " Indenting {{{
 " }}}
