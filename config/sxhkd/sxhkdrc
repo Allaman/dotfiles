@@ -18,6 +18,9 @@ super + c
 super + t
 	translator.sh
 
+super + e
+	alacritty -t files -e /home/michael/workspace/scripts/vifmrun
+
 # super + l
 #   betterlockscreen -l dim
 
