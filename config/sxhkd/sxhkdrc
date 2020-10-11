@@ -18,6 +18,10 @@ super + c
 super + t
 	translator.sh
 
+# Terminal
+alt + Return
+	alacritty
+
 super + e
 	alacritty -t files -e /home/michael/workspace/scripts/vifmrun
 
@@ -57,6 +61,8 @@ super + shift + t
 # 	$HOME/workspace/scripts/rofi-web-search.sh
 # super + shift + w
 # 	networkmanager_dmenu
+super + shift + f
+  fd -H -t f . data mjp workspace Downloads .dotfiles .public-dotfiles | rofi -threads 0 -width 50 -dmenu -i -p "Open" | xargs  xdg-open
 # super + shift + f
 #   fd -H -t f . data mjp workspace Downloads .dotfiles | rofi -modi file-browser -show file-browser -file-browser-stdin -file-browser-follow-symlinks -file-browser-show-hidden
 # super + shift + d
