@@ -329,6 +329,17 @@ nnoremap <leader>: :BTags<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>ft :Filetypes<CR>
 nnoremap <leader>s :Snippets<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+if has('nvim') && !exists('g:fzf_layout')
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  autocmd Filetype fzf noremap <buffer> <C-j> <nop>
+  autocmd Filetype fzf noremap <buffer> <C-k> <nop>
+endif
 " }}}
 " EasyMotion {{{
 " Disable default mappings
