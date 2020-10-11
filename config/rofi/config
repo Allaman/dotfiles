@@ -1,12 +1,9 @@
-rofi.theme:            solarized
 rofi.font:             hack 12
 rofi.modi:             combi
 rofi.terminal:         konsole
 rofi.ssh-command:      {terminal} -e "{ssh-client} {host}"
 rofi.kb-accept-entry:  Return,KP_Enter
 rofi.kb-remove-to-eol: Control+m
-rofi.kb-row-up:        Control+k
-rofi.kb-row-down:      Control+j
 rofi.padding: 40
 rofi.opacity: 80
 rofi.border: 2px
