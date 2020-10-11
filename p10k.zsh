@@ -124,7 +124,7 @@
   # POWERLEVEL9K_MODE=compatible, or install the recommended Powerlevel10k font from
   # https://github.com/romkatv/powerlevel10k/#recommended-meslo-nerd-font-patched-for-powerlevel10k
   # and set POWERLEVEL9K_MODE=nerdfont-complete.
-  typeset -g POWERLEVEL9K_MODE=nerdfont-complete
+  typeset -g POWERLEVEL9K_MODE=compatible
 
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
@@ -553,7 +553,8 @@
   # Default context color.
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=180
   # Default context format: %n is username, %m is hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n%244F at %180F%m'
+  #typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n%244F at %180F%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n%244F'
 
   # Context color when running with privileges.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=178
