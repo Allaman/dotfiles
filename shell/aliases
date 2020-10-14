@@ -85,12 +85,12 @@ alias caws='$EDITOR -p $HOME/.aws/{credentials,config}'
 
 #-------- PIM  {{{
 #------------------------------------------------------
-alias sync-all='mbsync -a && notmuch new && vdirsyncer sync'
-alias sync-pim='vdirsyncer sync'
-alias mutt-sync-all='cd ~ && mbsync google:Inbox sbs_bund:Inbox supersu:Inbox outlook:Inbox && vdirsyncer sync && notmuch new && mutt'
+alias sync-all='sync-pim.sh all'
+alias sync-main='sync-pim.sh main'
+alias sync-dav='sync-pim.sh dav'
 alias list-mailboxes='\find ~/data/pim/mail/ -type d -name cur -printf '"'"'%h '"'"' | sed -e '"'"'s_/home/michael/data/pim/mail/_+_g'"'"' | sed -e '"'"'s_ +_ \\\n+_g'"'"''
 alias agenda='khal list yesterday tomorrow'
-alias cal='khal calendar yesterday tomorrow'
+alias cal='notify-send "$(khal list yesterday tomorrow)"'
 #}}}
 
 #-------- SSH  {{{
@@ -205,6 +205,8 @@ alias ec='emacsclient'
 alias newsbeuter='newsboat -C $HOME/dotfiles/.newsbeuterrc'
 alias xo='mimeopen'
 alias xos='mimeopen -d'
+alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.1'
+alias code='code-insiders'
 #}}}
 
 #-------- Openbox {{{
