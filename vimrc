@@ -90,6 +90,8 @@ hi Normal guibg=NONE ctermbg=NONE
 if (has("termguicolors"))
  set termguicolors
 endif
+" Set comment color cause default dark blue is not readable
+hi Comment guifg=#cc99ff
 " }}}
 " UI {{{
 set number relativenumber " relative and absolute line numbers
