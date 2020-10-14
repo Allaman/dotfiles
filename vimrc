@@ -112,6 +112,11 @@ if has("win32")
 else
   set clipboard=unnamedplus " default register is system clipboard
 endif
+" Highlight TODO in every file
+augroup HiglightTODO
+    autocmd!
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
+augroup END
 set hidden
 set history=100
 set nocompatible
