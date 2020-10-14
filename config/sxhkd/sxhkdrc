@@ -8,11 +8,7 @@ super + Escape
 
 # launcher
 alt + d
- 	rofi -combi-modi window,drun,ssh -show combi -sidebar-mode -cycle
-
-# calendar
-super + c
-	notify-send "$(khal list yesterday tomorrow)"
+ 	rofi -combi-modi window,run,ssh,drun -show combi -sidebar-mode -cycle
 
 # traslator
 super + t
@@ -25,6 +21,9 @@ alt + Return
 super + e
 	alacritty -t files -e /home/michael/workspace/scripts/vifmrun
 
+super + shift + e
+  rofimoji --copy-only --max-recent 10 --skin-tone neutral --prompt TYPE
+
 # super + l
 #   betterlockscreen -l dim
 
@@ -32,23 +31,13 @@ super + e
 super + shift + s
 	$HOME/workspace/scripts/clipboard-snippets.sh
 
-# sync mail
-super + m
-	sync-pim.sh main
-
-# sync all pim
-super + shift + p
-	sync-pim.sh all
-
-# sync all dav
-super + d
-	sync-pim.sh dav
+# clipboard
+super + shift + c
+  CM_LAUNCHER=rofi CM_OUTPUT_CLIP=0 clipmenu
 
 # Applications
 super + shift + m
 	alacritty -e neomutt
-# super + e
-#   konsole -e vifmrun
 super + shift + l
 	alacritty -e nvim /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + h
