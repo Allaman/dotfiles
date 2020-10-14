@@ -19,16 +19,14 @@ Plug 'terryma/vim-expand-region'
 " fzf integration
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Fast movement in vim
 " Color preview
 Plug 'ap/vim-css-color'
+" Fast movement in vim
 Plug 'easymotion/vim-easymotion'
 " Aligment
 " Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
 " Plug 'vim-voom/VOoM'
-" Kubernetes itegration
-" Plug 'andrewstuart/vim-kubernetes'
 " Visualize undo tree
 Plug 'mbbill/undotree'
 " Vim prettier
