@@ -26,7 +26,7 @@ Plug 'ap/vim-css-color'
 " Fast movement in vim
 Plug 'easymotion/vim-easymotion'
 " Aligment
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
 " Plug 'vim-voom/VOoM'
 " Visualize undo tree
@@ -360,9 +360,12 @@ nmap <Leader>W <Plug>(easymotion-overwin-w)
 " emulate vim-sneak
 nmap <leader>S <Plug>(easymotion-s2)
 " }}}
-" Indenting {{{
+" EasyAlign {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}}
-" Indenting {{{
 " FLoaterm {{{
 let g:floaterm_keymap_toggle = '<leader>f'
 nnoremap <silent> <leader>fs :FloatermSend<CR>
