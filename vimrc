@@ -19,6 +19,8 @@ Plug 'terryma/vim-expand-region'
 " fzf integration
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" float term
+Plug 'voldikss/vim-floaterm'
 " Color preview
 Plug 'ap/vim-css-color'
 " Fast movement in vim
@@ -361,6 +363,12 @@ nmap <leader>S <Plug>(easymotion-s2)
 " Indenting {{{
 " }}}
 " Indenting {{{
+" FLoaterm {{{
+let g:floaterm_keymap_toggle = '<leader>f'
+nnoremap <silent> <leader>fs :FloatermSend<CR>
+let g:floaterm_gitcommit = 'split'
+command! VF FloatermNew vifm
+command! LF FloatermNew lf
 " }}}
 " Indenting {{{
 " }}}
