@@ -7,11 +7,15 @@
 
 " ------------------------------------------------------------------------------
 
+" Only show one pane at start
+only
+cd ~
+
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=$EDITOR
+set vicmd=nvim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -111,16 +115,6 @@ endif
 " Set custom status line look
 
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
-
-" ------------------------------------------------------------------------------
-
-" :mark mark /full/directory/path [filename]
-
-mark h ~/
-mark d ~/Downloads/
-mark m ~/mjp/
-mark o ~/.dotfiles/
-mark w ~/workspace/
 
 " ------------------------------------------------------------------------------
 
