@@ -212,6 +212,19 @@ if has("nvim")
 endif
 nnoremap <Leader>r :let @s='\<'.expand('<cword>').'\>'<CR>:%s/<C-r>s//g<left><Left>
 xnoremap <Leader>r "sy:%s/<C-r>s//g<left><Left>
+" Bash readline mappings
+inoremap <C-a>  <C-o>^
+inoremap <C-e>  <C-o>$
+inoremap <A-b>  <C-Left>
+inoremap <A-f>  <C-Right>
+inoremap <A-BS> <C-w>
+inoremap <A-d>  <C-o>dw
+cnoremap <C-a>  <Home>
+cnoremap <C-e>  <End>
+cnoremap <A-b>  <C-Left>
+cnoremap <A-f>  <C-Right>
+cnoremap <A-BS> <C-w>
+cnoremap <A-d>  <C-Right><C-w>
 " }}}
 " Folding {{{
 set foldenable          " enable folding
