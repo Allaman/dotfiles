@@ -136,6 +136,7 @@ autocmd BufEnter * :syntax sync fromstart
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase          " ignore case in search patterns
+set smartcase
 " highlight last inserted text
 nnoremap gV `[v`]
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
