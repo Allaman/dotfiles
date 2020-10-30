@@ -212,6 +212,19 @@ if has("nvim")
 endif
 nnoremap <Leader>r :let @s='\<'.expand('<cword>').'\>'<CR>:%s/<C-r>s//g<left><Left>
 xnoremap <Leader>r "sy:%s/<C-r>s//g<left><Left>
+" insert mode completion mappings
+" project tags
+inoremap <C-t>     <C-x><C-]>
+" language and context aware
+inoremap <C-Space> <C-x><C-o>
+" current buffer
+inoremap <C-b>     <C-x><C-p>
+" dictionary
+inoremap <C-d>     <C-x><C-k>
+" file path
+inoremap <C-f>     <C-x><C-f>
+" whole line
+inoremap <C-l>     <C-x><C-l>
 " Bash readline mappings
 inoremap <C-a>  <C-o>^
 inoremap <C-e>  <C-o>$
@@ -225,6 +238,9 @@ cnoremap <A-b>  <C-Left>
 cnoremap <A-f>  <C-Right>
 cnoremap <A-BS> <C-w>
 cnoremap <A-d>  <C-Right><C-w>
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
 " }}}
 " Folding {{{
 set foldenable          " enable folding
