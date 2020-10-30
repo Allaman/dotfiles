@@ -1,9 +1,5 @@
 " Plugin Management {{{
 call plug#begin()
-" Nerdtree
-Plug 'preservim/nerdtree'
-" Nerdtree git plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
 "" Nerdtree
 "Plug 'preservim/nerdtree'
 "" Nerdtree git plugin
@@ -137,8 +133,6 @@ set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 set backupdir=$HOME/.vim/swp/
 set directory=$HOME/.vim/swp/
-set timeoutlen=1000
-set ttimeoutlen=10
 " Delay for leader + key waiting for another key
 set timeoutlen=300
 " Delay for leaving insert mode with esc
