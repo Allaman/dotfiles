@@ -12,7 +12,7 @@ alt + d
 
 # custom launcher
 alt + space
-  rofi-menu
+  /home/michael/workspace/scripts/rofi-menu
 
 # Terminal
 alt + Return
