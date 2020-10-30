@@ -25,6 +25,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'ap/vim-css-color'
 " Fast movement in vim
 Plug 'easymotion/vim-easymotion'
+" Linting
+Plug 'dense-analysis/ale'
 " Aligment
 Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
