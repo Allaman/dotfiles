@@ -206,6 +206,12 @@ nnoremap U <C-r>
 " Undotree
 nmap <leader>u :UndotreeShow<CR>
 nmap <leader>u :UndotreeShow<CR>
+" Substitute in current file
+if has("nvim")
+    set inccommand=nosplit
+endif
+nnoremap <Leader>r :let @s='\<'.expand('<cword>').'\>'<CR>:%s/<C-r>s//g<left><Left>
+xnoremap <Leader>r "sy:%s/<C-r>s//g<left><Left>
 " }}}
 " Folding {{{
 set foldenable          " enable folding
