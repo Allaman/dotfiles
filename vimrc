@@ -361,9 +361,9 @@ nnoremap <leader>fr :History<CR>
 "nnoremap <leader>w :Windows<CR>
 nnoremap <leader>; :BLines<CR>
 nnoremap <leader>: :BTags<CR>
-nnoremap <leader>c :Commits<CR>
+"nnoremap <leader>c :Commits<CR>
 nnoremap <leader>ft :Filetypes<CR>
-nnoremap <leader>s :Snippets<CR>
+"nnoremap <leader>s :Snippets<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
