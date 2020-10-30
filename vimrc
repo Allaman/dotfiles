@@ -142,6 +142,9 @@ nnoremap gV `[v`]
 if &diff
     highlight! link DiffText MatchParen
 endif
+" Center searches
+noremap n nzz
+noremap N Nzz
 " }}}
 " Default Mappings {{{
 let mapleader=" "
