@@ -234,26 +234,26 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:�
 " Windows handling {{{
 " only show focused window
 nnoremap <leader>on :on<CR>
-" Terminal mode:
-tnoremap <C-h> <c-\><c-n><c-w>h
-tnoremap <C-j> <c-\><c-n><c-w>j
-tnoremap <C-k> <c-\><c-n><c-w>k
-tnoremap <C-l> <c-\><c-n><c-w>l
-" Insert mode:
-inoremap <c-h> <esc><c-w>h
-imap <c-j> <esc><c-w>j
-inoremap <c-k> <esc><c-w>k
-inoremap <c-l> <esc><c-w>l
-" Visual mode:
-vnoremap <C-h> <Esc><c-w>h
-vmap <C-j> <Esc><c-w>j
-vnoremap <C-k> <Esc><c-w>k
-vnoremap <C-l> <Esc><c-w>l
-" Normal mode:
-nnoremap <C-h> <c-w>h
-nmap <C-j> <c-w>j
-nnoremap <C-k> <c-w>k
-nnoremap <C-l> <c-w>l
+"" Terminal mode:
+"tnoremap <C-h> <c-\><c-n><c-w>h
+"tnoremap <C-j> <c-\><c-n><c-w>j
+"tnoremap <C-k> <c-\><c-n><c-w>k
+"tnoremap <C-l> <c-\><c-n><c-w>l
+"" Insert mode:
+"inoremap <c-h> <esc><c-w>h
+"imap <c-j> <esc><c-w>j
+"inoremap <c-k> <esc><c-w>k
+"inoremap <c-l> <esc><c-w>l
+"" Visual mode:
+"vnoremap <C-h> <Esc><c-w>h
+"vmap <C-j> <Esc><c-w>j
+"vnoremap <C-k> <Esc><c-w>k
+"vnoremap <C-l> <Esc><c-w>l
+"" Normal mode:
+"nnoremap <C-h> <c-w>h
+"nmap <C-j> <c-w>j
+"nnoremap <C-k> <c-w>k
+"nnoremap <C-l> <c-w>l
 " Resizing
 nnoremap <Left> :vertical resize +1<CR>
 nnoremap <Right> :vertical resize -1<CR>
