@@ -12,6 +12,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'lambdalisue/fern.vim'
 " Fern git status
 Plug 'lambdalisue/fern-git-status.vim'
+" Tmux
+Plug 'christoomey/vim-tmux-navigator'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -473,6 +475,18 @@ let g:fern_git_status#disable_ignored    = 1
 let g:fern_git_status#disable_untracked  = 1
 let g:fern_git_status#disable_submodules = 1
 
+" }}}
+" Tmux {{{
+let g:tmux_navigator_disable_when_zoomed = 1
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <leader>l :TmuxNavigatePrevious<cr>
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
 " }}}
 " Indenting {{{
 " }}}
