@@ -184,6 +184,8 @@ nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bd :BD<CR>
 nnoremap <Leader>bk :BD!<CR>
 nnoremap <leader>bs :w<CR>
+" Redo remap
+nnoremap U <C-r>
 " Undotree
 nmap <leader>u :UndotreeShow<CR>
 nmap <leader>u :UndotreeShow<CR>
