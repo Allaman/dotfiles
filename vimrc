@@ -259,6 +259,12 @@ nnoremap <Left> :vertical resize +1<CR>
 nnoremap <Right> :vertical resize -1<CR>
 nnoremap <Up> :resize -1<CR>
 nnoremap <Down> :resize +1<CR>
+" New
+nnoremap <silent> <Leader>t :$tabnew<CR>
+" close
+nnoremap <silent> <Leader>s :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
+nnoremap <silent> <Leader>q :close<CR>
 " }}}
 " Lightline {{{
 set laststatus=2
