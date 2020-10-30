@@ -127,6 +127,10 @@ set backupdir=$HOME/.vim/swp/
 set directory=$HOME/.vim/swp/
 set timeoutlen=1000
 set ttimeoutlen=10
+" Delay for leader + key waiting for another key
+set timeoutlen=300
+" Delay for leaving insert mode with esc
+set ttimeoutlen=0
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Prevent wornd syntax redering - may slow down
