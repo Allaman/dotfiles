@@ -145,8 +145,8 @@ set timeoutlen=300
 set ttimeoutlen=0
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-" Prevent wornd syntax redering - may slow down
-autocmd BufEnter * :syntax sync fromstart
+" Prevent wrong syntax redering - may slow down
+"autocmd BufEnter * :syntax sync fromstart
 " }}}
 " Search {{{
 set incsearch           " search as characters are entered
