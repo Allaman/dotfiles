@@ -82,10 +82,15 @@ Plug 'andymass/vim-matchup'
 " Plug 'luochen1990/rainbow'
 " Find and Replace
 " Plug 'brooth/far.vim'
-" Terraform
-Plug 'hashivim/vim-terraform'
 " bufkill
 Plug 'qpkorr/vim-bufkill'
+" Terraform
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+"Deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" CSV
+Plug 'chrisbra/csv.vim'
 call plug#end()
 " }}}
 " Colors {{{
@@ -513,7 +518,23 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <leader>l :TmuxNavigatePrevious<cr>
 " }}}
-" Indenting {{{
+" Deoplete {{{
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#enable_at_startup = 1
+call deoplete#initialize()
+" }}}
+" Terrafrom {{{
+" (Optional)Remove Info(Preview) window
+set completeopt-=preview
+" (Optional)Hide Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" (Optional) Default: 0, enable(1)/disable(0) plugin's keymapping
+let g:terraform_completion_keys = 1
+" (Optional) Default: 1, enable(1)/disable(0) terraform module registry completion
+let g:terraform_registry_module_completion = 0
 " }}}
 " Indenting {{{
 " }}}
