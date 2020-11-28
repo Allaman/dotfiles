@@ -30,6 +30,8 @@ export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
 command -v yay >/dev/null 2>&1 && export AUR_MANAGER=yay
 command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/workspace/go
 command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
+# ruby gem
+export PATH=$PATH:~/.gem/ruby/2.7.0/bin
 
 
 # basedir defaults, in case they're not already set up.
@@ -69,5 +71,5 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute:vim {} > /dev/tty'"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # Preview directories with tree
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*}"'
+command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*,.terraform/*}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
