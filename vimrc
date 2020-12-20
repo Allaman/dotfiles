@@ -112,7 +112,7 @@ set scrolloff=3
 set sidescrolloff=5
 set wildmenu wildmode=full
 set wildignorecase
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**,**/target/**     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**,**/target/**,**.terraform/**     " MacOSX/Linux
 set encoding=utf-8
 set showmatch           " highlight matching [{()}]
 " }}}
@@ -128,8 +128,8 @@ augroup HiglightTODO
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 set hidden
-set history=100
 set nocompatible
+set history=500
 "set autochdir " set pwd always to current file
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
@@ -378,6 +378,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
+augroup ultisnips_no_auto_expansion
+    au!
+    au VimEnter * au! UltiSnips_AutoTrigger
+augroup END
 " }}}
 " Gitgutter {{{
 let g:gitgutter_map_keys = 0
@@ -476,7 +480,7 @@ function! FernInit() abort
         \ )
   nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
   nmap <buffer> n <Plug>(fern-action-new-path)
-  nmap <buffer> D <Plug>(fern-action-remove)
+  nmap <buffer> D <Plug>(fern-action-trash)
   nmap <buffer> m <Plug>(fern-action-move)
   nmap <buffer> M <Plug>(fern-action-rename)
   nmap <buffer> c <Plug>(fern-action-copy)
