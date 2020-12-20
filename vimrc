@@ -1,9 +1,5 @@
 " Plugin Management {{{
 call plug#begin()
-"" Nerdtree
-"Plug 'preservim/nerdtree'
-"" Nerdtree git plugin
-"Plug 'Xuyuanp/nerdtree-git-plugin'
 " Fern
 Plug 'lambdalisue/fern.vim'
 " Fern git status
