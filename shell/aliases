@@ -53,6 +53,7 @@ alias gc='git commit'
 alias gpush='git push'
 alias gpull='git pull'
 alias gd='git diff'
+alias gco='git checkout'
 #}}}
 
 #-------- Configs  {{{
@@ -61,6 +62,7 @@ alias srcbash='source $HOME/.bashrc'
 alias srczsh='source $HOME/.zshrc'
 alias cbashrc='$EDITOR $HOME/.bashrc'
 alias czshrc='$EDITOR $HOME/.zshrc'
+alias czshenv='$EDITOR $HOME/.shell/zshenv'
 alias cfuncs='$EDITOR $HOME/.public-dotfiles/shell/funcs'
 alias cvimrc='$EDITOR $HOME/.public-dotfiles/vimrc'
 alias calias='$EDITOR $HOME/.public-dotfiles/shell/aliases'
@@ -82,6 +84,7 @@ alias cranger='$EDITOR $HOME/.public-dotfiles/config/ranger/rc.conf'
 alias csxhkdrc='$EDITOR $HOME/.public-dotfiles/config/sxhkd/sxhkdrc'
 alias ledgerfile='$EDITOR $LEDGER_FILE'
 alias caws='$EDITOR -p $HOME/.aws/{credentials,config}'
+alias ckube='$EDITOR $HOME/.kube/config'
 #}}}
 
 #-------- PIM  {{{
