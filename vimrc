@@ -87,6 +87,8 @@ Plug 'juliosueiras/vim-terraform-completion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " CSV
 Plug 'chrisbra/csv.vim'
+" Better f F t T
+Plug 'unblevable/quick-scope'
 call plug#end()
 " }}}
 " Colors {{{
@@ -544,7 +546,12 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_edit_url_in = 'tab'
 let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'dockerfile', 'terraform', 'java']
 " }}}
-" Indenting {{{
+" Quickscope {{{
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_buftype_blacklist = ['terminal', 'nofile']
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 " }}}
 " Indenting {{{
 " }}}
