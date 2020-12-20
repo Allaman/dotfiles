@@ -145,6 +145,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+enable-fzf-tab
 
 # Profiling zsh
 #zprof
