@@ -37,6 +37,9 @@ super + shift + t
 	alacritty -e htop
 alt + shift + c
 	/home/michael/workspace/scripts/chromarks
+alt + shift + {g,f}
+	/home/michael/workspace/scripts/surfraw-rofi {chromium,firefox}
+
 # super + shift + c
 # 	rofi -show calc -modi calc -no-show-match -no-sort
 # super + shift + s
