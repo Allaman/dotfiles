@@ -92,7 +92,7 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 # launch tmux at login
 if command -v tmux>/dev/null; then
-  # [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [ -z "$SSH_CONNECTION" ] && [ "$DESKTOP_SESSION" != "i3" ] &&[ ! "0" = "$(id -u)" ] && exec tmux
+   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && [ -z "$SSH_CONNECTION" ] && [ "$DESKTOP_SESSION" != "i3" ] &&[ ! "0" = "$(id -u)" ] && exec tmux
 fi
 
 # typing ... expands to ../.., .... to ../../.., etc.
