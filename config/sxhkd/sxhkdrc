@@ -18,8 +18,10 @@ alt + space
 alt + Return
 	alacritty
 
+#super + e
+#  alacritty -d 120 60 -t files -e /home/michael/workspace/scripts/vifmrun
 super + e
-	alacritty -d 120 60 -t files -e /home/michael/workspace/scripts/vifmrun
+	alacritty -d 120 60 -t files -e lf
 
 # super + l
 #   betterlockscreen -l dim
@@ -33,6 +35,8 @@ super + shift + h
 	alacritty -e hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + t
 	alacritty -e htop
+alt + shift + c
+	/home/michael/workspace/scripts/chromarks
 # super + shift + c
 # 	rofi -show calc -modi calc -no-show-match -no-sort
 # super + shift + s
