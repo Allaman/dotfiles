@@ -8,3 +8,48 @@ fi
 [ -f $HOME/.shell/kubectl_aliases ] && source $HOME/.shell/kubectl_aliases
 [ -f $HOME/.shell/funcs ] && source $HOME/.shell/funcs
 [ -d $HOME/./shell/fzf-tab/ ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
+
+export LF_ICONS="\
+di=🗀 :\
+fi=🗎:\
+ln=:\
+or=:\
+ex=:\
+*.vimrc=:\
+*.viminfo=:\
+*.gitignore=:\
+*.c=:\
+*.cc=:\
+*.clj=:\
+*.coffee=:\
+*.cpp=:\
+*.css=:\
+*.d=:\
+*.dart=:\
+*.erl=:\
+*.exs=:\
+*.fs=:\
+*.go=:\
+*.h=:\
+*.hh=:\
+*.hpp=:\
+*.hs=:\
+*.html=:\
+*.java=:\
+*.jl=:\
+*.js=:\
+*.json=:\
+*.lua=:\
+*.md=:\
+*.php=:\
+*.pl=:\
+*.pro=:\
+*.py=:\
+*.rb=:\
+*.rs=:\
+*.scala=:\
+*.ts=:\
+*.vim=:\
+*.pdf=:\
+*.nix=:\
+"
