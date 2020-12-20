@@ -129,7 +129,7 @@ command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
-[ -f $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $HOME/.shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -d $HOME/.shell/fast-syntax-Highlighting ] && source $HOME/.shell/fast-syntax-Highlighting/fast-syntax-highlighting.plugin.zsh
 [ -f $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source  $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -d $HOME/.shell/zsh-completions/ ] &&  fpath=($HOME/.shell/zsh-completions/src $fpath)
