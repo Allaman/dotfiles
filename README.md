@@ -4,16 +4,17 @@
 
 ### This repo contains dotfiles for
 
-- Zsh (zshrc, zshenv, profile, aliases, funcs)
-- [Powershell10k](https://github.com/romkatv/powerlevel10k)
-- Tmux
-- NeoVim (might work with Vim > 8)
-- Ranger
-- Vifm
-- I3{status,blocks}
-- Rofi
-- Alacritty
-- Sxhkd
+- alacritty
+- i3{status,blocks}
+- neoVim (might work with Vim > 8)
+- ranger
+- rofi
+- sxhkd
+- tmux
+- vifm
+- zsh (zshrc, zshenv, profile, aliases, funcs)
+- [powershell10k](https://github.com/romkatv/powerlevel10k)
+- lf
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
 
