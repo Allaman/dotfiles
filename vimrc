@@ -48,8 +48,8 @@ Plug 'airblade/vim-gitgutter'
  Plug 'tpope/vim-surround'
 " Tags
 " Plug 'majutsushi/tagbar'
-" Markdown addon
-"Plug 'plasticboy/vim-markdown'
+" Markdown
+Plug 'plasticboy/vim-markdown'
 " Plug 'nelstrom/vim-markdown-folding'
 " For formating md tables
 " Plug 'godlygeek/tabular'
@@ -103,6 +103,7 @@ endif
 hi Comment guifg=#cc99ff
 " }}}
 " UI {{{
+set conceallevel=2
 set number relativenumber " relative and absolute line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
@@ -531,6 +532,13 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 let g:terraform_completion_keys = 1
 " (Optional) Default: 1, enable(1)/disable(0) terraform module registry completion
 let g:terraform_registry_module_completion = 0
+" }}}
+" Markdown {{{
+" Indet lists with 2 spaces
+let g:vim_markdown_new_list_item_indent = 0
+" Open files followed by link in new tab
+let g:vim_markdown_edit_url_in = 'tab'
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'dockerfile', 'terraform', 'java']
 " }}}
 " Indenting {{{
 " }}}
