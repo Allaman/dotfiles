@@ -95,7 +95,6 @@ call plug#end()
 silent! colorscheme dracula
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
-syntax enable
 " Follow transperancy from temrinal
 hi Normal guibg=NONE ctermbg=NONE
 if (has("termguicolors"))
@@ -129,6 +128,8 @@ augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
+syntax on
+filetype indent plugin on
 set hidden
 set nocompatible
 set history=500
@@ -247,8 +248,8 @@ set foldnestmax=2      " 10 nested fold max
 " }}}
 " Indenting {{{
 set nowrap
-set tabstop=2
-set shiftwidth=2
+"set tabstop=2
+"set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
@@ -552,6 +553,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_buftype_blacklist = ['terminal', 'nofile']
 highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
 highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+" }}}
+" Python {{{
+" Run file
+nmap <buffer> <leader>ep <Esc>:w<CR>:!clear;python %<CR>
+au FileType python setl shiftwidth=4 tabstop=4
 " }}}
 " Indenting {{{
 " }}}
