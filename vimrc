@@ -555,13 +555,14 @@ highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=unde
 highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 " }}}
 " Python {{{
-" Run file
-nmap <buffer> <leader>ep <Esc>:w<CR>:!clear;python %<CR>
 au FileType python setl shiftwidth=4 tabstop=4
 " }}}
-" Indenting {{{
+" Run files {{{
+nmap <buffer> <leader>ep <Esc>:w<CR>:!clear;python %<CR>
+nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
-" Indenting {{{
+" YAML {{{
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 " }}}
 " Indenting {{{
 " }}}
