@@ -1,0 +1,9 @@
+.git/
+node_modules/
+target/
+.idea/
+.vscode/
+.terraform/
+.gem/
+.cache,cache/
+workspace/go/pkg/*
