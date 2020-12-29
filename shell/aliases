@@ -85,6 +85,8 @@ alias csxhkdrc='$EDITOR $HOME/.public-dotfiles/config/sxhkd/sxhkdrc'
 alias ledgerfile='$EDITOR $LEDGER_FILE'
 alias caws='$EDITOR -p $HOME/.aws/{credentials,config}'
 alias ckube='$EDITOR $HOME/.kube/config'
+alias cvifm='$EDITOR $HOME/.config/vifm/vifmrc'
+alias clf='$EDITOR $HOME/.config/lf/lfrc'
 #}}}
 
 #-------- PIM  {{{
