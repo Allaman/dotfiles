@@ -22,22 +22,22 @@ setopt histappend
 setopt inc_append_history
 setopt share_history
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path
-zstyle ':completion:*' special-dirs true                        # enable cd .. behaviour
-zstyle ":completion:*" auto-description "specify: %d"
-#zstyle ":completion:*" completer _complete _correct _approximate
-#zstyle ":completion:*" format "Completing %d"
-zstyle ":completion:*" group-name ""
-zstyle ":completion:*" menu select=2
-zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=* l:|=*"
-zstyle ":completion:*" menu select=long
-zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
-zstyle ":completion:*" verbose true
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+#zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+#zstyle ':completion:*' rehash true                              # automatically find new executables in path
+#zstyle ':completion:*' special-dirs true                        # enable cd .. behaviour
+#zstyle ":completion:*" auto-description "specify: %d"
+##zstyle ":completion:*" completer _complete _correct _approximate
+##zstyle ":completion:*" format "Completing %d"
+#zstyle ":completion:*" group-name ""
+#zstyle ":completion:*" menu select=2
+#zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+#zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=* l:|=*"
+#zstyle ":completion:*" menu select=long
+#zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
+#zstyle ":completion:*" verbose true
 zstyle ':completion:*' hosts off # ignore hosts file for ssh/scp autocompletion
-# Speed up completions
+## Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -129,6 +129,7 @@ command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
+[ -d ~/.shell/forgit ] && source ~/.shell/forgit/forgit.plugin.zsh
 [ -d $HOME/.shell/fast-syntax-Highlighting ] && source $HOME/.shell/fast-syntax-Highlighting/fast-syntax-highlighting.plugin.zsh
 [ -f $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source  $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh
