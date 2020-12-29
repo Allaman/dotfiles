@@ -63,16 +63,18 @@ export WORKON_HOME=$HOME/.virtualenvs
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 [ -f /usr/bin/virtualenvwrapper.sh ] && source /usr/bin/virtualenvwrapper.sh
 
+export EXCLUDE_STRING=.git,node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*,.terraform/*,.gem/*,.cache,**/cache/*,**go/pkg/*
+
 # fzf
 export FZF_COMPLETION_TRIGGER=',,'
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # The first argument to the function ($1) is the base path to start traversal
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
+  fd --hidden --follow . "$1"
 }
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+  fd --type d --hidden --follow . "$1"
 }
 # add support for ctrl+o to open selected file
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute:nvim {} > /dev/tty'"
@@ -80,5 +82,5 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute:nvim {} > /dev/tty'"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # Preview directories with tree
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*,.terraform/*, .gem/*}"'
+command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{$EXCLUDE_STRING}"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
