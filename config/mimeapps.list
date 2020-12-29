@@ -42,3 +42,4 @@ application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/jpg=sxiv.desktop;
 image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
+text/csv=libreoffice-calc.desktop;
