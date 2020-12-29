@@ -1,14 +1,14 @@
 # reload sxhd config
 
 super + Escape
-	pkill -USR1 -x sxhkd
+  pkill -USR1 -x sxhkd
 
 # super + h
 #   konsole -e 'less .config/sxhkd/sxhkdrc'
 
 # launcher
 alt + d
- 	rofi -combi-modi window,run,ssh,drun -show combi -sidebar-mode -cycle
+  rofi -combi-modi window,run,ssh,drun -show combi -sidebar-mode -cycle
 
 # custom launcher
 alt + space
@@ -16,12 +16,12 @@ alt + space
 
 # Terminal
 alt + Return
-	alacritty
+  alacritty
 
 #super + e
 #  alacritty -d 120 60 -t files -e /home/michael/workspace/scripts/vifmrun
 super + e
-	alacritty -d 120 60 -t files -e lf
+  alacritty -d 100 60 -t files -e "/bin/zsh" "--login" "-c" "lf"
 
 # super + l
 #   betterlockscreen -l dim
@@ -37,6 +37,8 @@ super + shift + t
 	alacritty -e htop
 alt + shift + c
 	/home/michael/workspace/scripts/chromarks
+alt + shift + b
+	/home/michael/workspace/scripts/boosta
 alt + shift + {g,f}
 	/home/michael/workspace/scripts/surfraw-rofi {chromium,firefox}
 
