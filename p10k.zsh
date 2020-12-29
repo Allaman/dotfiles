@@ -33,6 +33,7 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       #os_icon                 # os identifier
+      vpn_ip                # virtual private network indicator
       status                  # exit code of the last command
       context
       dir                     # current directory
@@ -69,7 +70,6 @@
       #nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       #ranger                  # ranger shell (https://github.com/ranger/ranger)
       #vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
-      # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
       # time                    # current time
@@ -787,7 +787,7 @@
   # VPN IP color.
   typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=81
   # When on VPN, show just an icon without the IP address.
-  typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
+  #typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
   # Regular expression for the VPN network interface. Run ifconfig while on VPN to see the
   # name of the interface.
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(wg|(.*tun))[0-9]*'
