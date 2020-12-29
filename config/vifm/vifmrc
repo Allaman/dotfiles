@@ -138,7 +138,7 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 command! FZFlocate :set noquickview | :execute 'goto "'.system('locate $HOME | fzf --height 10 2>/dev/tty ').'"%IU' | redraw
-command! FZFfind :set noquickview | :execute 'goto "'.system('find | fzf --height 10 2>/dev/tty ').'"%IU' | redraw
+command! FZFfind :set noquickview | :execute 'goto "'.system('fd | fzf --height 10 2>/dev/tty ').'"%IU' | redraw
 
 " ------------------------------------------------------------------------------
 
