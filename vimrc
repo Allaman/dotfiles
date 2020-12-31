@@ -89,6 +89,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'chrisbra/csv.vim'
 " Better f F t T
 Plug 'unblevable/quick-scope'
+" vim-slime
+Plug 'jpalardy/vim-slime'
 call plug#end()
 " }}}
 " Colors {{{
@@ -563,6 +565,27 @@ nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
 " YAML {{{
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+" }}}
+" vim-slime {{{
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+" If you generally run vim in a split tmux window with a REPL in the other pane:
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_dont_ask_default = 1
+let g:slime_python_ipython = 1
+" default keybindings
+let g:slime_no_mappings = 0
+xmap <c-c><c-c> <Plug>SlimeRegionSend
+nmap <c-c><c-c> <Plug>SlimeParagraphSend
+nmap <c-c>v     <Plug>SlimeConfig
+" neovim <c-c> conflicts with vim-slime
+nnoremap <c-c> nop
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
 " }}}
 " Indenting {{{
 " }}}
