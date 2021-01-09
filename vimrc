@@ -587,7 +587,11 @@ nmap <c-c>v     <Plug>SlimeConfig
 " neovim <c-c> conflicts with vim-slime
 nnoremap <c-c> nop
 " }}}
-" Indenting {{{
+" Fugitive {{{
+" Conflict Resolution
+nnoremap <leader>gc:Gvdiff!<CR>
+nnoremap gdh :diffget //2<CR>
+nnoremap gdl :diffget //3<CR>
 " }}}
 " Indentline {{{
 let g:indentLine_defaultGroup = 'SpecialKey'
