@@ -91,6 +91,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'unblevable/quick-scope'
 " vim-slime
 Plug 'jpalardy/vim-slime'
+Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 call plug#end()
 " }}}
@@ -588,7 +589,11 @@ nnoremap <c-c> nop
 " }}}
 " Indenting {{{
 " }}}
-" Indenting {{{
+" Indentline {{{
+let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
 " }}}
 " Ale {{{
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
