@@ -91,6 +91,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'unblevable/quick-scope'
 " vim-slime
 Plug 'jpalardy/vim-slime'
+Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
@@ -565,6 +566,9 @@ nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
 " YAML {{{
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+" JSON {{{
+autocmd FileType json setlocal ts=4 sts=4 sw=4 foldmethod=syntax expandtab
+let g:vim_json_syntax_conceal = 0
 " }}}
 " vim-slime {{{
 let g:slime_target = "tmux"
