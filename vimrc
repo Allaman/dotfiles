@@ -91,6 +91,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'unblevable/quick-scope'
 " vim-slime
 Plug 'jpalardy/vim-slime'
+Plug 'vim-python/python-syntax'
 Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 call plug#end()
@@ -560,6 +561,7 @@ highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=und
 " }}}
 " Python {{{
 au FileType python setl shiftwidth=4 tabstop=4
+let g:python_highlight_all = 1
 " }}}
 " Run files {{{
 nmap <buffer> <leader>ep <Esc>:w<CR>:!clear;python %<CR>
