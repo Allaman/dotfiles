@@ -565,7 +565,8 @@ nmap <buffer> <leader>ep <Esc>:w<CR>:!clear;python %<CR>
 nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
 " YAML {{{
-autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 foldmethod=indent expandtab
+" }}}
 " JSON {{{
 autocmd FileType json setlocal ts=4 sts=4 sw=4 foldmethod=syntax expandtab
 let g:vim_json_syntax_conceal = 0
@@ -589,7 +590,11 @@ nnoremap <c-c> nop
 " }}}
 " Indenting {{{
 " }}}
-" Indenting {{{
+" Ale {{{
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
 " }}}
 " Indenting {{{
 " }}}
