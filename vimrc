@@ -144,7 +144,7 @@ set undodir=~/.vim/undodir
 set backupdir=$HOME/.vim/swp/
 set directory=$HOME/.vim/swp/
 " Delay for leader + key waiting for another key
-set timeoutlen=300
+set timeoutlen=400
 " Delay for leaving insert mode with esc
 set ttimeoutlen=0
 " Disables automatic commenting on newline
