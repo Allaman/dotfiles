@@ -99,7 +99,7 @@ Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme dracula
+silent! colorscheme gruvbox
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
 " Follow transperancy from temrinal
@@ -111,7 +111,7 @@ endif
 hi Comment guifg=#cc99ff
 " }}}
 " UI {{{
-set conceallevel=2
+set conceallevel=0
 set number relativenumber " relative and absolute line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
@@ -651,7 +651,7 @@ nnoremap <c-c> nop
 " }}}
 " Fugitive {{{
 " Conflict Resolution
-nnoremap <leader>gc:Gvdiff!<CR>
+nnoremap <leader>gc :Gvdiff!<CR>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
 " }}}
@@ -666,6 +666,12 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
 " }}}
 " Indenting {{{
 " }}}
