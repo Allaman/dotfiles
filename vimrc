@@ -553,6 +553,8 @@ let g:vim_markdown_new_list_item_indent = 0
 " Open files followed by link in new tab
 let g:vim_markdown_edit_url_in = 'tab'
 let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'dockerfile', 'terraform', 'java']
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 " }}}
 " Quickscope {{{
 " Trigger a highlight in the appropriate direction when pressing these keys:
@@ -658,8 +660,8 @@ nnoremap gdl :diffget //3<CR>
 " Indentline {{{
 let g:indentLine_defaultGroup = 'SpecialKey'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
+let g:indentLine_concealcursor = 'nv'
+"let g:indentLine_conceallevel = 2
 " }}}
 " Ale {{{
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
