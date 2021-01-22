@@ -35,6 +35,8 @@ super + shift + h
 	alacritty -e hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + t
 	alacritty -e htop
+alt + shift +s
+        xfce4-settings-manager
 alt + shift + c
 	/home/michael/workspace/scripts/chromarks
 alt + shift + b
