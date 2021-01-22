@@ -32,7 +32,7 @@ Plug 'dense-analysis/ale'
 " Aligment
 Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
-" Plug 'vim-voom/VOoM'
+ Plug 'vim-voom/VOoM'
 " Visualize undo tree
 Plug 'mbbill/undotree'
 " Vim prettier
