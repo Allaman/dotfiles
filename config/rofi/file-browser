@@ -1,4 +1,0 @@
-icon-theme "Numix-Circle"
-cmd        "mimeopen -n"
-oc-cmd     "alacritty -e vifmrun"
-oc-cmd     "masterpdfeditor5"
