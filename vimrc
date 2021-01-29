@@ -11,6 +11,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/edge'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Whitespace
 Plug 'ntpeters/vim-better-whitespace'
@@ -99,7 +100,7 @@ Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme gruvbox
+silent! colorscheme edge
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
 " Follow transperancy from temrinal
