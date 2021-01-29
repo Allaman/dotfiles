@@ -126,7 +126,6 @@ alias k=kubectl
 #command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
 #[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
 #[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
-autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 [ -f $HOME/.shell/bash-my-aws/aliases ] && source $HOME/.shell/bash-my-aws/aliases && source $HOME/.shell/bash-my-aws/bash_completion.sh
 command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
@@ -149,6 +148,7 @@ bindkey '^ ' autosuggest-accept                                 # zsh autosugges
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 enable-fzf-tab
+autoload -Uz +X compinit && compinit
 
 # Profiling zsh
 #zprof
