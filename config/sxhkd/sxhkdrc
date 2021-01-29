@@ -21,7 +21,7 @@ alt + Return
 #super + e
 #  alacritty -d 120 60 -t files -e /home/michael/workspace/scripts/vifmrun
 super + e
-  alacritty -d 100 60 -t files -e "/bin/zsh" "--login" "-c" "lf"
+  alacritty -t files -e "/bin/zsh" "--login" "-c" "lf"
 
 # super + l
 #   betterlockscreen -l dim
