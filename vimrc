@@ -4,6 +4,8 @@ call plug#begin()
 Plug 'lambdalisue/fern.vim'
 " Fern git status
 Plug 'lambdalisue/fern-git-status.vim'
+" filemanager
+"Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
 " Snippets
@@ -671,6 +673,10 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
+" }}}
+" Indenting {{{
+" }}}
+" Indenting {{{
 " }}}
 " Indenting {{{
 " }}}
