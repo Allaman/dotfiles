@@ -74,8 +74,10 @@ bindkey '^[[2~' overwrite-mode                                  # Insert key
 bindkey '^[[3~' delete-char                                     # Delete key
 bindkey '^[[C'  forward-char                                    # Right key
 bindkey '^[[D'  backward-char                                   # Left key
-bindkey '^[[5~' history-beginning-search-backward               # Page up key
-bindkey '^[[6~' history-beginning-search-forward                # Page down key
+#bindkey '^[[5~' history-beginning-search-backward               # Page up key
+#bindkey '^[[6~' history-beginning-search-forward                # Page down key
+bindkey '^P' history-beginning-search-backward               # Page up key
+bindkey '^N' history-beginning-search-forward                # Page down key
 # Use vim keys to select autocompletion
 _comp_options+=(globdots)		# Include hidden files.
 bindkey -M menuselect 'h' vi-backward-char
@@ -143,9 +145,6 @@ command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-bindkey '^ ' autosuggest-accept
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
