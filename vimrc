@@ -628,7 +628,8 @@ function! SaveAndExecutePython()
     setlocal nomodifiable
 endfunction
 " }}}
-" Run files {{{
+" Bash {{{
+au FileType sh setl shiftwidth=2 tabstop=2
 nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
 " YAML {{{
