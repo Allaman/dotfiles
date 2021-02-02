@@ -6,15 +6,17 @@
 
 - alacritty
 - i3{status,blocks}
+- lf
 - neoVim (might work with Vim > 8)
+- [powershell10k](https://github.com/romkatv/powerlevel10k)
 - ranger
 - rofi
 - sxhkd
 - tmux
 - vifm
+- w3m
+- Xresources
 - zsh (zshrc, zshenv, profile, aliases, funcs)
-- [powershell10k](https://github.com/romkatv/powerlevel10k)
-- lf
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
 
@@ -32,7 +34,7 @@ This repo works with the [RCM](https://github.com/thoughtbot/rcm) dotfiles manag
 
 ### Neovim configuration includes but not limited to:
 
-- Several useful plugins, e.g. [NERDTree](https://github.com/preservim/nerdtree), [fzf-vim](https://github.com/junegunn/fzf.vim), [undotree](https://github.com/mbbill/undotree), [UltiSnips](https://github.com/SirVer/ultisnips), and more
+- Several useful plugins
 - Mnemonic key configuration based upon `space` as leader key
 - Git integration
 - well structured vimrc
