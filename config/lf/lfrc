@@ -92,9 +92,9 @@ cmd broot_jump ${{
 }}
 
 # Dragon fucntions
-cmd dragon %dragon -a -x $fx
-cmd dragon-stay %dragon -a $fx
-cmd dragon-individual %dragon $fx
+cmd dragon %dragon --on-top -a -x $fx
+cmd dragon-stay %dragon --on-top -a $fx
+cmd dragon-individual %dragon --on-top $fx
 
 # Archive bindings
 cmd unarchive ${{
