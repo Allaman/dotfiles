@@ -210,7 +210,7 @@ alias hots='setarch i386 -L -B -R -3 /opt/cxoffice/bin/wine --bottle Heroes_of_t
 #------------------------------------------------------
 alias emacs-debug='emacs --debug-init --timed-requires'
 alias ec='emacsclient'
-alias newsbeuter='newsboat -C $HOME/dotfiles/.newsbeuterrc'
+alias nb='newsboat'
 alias xo='mimeopen'
 alias xos='mimeopen -d'
 alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.1'
