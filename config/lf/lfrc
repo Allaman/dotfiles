@@ -1,6 +1,10 @@
 set previewer ~/.config/lf/preview
 # Basic Settings
+# https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
 set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+set filesep "\n"  # default already
 set preview true
 #set hidden true
 set color256 true
@@ -60,6 +64,10 @@ cmd sudomkfile ${{
   printf "File Name: "
   read ans
   sudo $EDITOR $ans
+}}
+
+cmd bulkremane ${{
+  printf '%s\n' $fx | vidir -
 }}
 
 cmd fasd_jump ${{
@@ -138,6 +146,36 @@ cmd restore_trash ${{
   trash-restore
 }}
 
+cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
+cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
+cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
+cmd select-all :unselect; invert
+
+# both dont work
+#cmd select-files ${{
+#    { echo "$fs"; find -L "$(pwd)" -mindepth 1 -maxdepth 1 -type f; } |
+#        if [ "$lf_hidden" = "false" ]; then
+#          # remove any hidden files so you only select files you can see.
+#          grep -v '/\.[^/]\+$'
+#        else
+#          cat
+#        fi |
+#        sed '/^$/d' | sort | uniq -u |
+#        xargs -d '\n' -r -I{} lf -remote "send $id toggle {}"
+#}}
+#cmd select-dirs ${{
+#    { echo "$fs"; find -L "$(pwd)" -mindepth 1 -maxdepth 1 -type d; } |
+#        if [ "$lf_hidden" = "false" ]; then
+#          grep -v '/\.[^/]\+$'
+#        else
+#          cat
+#        fi |
+#        sed '/^$/d' | sort | uniq -u |
+#        xargs -d '\n' -r -I{} lf -remote "send $id toggle {}"
+#}}
+
+cmd open-with %"$@" $fx
+
 # Bindings
 # Remove some defaults
 map m
@@ -159,8 +197,15 @@ cmd video_preview ${{
 }}
 map + :video_preview
 
+
 # File Openers
 map ee $$EDITOR "$f"
+map O push :open-with<space>
+
+# Git
+map gp ${{clear; git pull || true; echo "press ENTER"; read ENTER}}
+map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
+map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
 # Archive Mappings
 map az zip
@@ -198,14 +243,18 @@ map md mkdir
 map ms $mkscript
 map ch chmod
 map r rename
+map br bulkremane
 map H top
 map L bottom
+map fd yank-dirname
+map fp yank-path
+map fb yank-basename
 map R reload
 map C clear
 map U unselect
+map A select-all
 
 # Advanced
-map br $vidir $fx
 map <enter> shell
 map ex $$f
 #map X !$f
