@@ -20,7 +20,7 @@ fi
 [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
 [ -f /usr/bin/ksshaskpass ] && export GIT_ASKPASS=/usr/bin/ksshaskpass
 export BROWSERCLI=lynx
-export BROWER=firefox
+export BROWSER=firefox
 export TERMINAL=alacritty
 #export TERM=rxvt-unicode-256color
 command -v vim >/dev/null 2>&1 && export EDITOR=vim
