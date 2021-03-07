@@ -17,6 +17,8 @@ Plug 'sainnhe/edge'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" Repeat
+Plug 'tpope/vim-repeat'
 " Expand region
 Plug 'terryma/vim-expand-region'
 " 100+ lazy loading syntax
@@ -174,7 +176,7 @@ noremap N Nzz
 " }}}
 " Default Mappings {{{
 let mapleader=" "
-" replace currently selected text with default register without yanking it
+" paste over currently selected text without yanking it
 vnoremap p "_dP
 " write file with sudo
 cnoreabbrev w!! w !sudo tee > /dev/null %|
@@ -190,6 +192,8 @@ imap <right> <nop>
 " Visually move lines
 vmap J :m +1<CR>gv
 vmap K :m -2<CR>gv
+" change dire to current buufer
+nnoremap <Leader>cd :cd %:p:h<cr>
 " open previously opened file
 nnoremap <Leader><tab> :e#<CR>
 " duplicate file
@@ -451,6 +455,7 @@ nnoremap <silent> <leader>fs :FloatermSend<CR>
 let g:floaterm_gitcommit = 'split'
 command! VF FloatermNew vifm
 command! LF FloatermNew lf
+nnoremap <leader>lf :LF<CR>
 " }}}
 " Fern {{{
 
@@ -570,6 +575,10 @@ highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=und
 " Python {{{
 au FileType python setl shiftwidth=4 tabstop=4
 let g:python_highlight_all = 1
+" Check Python files with flake8 and pylint.
+let b:ale_linters = ['flake8', 'pylint']
+" Fix Python files with autopep8 and yapf.
+let b:ale_fixers = ['autopep8', 'yapf']
 " Ignore line length linting
 let g:ale_python_flake8_options = '--ignore=E501'
 " open the go-to function in split, not another buffer
