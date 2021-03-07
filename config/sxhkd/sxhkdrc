@@ -12,7 +12,9 @@ alt + d
 
 # custom launcher
 alt + space
-  /home/michael/workspace/scripts/rofi-menu
+  #/home/michael/workspace/scripts/rofi-menu
+  xterm -T fzf-nova -geometry 90x25+350+200 -fs 16 -e /home/michael/workspace/scripts/rofi-nova/rofi-nova
+  #alacritty -t fzf-nova -e $HOME/workspace/scripts/rofi-nova/rofi-nova
 
 # Terminal
 alt + Return
@@ -28,13 +30,15 @@ super + e
 
 # Applications
 super + shift + m
-	alacritty -e neomutt
+	alacritty -o window.startup_mode=Maximized -e neomutt
+super + shift + n
+	alacritty -o window.startup_mode=Maximized -e newsboat
 super + shift + l
 	alacritty -e nvim /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + h
 	alacritty -e hledger add -f /home/michael/data/buchhaltung/ledger/main.ledger
 super + shift + t
-	alacritty -e htop
+	alacritty -o window.startup_mode=Maximized -e htop
 alt + shift +s
         xfce4-settings-manager
 alt + shift + c
@@ -42,6 +46,7 @@ alt + shift + c
 alt + shift + b
 	/home/michael/workspace/scripts/boosta
 alt + shift + {g,f}
+p
 	/home/michael/workspace/scripts/surfraw-rofi {chromium,firefox}
 
 # super + shift + c
