@@ -15,6 +15,8 @@ Plug 'honza/vim-snippets'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/edge'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 " Whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Repeat
@@ -43,7 +45,7 @@ Plug 'mbbill/undotree'
 " Vim prettier
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
-  \ 'for': ['json', 'markdown', 'yaml', 'html'] }
+  \ 'for': ['json', 'markdown', 'yaml', 'html', 'javascript', 'css'] }
 " Statusline
 Plug 'itchyny/lightline.vim'
 " Git
@@ -104,7 +106,7 @@ Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme edge
+silent! colorscheme gruvbox
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
 " Follow transperancy from temrinal
