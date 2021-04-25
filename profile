@@ -32,6 +32,8 @@ command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && expor
 command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
 # ruby gem
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
+# kubectl krew
+[ -d $HOME/.krew/bin ] && export PATH="$HOME/.krew/bin:$PATH"
 
 
 # basedir defaults, in case they're not already set up.
