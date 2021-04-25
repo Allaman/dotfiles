@@ -216,6 +216,8 @@ alias xos='mimeopen -d'
 alias rustscan='docker run -it --rm --name rustscan rustscan/rustscan:1.10.1'
 alias code='code-insiders'
 alias tfswitch='tfswitch -b ~/.local/bin/terraform'
+alias slack-id="slack-term -config ~/.config/slack-term/id-config"
+alias slack-idz="slack-term -config ~/.config/slack-term/idz-config"
 #}}}
 
 #-------- Openbox {{{
