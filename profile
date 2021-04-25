@@ -28,7 +28,7 @@ command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 export MAIL=/usr/bin/neomutt
 export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
 command -v paru >/dev/null 2>&1 && export AUR_MANAGER=paru
-command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/workspace/go
+command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/go
 command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
 # ruby gem
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
