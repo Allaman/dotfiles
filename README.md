@@ -4,19 +4,15 @@
 
 ### This repo contains dotfiles for
 
-- alacritty
+- Terminal stuff (alacritty, wezterm, tmux)
+- File manager (ranger, vifm, lf)
+- Zsh (prompt, plugins, aliases and custom functions)
 - i3{status,blocks}
-- lf
-- neoVim (might work with Vim > 8)
-- [powershell10k](https://github.com/romkatv/powerlevel10k)
-- ranger
+- NeoVim (might work with Vim > 8)
 - rofi
 - sxhkd
-- tmux
-- vifm
 - w3m
 - Xresources
-- zsh (zshrc, zshenv, profile, aliases, funcs)
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
 
