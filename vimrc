@@ -1,4 +1,10 @@
 " Plugin Management {{{
+if ! filereadable(system('echo -n "$HOME/.vim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p $HOME/.vim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
 call plug#begin()
 " Fern
 Plug 'lambdalisue/fern.vim'
@@ -39,7 +45,7 @@ Plug 'dense-analysis/ale'
 " Aligment
 Plug 'junegunn/vim-easy-align'
 " Outliner for structured text
- Plug 'vim-voom/VOoM'
+" Plug 'vim-voom/VOoM'
 " Visualize undo tree
 Plug 'mbbill/undotree'
 " Vim prettier
@@ -54,19 +60,19 @@ Plug 'airblade/vim-gitgutter'
 " Surround
  Plug 'tpope/vim-surround'
 " Tags
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Markdown
 Plug 'plasticboy/vim-markdown'
 " Plug 'nelstrom/vim-markdown-folding'
 " For formating md tables
-" Plug 'godlygeek/tabular'
-" Plug 'dhruvasagar/vim-table-mode'
+Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
 " Ansible
 Plug 'pearofducks/ansible-vim'
 " Docker
 Plug 'ekalinin/Dockerfile.vim'
 " Go support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " wrapper of Terminal and REPL
 " Plug 'kassio/neoterm'
 " Commenting
@@ -106,7 +112,7 @@ Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme gruvbox
+silent! colorscheme edge
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
 " Follow transperancy from temrinal
@@ -181,7 +187,7 @@ let mapleader=" "
 " paste over currently selected text without yanking it
 vnoremap p "_dP
 " write file with sudo
-cnoreabbrev w!! w !sudo tee > /dev/null %|
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 " move vertically by visual line when used withput count
 " and move by physical line when used with count
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -264,8 +270,8 @@ set foldnestmax=2      " 10 nested fold max
 " }}}
 " Indenting {{{
 set nowrap
-"set tabstop=2
-"set shiftwidth=2
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
@@ -652,6 +658,9 @@ autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 foldmethod=indent expandtab
 autocmd FileType json setlocal ts=4 sts=4 sw=4 foldmethod=syntax expandtab
 let g:vim_json_syntax_conceal = 0
 " }}}
+" JavaScript {{{
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+" }}}
 " vim-slime {{{
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
@@ -684,8 +693,33 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_completion_enabled = 0
 " }}}
-" Indenting {{{
+" Golang {{{
+au FileType go setl shiftwidth=2 tabstop=2
+au filetype go inoremap <buffer> . .<C-x><C-o>
+autocmd FileType go nmap <leader>e <Plug>(go-run)
+autocmd FileType go nmap <leader>d <Plug>(go-describe)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+autocmd FileType go nmap <leader>B :<C-u>call <SID>build_go_files()<CR>
+let g:go_bin_path = $HOME."/go/bin"
+"let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
 " }}}
 " Indenting {{{
 " }}}
