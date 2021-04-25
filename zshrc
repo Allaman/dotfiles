@@ -85,7 +85,7 @@ alias k=kubectl
 #command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
 #[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
 #[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
-command -v fasd >/dev/null 2>&1 && eval "$(fasd --init posix-alias zsh-hook)"
+command -v fasd >/dev/null 2>&1 && eval "$(fasd --init zsh-hook)"
 command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 [ -d $HOME/.shell/forgit ] && source $HOME/.shell/forgit/forgit.plugin.zsh
