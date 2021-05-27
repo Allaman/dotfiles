@@ -61,6 +61,8 @@ Plug 'airblade/vim-gitgutter'
  Plug 'tpope/vim-surround'
 " Tags
 Plug 'majutsushi/tagbar'
+" TOML
+Plug 'cespare/vim-toml'
 " Markdown
 Plug 'plasticboy/vim-markdown'
 " Plug 'nelstrom/vim-markdown-folding'
@@ -698,8 +700,16 @@ let g:ale_completion_enabled = 0
 " Golang {{{
 au FileType go setl shiftwidth=2 tabstop=2
 au filetype go inoremap <buffer> . .<C-x><C-o>
+au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 autocmd FileType go nmap <leader>e <Plug>(go-run)
 autocmd FileType go nmap <leader>d <Plug>(go-describe)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>j :GoDeclsDir<cr>
+autocmd FileType go nmap <leader>B :<C-u>call <SID>build_go_files()<CR>
+au Filetype go nmap <leader>ta <Plug>(go-alternate-edit)
+au Filetype go nmap <leader>tah <Plug>(go-alternate-split)
+au Filetype go nmap <leader>tav <Plug>(go-alternate-vertical)
+au FileType go nmap <leader>gc :GoCoverageToggle -short<cr>
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -709,10 +719,10 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
-autocmd FileType go nmap <leader>B :<C-u>call <SID>build_go_files()<CR>
 let g:go_bin_path = $HOME."/go/bin"
-"let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
+let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
 let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
+let g:go_auto_sameids = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -720,6 +730,9 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+set updatetime=300
 " }}}
 " Indenting {{{
 " }}}
