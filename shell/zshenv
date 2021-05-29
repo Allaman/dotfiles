@@ -2,7 +2,7 @@ if [ "$DESKTOP_SESSION" =~ "xfce" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
-[ -d $HOME/workspace/scripts ] && export PATH=$PATH:$HOME/workspace/scripts
+[ -d $HOME/workspace/git.rootknecht.net/scripts ] && export PATH=$PATH:$HOME/workspace/git.rootknecht.net/scripts
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -f $HOME/.shell/aliases ] && source $HOME/.shell/aliases
 [ -f $HOME/.shell/kubectl_aliases ] && source $HOME/.shell/kubectl_aliases
