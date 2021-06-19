@@ -3,7 +3,7 @@ local wezterm = require 'wezterm';
 return {
   color_scheme = "MaterialOcean",
   --window_background_image = "media/wallpapers/distrotube/0042.jpg",
-  window_background_image = "media/wallpapers/distrotube/0188.jpg",
+  --window_background_image = "media/wallpapers/distrotube/0188.jpg",
   window_decorations = "NONE",
   window_background_image_hsb = {
     -- Darken the background image by reducing it to 1/3rd
@@ -15,7 +15,7 @@ return {
     saturation = 1.0,
   },
   font_size = 16.00,
-  font = wezterm.font("MesloLGS NF", {weight="Bold"}),
+  font = wezterm.font("MesloLGS NF"),
   font_antialias = "None", -- None, Greyscale, Subpixel
   font_hinting = "None",  -- None, Vertical, VerticalSubpixel, Full
   line_height = 1.1,
