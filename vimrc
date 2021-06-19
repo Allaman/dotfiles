@@ -14,6 +14,7 @@ Plug 'lambdalisue/fern-git-status.vim'
 "Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/vimux'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -106,7 +107,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'unblevable/quick-scope'
 " python
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'jpalardy/vim-slime'
 Plug 'vim-python/python-syntax'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
@@ -114,7 +114,7 @@ Plug 'elzr/vim-json'
 call plug#end()
 " }}}
 " Colors {{{
-silent! colorscheme edge
+silent! colorscheme gruvbox
 " to work better with dracula
 "let g:polyglot_disabled = ['yaml']
 " Follow transperancy from temrinal
@@ -218,7 +218,7 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Toogle whitespace
 nnoremap <Leader>tw :set list!<CR>
 " Buffer handling
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bd :BD<CR>
@@ -227,7 +227,6 @@ nnoremap <leader>bs :w<CR>
 " Redo remap
 nnoremap U <C-r>
 " Undotree
-nmap <leader>u :UndotreeShow<CR>
 nmap <leader>u :UndotreeShow<CR>
 " Substitute in current file
 if has("nvim")
@@ -460,10 +459,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}}
 " FLoaterm {{{
-let g:floaterm_keymap_toggle = '<leader>f'
-nnoremap <silent> <leader>fs :FloatermSend<CR>
+"let g:floaterm_keymap_toggle = '<leader>f'
+"nnoremap <silent> <leader>fs :FloatermSend<CR>
 let g:floaterm_gitcommit = 'split'
-command! VF FloatermNew vifm
+"command! VF FloatermNew vifm
 command! LF FloatermNew lf
 nnoremap <leader>lf :LF<CR>
 " }}}
@@ -547,6 +546,10 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <leader>l :TmuxNavigatePrevious<cr>
+map <Leader>tp :VimuxPromptCommand<CR>
+map <Leader>tl :VimuxRunLastCommand<CR>
+map <Leader>ti :VimuxInspectRunner<CR>
+map <leader>tz :VimuxZoomRunner<CR>
 " }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
@@ -662,21 +665,6 @@ let g:vim_json_syntax_conceal = 0
 " }}}
 " JavaScript {{{
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-" }}}
-" vim-slime {{{
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-" If you generally run vim in a split tmux window with a REPL in the other pane:
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-let g:slime_dont_ask_default = 1
-let g:slime_python_ipython = 1
-" default keybindings
-let g:slime_no_mappings = 0
-xmap <c-c><c-c> <Plug>SlimeRegionSend
-nmap <c-c><c-c> <Plug>SlimeParagraphSend
-nmap <c-c>v     <Plug>SlimeConfig
-" neovim <c-c> conflicts with vim-slime
-nnoremap <c-c> nop
 " }}}
 " Fugitive {{{
 " Conflict Resolution
