@@ -1,0 +1,1 @@
+/home/michael/.dotfiles/config/nvim/plugin/packer_compiled.lua

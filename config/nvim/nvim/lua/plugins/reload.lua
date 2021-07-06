@@ -1,0 +1,1 @@
+/home/michael/.dotfiles/config/nvim/lua/plugins/reload.lua
