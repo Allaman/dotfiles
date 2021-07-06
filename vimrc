@@ -113,57 +113,20 @@ Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 call plug#end()
 " }}}
-" Colors {{{
-silent! colorscheme gruvbox
-" to work better with dracula
-"let g:polyglot_disabled = ['yaml']
-" Follow transperancy from temrinal
-hi Normal guibg=NONE ctermbg=NONE
-if (has("termguicolors"))
- set termguicolors
-endif
-" Set comment color cause default dark blue is not readable
-hi Comment guifg=#cc99ff
-" }}}
 " UI {{{
-set conceallevel=0
-set number relativenumber " relative and absolute line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
 " Space above/beside cursor from screen edges
-set scrolloff=3
-set sidescrolloff=5
 set wildmenu wildmode=full
-set wildignorecase
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**.git/**,**/target/**,**.terraform/**     " MacOSX/Linux
-set encoding=utf-8
 set showmatch           " highlight matching [{()}]
 " }}}
 " Misc {{{
-if has("win32")
-  set clipboard=unnamed " default register is system clipboard
-else
-  set clipboard=unnamedplus " default register is system clipboard
-endif
 " Highlight TODO in every file
 augroup HiglightTODO
     autocmd!
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
-syntax on
 filetype indent plugin on
-set hidden
 set nocompatible
 set history=500
-"set autochdir " set pwd always to current file
-set undofile " Maintain undo history between sessions
-set undodir=~/.vim/undodir
-set backupdir=$HOME/.vim/swp/
-set directory=$HOME/.vim/swp/
-" Delay for leader + key waiting for another key
-set timeoutlen=400
-" Delay for leaving insert mode with esc
-set ttimeoutlen=0
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Prevent wrong syntax redering - may slow down
@@ -173,7 +136,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 set ignorecase          " ignore case in search patterns
-set smartcase
 " highlight last inserted text
 nnoremap gV `[v`]
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
@@ -210,9 +172,6 @@ nnoremap <Leader><tab> :e#<CR>
 nnoremap <silent> <Leader>fd :clear<bar>silent exec "!cp '%:p' '%:p:h/%:t:r-copy.%:e'"<bar>redraw<bar>echo "Copied " . expand('%:t') . ' to ' . expand('%:t:r') . '-copy.' . expand('%:e')<cr>
 " Change behaviour of Y similar to C and D
 nnoremap Y y$
-" Keep selection active after indenting
-vmap > >gv
-vmap < <gv
 " Cancel search with escape
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 " Toogle whitespace
@@ -274,7 +233,6 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent
 set autoindent
 " }}}
 " Whitespace {{{
@@ -326,7 +284,6 @@ nnoremap <silent> <Leader>v :vsplit<CR>
 nnoremap <silent> <Leader>q :close<CR>
 " }}}
 " Lightline {{{
-set laststatus=2
 set noshowmode " do not show mode because it is shown in the status line
 let g:lightline = {
       \ 'colorscheme': 'dracula',
