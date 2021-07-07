@@ -1,9 +1,10 @@
 
 require('packages')
 require('mappings')
-require('config')
-require('statusline')
+require('options')
+require('globals')
+require('autocmd')
 require('plugins/kommentary')
 require('plugins/reload')
 require('plugins/telescope')
-
+require('plugins/nvim-tree')

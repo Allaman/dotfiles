@@ -26,5 +26,14 @@ return require('packer').startup(function()
 
   -- https://github.com/b3nj5m1n/kommentary
   use 'b3nj5m1n/kommentary'
+
+  -- https://github.com/kyazdani42/nvim-tree.lua
+  use 'kyazdani42/nvim-tree.lua'
+
+  -- https://github.com/numToStr/Navigator.nvim
+  use 'numToStr/Navigator.nvim'
+
+  --
+  use 'kyazdani42/nvim-web-devicons'
 end)
 

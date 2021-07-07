@@ -1,10 +1,12 @@
-local g = vim.g
 local o = vim.opt
 local wo = vim.wo
 local bo = vim.bo
 local fn = vim.fn
-local cmd = vim.cmd
+local execute = vim.api.nvim_command
 
+vim.cmd "filetype indent plugin on"
+o.timeoutlen =  300 -- time to wait for a mapped sequence to complete (in milliseconds)
+o.ttimeoutlen = 0 -- Time in milliseconds to wait for a key code sequence to complete
 o.backup = false -- creates a backup file
 o.swapfile = true -- enable/disable swap file creation
 o.dir = fn.stdpath('data')..'/swp' -- swap file directory
@@ -31,30 +33,22 @@ o.termguicolors = true -- set term gui colors (most terminals support this)
 o.cursorline = true -- highlight the current line
 o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cursor
 o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
+o.hlsearch = true -- highlight all matches on previous search pattern
+o.ignorecase = true -- ignore case in search patterns
 o.wildmode = "full"
 o.completeopt = { 'menuone', 'noselect', 'noinsert' } -- A comma separated list of options for Insert mode completion
 o.wildignorecase = true -- When set case is ignored when completing file names and directories
--- o.wildignore = [[
--- .git,.hg,.svn
--- *.aux,*.out,*.toc
--- *.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
--- *.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
--- *.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
--- *.mp3,*.oga,*.ogg,*.wav,*.flac
--- *.eot,*.otf,*.ttf,*.woff
--- *.doc,*.pdf,*.cbr,*.cbz
--- *.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
--- *.swp,.lock,.DS_Store,._*
--- */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**"
--- ]]
+o.wildignore = [[
+.git,.hg,.svn
+*.aux,*.out,*.toc
+*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+*.avi,*.divx,*.mp4,*.webm,*.mov,*.m2ts,*.mkv,*.vob,*.mpg,*.mpeg
+*.mp3,*.oga,*.ogg,*.wav,*.flac
+*.eot,*.otf,*.ttf,*.woff
+*.doc,*.pdf,*.cbr,*.cbz
+*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.kgb
+*.swp,.lock,.DS_Store,._*
+*/tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**"
+]]
 
-g.material_style = 'deep ocean'
-g.material_italic_comments = true
-g.material_italic_keywords = true
-g.material_italic_functions = true
-g.material_italic_variables = false
-g.material_contrast = true
-g.material_borders = false
-g.material_disable_background = false
-require('material').set()
---o.timeoutlen = 0
