@@ -6,14 +6,7 @@ if ! filereadable(system('echo -n "$HOME/.vim/autoload/plug.vim"'))
 	autocmd VimEnter * PlugInstall
 endif
 call plug#begin()
-" Fern
-Plug 'lambdalisue/fern.vim'
-" Fern git status
-Plug 'lambdalisue/fern-git-status.vim'
-" filemanager
-"Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Tmux
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/vimux'
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -119,37 +112,21 @@ set wildmenu wildmode=full
 set showmatch           " highlight matching [{()}]
 " }}}
 " Misc {{{
-" Highlight TODO in every file
-augroup HiglightTODO
-    autocmd!
-    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
-augroup END
-filetype indent plugin on
 set nocompatible
-set history=500
 " Disables automatic commenting on newline
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Prevent wrong syntax redering - may slow down
 "autocmd BufEnter * :syntax sync fromstart
 " }}}
 " Search {{{
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
-set ignorecase          " ignore case in search patterns
 " highlight last inserted text
 nnoremap gV `[v`]
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
     highlight! link DiffText MatchParen
 endif
-" Center searches
-noremap n nzz
-noremap N Nzz
 " }}}
 " Default Mappings {{{
 let mapleader=" "
-" paste over currently selected text without yanking it
-vnoremap p "_dP
 " write file with sudo
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 " move vertically by visual line when used withput count
@@ -299,52 +276,6 @@ let g:lightline = {
 function! LightlineFilename()
   return expand('%:p')
 endfunction" }}}
-" Nerdtree {{{
-"" Toggle NERDTree
-"nnoremap <Leader>pt :NERDTreeToggle<Enter>
-"nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
-"" quit vim if Nerdtree is the last buffer
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"" open NERDTree automatically
-""autocmd StdinReadPre * let s:std_in=1
-""autocmd VimEnter * NERDTree
-"" Jump to the main window after Nerdtree is open
-"autocmd VimEnter * wincmd p
-"" sync open file with NERDTree
-"" " Check if NERDTree is open or active
-"function! IsNERDTreeOpen()
-"  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-"endfunction
-
-"" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-"" file, and we're not in vimdiff
-""function! SyncTree()
-""  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-""    NERDTreeFind
-""    wincmd p
-""  endif
-""endfunction
-"" Highlight currently open buffer in NERDTree
-""autocmd BufEnter * call SyncTree()
-
-"" Automatically delete the buffer of the deleted file
-"let NERDTreeAutoDeleteBuffer = 1
-"" Remove help message
-"let NERDTreeMinimalUI = 1
-
-"let g:NERDTreeGitStatusIndicatorMapCustom = {
-"    \ "Modified"  : "✹",
-"    \ "Staged"    : "✚",
-"    \ "Untracked" : "✭",
-"    \ "Renamed"   : "➜",
-"    \ "Unmerged"  : "═",
-"    \ "Deleted"   : "✖",
-"    \ "Dirty"     : "✗",
-"    \ "Clean"     : "✔︎",
-"    \ 'Ignored'   : '☒',
-"    \ "Unknown"   : "?"
-"    \ }
-" }}}
 " Goyo and limelight {{{
 " Goyo and limelight integration
 autocmd! User GoyoEnter Limelight
@@ -422,79 +353,6 @@ let g:floaterm_gitcommit = 'split'
 "command! VF FloatermNew vifm
 command! LF FloatermNew lf
 nnoremap <leader>lf :LF<CR>
-" }}}
-" Fern {{{
-
-" Disable netrw.
-let g:loaded_netrw  = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
-
-augroup my-fern-hijack
-  autocmd!
-  autocmd BufEnter * ++nested call s:hijack_directory()
-augroup END
-
-function! s:hijack_directory() abort
-  let path = expand('%:p')
-  if !isdirectory(path)
-    return
-  endif
-  bwipeout %
-  execute printf('Fern %s', fnameescape(path))
-endfunction
-
-" Custom settings and mappings.
-let g:fern#disable_default_mappings = 1
-
-noremap <silent> <Leader>p :Fern . -drawer -width=35 -toggle<CR><C-w>=
-noremap <silent> <Leader>. :Fern %:h -drawer -width=35 -toggle<CR><C-w>=
-
-function! FernInit() abort
-  augroup FernTypeGroup
-      autocmd! * <buffer>
-      autocmd BufEnter <buffer> silent execute "normal \<Plug>(fern-action-reload)"
-  augroup END
-  nmap <buffer><expr>
-        \ <Plug>(fern-my-open-expand-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action-open:select)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
-  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
-  nmap <buffer> n <Plug>(fern-action-new-path)
-  nmap <buffer> D <Plug>(fern-action-trash)
-  nmap <buffer> m <Plug>(fern-action-move)
-  nmap <buffer> M <Plug>(fern-action-rename)
-  nmap <buffer> c <Plug>(fern-action-copy)
-  nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> t <Plug>(fern-action-mark:toggle)
-  nmap <buffer> s <Plug>(fern-action-open:split)
-  nmap <buffer> v <Plug>(fern-action-open:vsplit)
-  nmap <buffer> <nowait> i <Plug>(fern-action-hidden:toggle)
-  nmap <buffer><nowait> u <Plug>(fern-action-leave)
-  nmap <buffer><nowait> e <Plug>(fern-action-enter)
-  nmap <buffer> q :<C-u>quit<CR>
-endfunction
-
-augroup FernGroup
-  autocmd!
-  autocmd FileType fern call FernInit()
-augroup END
-
-let g:fern#mark_symbol                       = '●'
-let g:fern#renderer#default#collapsed_symbol = '▷ '
-let g:fern#renderer#default#expanded_symbol  = '▼ '
-let g:fern#renderer#default#leading          = ' '
-let g:fern#renderer#default#leaf_symbol      = ' '
-let g:fern#renderer#default#root_symbol      = '~ '
-
-let g:fern_git_status#disable_ignored    = 1
-let g:fern_git_status#disable_untracked  = 1
-let g:fern_git_status#disable_submodules = 1
-
 " }}}
 " Tmux {{{
 let g:tmux_navigator_disable_when_zoomed = 1
@@ -614,14 +472,11 @@ au FileType sh setl shiftwidth=2 tabstop=2
 nmap <buffer> <leader>eb <Esc>:w<CR>:!clear;bash %<CR>
 " }}}
 " YAML {{{
-autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 foldmethod=indent expandtab
 " }}}
 " JSON {{{
-autocmd FileType json setlocal ts=4 sts=4 sw=4 foldmethod=syntax expandtab
 let g:vim_json_syntax_conceal = 0
 " }}}
 " JavaScript {{{
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
 " }}}
 " Fugitive {{{
 " Conflict Resolution

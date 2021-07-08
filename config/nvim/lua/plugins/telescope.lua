@@ -1,3 +1,9 @@
+local map = vim.api.nvim_set_keymap
+map('n', '<C-p>', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'fd', '--type', 'file', '--follow'}})<cr>", options)
+map('n', '<Leader>fr', '<cmd>Telescope oldfiles<cr>', options)
+map('n', '<Leader>rg', '<cmd>Telescope live_grep<cr>', options)
+map('n', '<Leader>b', '<cmd>Telescope buffers<cr>', options)
+
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
