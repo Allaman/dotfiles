@@ -4,8 +4,7 @@ local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path}) execute 'packadd packer.nvim'
 end
 
 return require('packer').startup(function()
@@ -46,6 +45,24 @@ return require('packer').startup(function()
   use {
     'glepnir/galaxyline.nvim',
       branch = 'main'
+  }
+
+  -- https://github.com/norcalli/nvim-colorizer.lua
+  use 'norcalli/nvim-colorizer.lua'
+
+  -- https://github.com/windwp/nvim-autopairs
+  use 'windwp/nvim-autopairs'
+
+  -- https://github.com/nvim-treesitter/nvim-treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter'
   }
 end)
 

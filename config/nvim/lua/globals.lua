@@ -1,7 +1,5 @@
 local g = vim.g
 
-g.mapleader = " " -- 'vim.g' sets global variables
-
 -- Material theme
 g.material_style = 'deep ocean'
 g.material_italic_comments = true

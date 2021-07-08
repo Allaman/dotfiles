@@ -5,6 +5,8 @@ local fn = vim.fn
 local execute = vim.api.nvim_command
 
 vim.cmd "filetype indent plugin on"
+vim.cmd "set inccommand=split"
+o.updatetime = 300 -- faster completion
 o.timeoutlen =  300 -- time to wait for a mapped sequence to complete (in milliseconds)
 o.ttimeoutlen = 0 -- Time in milliseconds to wait for a key code sequence to complete
 o.backup = false -- creates a backup file
@@ -36,7 +38,9 @@ o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cu
 o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.hlsearch = true -- highlight all matches on previous search pattern
 o.ignorecase = true -- ignore case in search patterns
+o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
 o.wildmode = "full"
+o.grepprg = "rg --hidden --vimgrep --smart-case --"
 o.completeopt = { 'menuone', 'noselect', 'noinsert' } -- A comma separated list of options for Insert mode completion
 o.wildignorecase = true -- When set case is ignored when completing file names and directories
 o.wildignore = [[

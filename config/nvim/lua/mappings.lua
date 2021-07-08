@@ -16,5 +16,20 @@ map("v", ">", ">gv", { noremap = true, silent = true })
 map('v', 'p', '"_dP', { noremap = true, silent = true })
 
 -- Tab switch buffer
-vim.api.nvim_set_keymap("n", "<TAB>", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<S-TAB>", ":bprevious<CR>", { noremap = true, silent = true })
+map("n", "<TAB>", ":bnext<CR>", { noremap = true, silent = true })
+map("n", "<S-TAB>", ":bprevious<CR>", { noremap = true, silent = true })
+
+-- Change behaviour of Y similar to C and D
+map("n", "Y", "y$", options)
+
+-- Cancel search highlighting with ESC
+map("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", options)
+
+-- previously opened buffer
+map("n", "<Leader><TAB>", ":e#<CR>", options)
+
+-- Resizing panes
+map("n", "<Left>", ":vertical resize +1<CR>", options)
+map("n", "<Right>", ":vertical resize -1<CR>", options)
+map("n", "<Up>", ":resize -1<CR>", options)
+map("n", "<Down>", ":resize +1<CR>", options)
