@@ -70,6 +70,8 @@ return require('packer').startup(function()
   -- https://github.com/rafamadriz/friendly-snippets
   use 'rafamadriz/friendly-snippets'
 
+  -- https://github.com/sbdchd/neoformat
+  use 'sbdchd/neoformat'
 
 end)
 

@@ -18,3 +18,14 @@ vim.api.nvim_exec(
   ]],
   false
 )
+--       autocmd BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+
+vim.api.nvim_exec(
+  [[
+    augroup fmt
+      autocmd!
+      autocmd BufWritePre * undojoin | Neoformat
+    augroup END
+  ]],
+  false
+)

@@ -14,3 +14,6 @@ g.material_contrast = false
 g.material_hide_eob = true
 -- Load the colorscheme
 require('material').set()
+
+g.neoformat_run_all_formatters = 0
+
