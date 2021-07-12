@@ -65,5 +65,11 @@ return require('packer').startup(function()
   -- https://github.com/hrsh7th/nvim-compe
   use 'hrsh7th/nvim-compe'
 
+  -- https://github.com/hrsh7th/vim-vsnip
+  use 'hrsh7th/vim-vsnip'
+  -- https://github.com/rafamadriz/friendly-snippets
+  use 'rafamadriz/friendly-snippets'
+
+
 end)
 
