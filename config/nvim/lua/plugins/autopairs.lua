@@ -38,7 +38,7 @@ npairs.setup {
   },
 }
 
--- require("nvim-treesitter.configs").setup { autopairs = { enable = true } }
+require("nvim-treesitter.configs").setup { autopairs = { enable = true } }
 
 -- local ts_conds = require "nvim-autopairs.ts-conds"
 

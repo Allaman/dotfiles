@@ -12,6 +12,7 @@ require('autocmd')
 -- Plugin configurations
 require('plugins/autopairs')
 require('plugins/colorizer')
+require('plugins/compe')
 require('plugins/nerd-galaxyline')
 require('plugins/gitsigns')
 require('plugins/kommentary')

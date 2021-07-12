@@ -38,6 +38,7 @@ o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cu
 o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.hlsearch = true -- highlight all matches on previous search pattern
 o.ignorecase = true -- ignore case in search patterns
+o.foldenable = false -- disable folding
 o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
 o.wildmode = "full"
 o.grepprg = "rg --hidden --vimgrep --smart-case --"

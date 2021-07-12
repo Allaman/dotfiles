@@ -59,10 +59,11 @@ return require('packer').startup(function()
     run = ':TSUpdate'
   }
 
-  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-  use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter'
-  }
+  -- https://github.com/tjdevries/astronauta.nvim
+  use 'tjdevries/astronauta.nvim'
+
+  -- https://github.com/hrsh7th/nvim-compe
+  use 'hrsh7th/nvim-compe'
+
 end)
 
