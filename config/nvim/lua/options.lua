@@ -40,6 +40,7 @@ o.hlsearch = true -- highlight all matches on previous search pattern
 o.ignorecase = true -- ignore case in search patterns
 o.foldenable = false -- disable folding
 o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
+vim.wo.colorcolumn = "99999"
 o.wildmode = "full"
 o.grepprg = "rg --hidden --vimgrep --smart-case --"
 o.completeopt = { 'menuone', 'noselect', 'noinsert' } -- A comma separated list of options for Insert mode completion

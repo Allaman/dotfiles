@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
-map('n', '<Leader>t', ':NvimTreeToggle<CR>', options)
-map('n', '<Leader>tf', ':NvimTreeFindFile<CR>', options)
+map('n', '<Leader>p', ':NvimTreeToggle<CR>', options)
+map('n', '<Leader>pf', ':NvimTreeFindFile<CR>', options)
 
 vim.g.nvim_tree_highlight_opened_files = true
 vim.g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }

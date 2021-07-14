@@ -18,14 +18,14 @@ vim.api.nvim_exec(
   ]],
   false
 )
---       autocmd BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-
 vim.api.nvim_exec(
   [[
-    augroup fmt
+    augroup terraform
       autocmd!
-      autocmd BufWritePre * undojoin | Neoformat
+      autocmd BufRead,BufNewFile *.tf set filetype=terraform
     augroup END
   ]],
   false
 )
+
+

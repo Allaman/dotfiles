@@ -1,11 +1,14 @@
 local map = vim.api.nvim_set_keymap
 map('n', '<C-p>', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'fd', '--type', 'file', '--follow'}})<cr>", options)
-map('n', '<Leader>fr', '<cmd>Telescope oldfiles<cr>', options)
-map('n', '<Leader>rg', '<cmd>Telescope live_grep<cr>', options)
-map('n', '<Leader>b', '<cmd>Telescope buffers<cr>', options)
+map('n', '<Leader>fr', '<cmd>Telescope oldfiles<cr>', options) -- last opened files
+map('n', '<Leader>rg', '<cmd>Telescope live_grep<cr>', options) -- search for a string in current working directory
+map('n', '<Leader>b', '<cmd>Telescope buffers<cr>', options) -- list buffers
+map('n', '<Leader>/', '<cmd>Telescope grep_string<cr>', options) -- search string under cursor in working directory
+map('n', '<Leader>t', '<cmd>Telescope<cr>', options) -- search string under cursor in working directory
 
 require('telescope').setup{
   defaults = {
+    file_ignore_patterns = {"node_modules", "%.jpg"},
     vimgrep_arguments = {
       'rg',
       '--follow',

@@ -59,6 +59,9 @@ return require('packer').startup(function()
     run = ':TSUpdate'
   }
 
+  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
+
   -- https://github.com/tjdevries/astronauta.nvim
   use 'tjdevries/astronauta.nvim'
 
@@ -73,5 +76,42 @@ return require('packer').startup(function()
   -- https://github.com/sbdchd/neoformat
   use 'sbdchd/neoformat'
 
+  -- https://github.com/phaazon/hop.nvim
+  use {
+  'phaazon/hop.nvim',
+  as = 'hop',
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup {
+        keys = 'etovxqpdygfblzhckisuran'
+      }
+  end
+  }
+
+  -- https://github.com/sindrets/diffview.nvim
+  -- https://github.com/TimUntersberger/neogit
+  use {
+    'TimUntersberger/neogit',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim'
+    }
+  }
+
+  -- use {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   branch = master,
+  --   setup = function()
+  --     vim.g.indentLine_enabled = 1
+  --     vim.g.indent_blankline_char = "| "
+  --     vim.g.indent_blankline_space_char = " "
+  --     vim.g.indent_blankline_filetype_exclude = {
+  --       "help",
+  --       "terminal",
+  --       "dashboard",
+  --     }
+  --     vim.g.indent_blankline_buftype_exclude = { "terminal" }
+  --   end
+  -- }
 end)
 
