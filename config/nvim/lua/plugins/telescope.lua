@@ -6,7 +6,10 @@ map('n', '<Leader>b', '<cmd>Telescope buffers<cr>', options) -- list buffers
 map('n', '<Leader>/', '<cmd>Telescope grep_string<cr>', options) -- search string under cursor in working directory
 map('n', '<Leader>t', '<cmd>Telescope<cr>', options) -- search string under cursor in working directory
 
-require('telescope').setup{
+local actions = require('telescope.actions')
+local telescope = require('telescope')
+
+telescope.setup{
   defaults = {
     file_ignore_patterns = {"node_modules", "%.jpg"},
     vimgrep_arguments = {
@@ -18,6 +21,12 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case'
+    },
+    mappings = {
+      i = {
+        -- Close on first esc instead of gonig to normal mode
+        ["<esc>"] = actions.close,
+      }
     },
     prompt_prefix = " ",
     selection_caret = " ",

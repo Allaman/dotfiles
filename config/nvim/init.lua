@@ -1,4 +1,5 @@
-
+-- User settings
+require('user')
 -- Plugin management via Packer
 require('plugins')
 -- Global keyboard mappings
@@ -11,6 +12,7 @@ require('globals')
 require('autocmd')
 -- Plugin configurations
 require('plugins/autopairs')
+require('plugins/bufferline')
 require('plugins/colorizer')
 require('plugins/compe')
 require('plugins/diffview')

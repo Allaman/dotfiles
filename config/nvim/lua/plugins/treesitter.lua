@@ -19,6 +19,9 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true
   },
+  autopairs = {
+    { enable = true }
+  },
   textobjects = {
     select = {
       enable = true,
@@ -32,8 +35,17 @@ require'nvim-treesitter.configs'.setup {
         ["ic"] = "@class.inner",
         ["al"] = "@loop.outer",
         ["il"] = "@loop.inner",
+        ["ib"] = "@block.inner",
+        ["ab"] = "@block.outer",
+        ["ir"] = "@parameter.inner",
+        ["ar"] = "@parameter.outer",
       },
     },
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
+    max_file_lines = 2000, -- Do not enable for files with more than specified lines
   },
 }
 

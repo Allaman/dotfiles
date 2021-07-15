@@ -12,6 +12,7 @@ map('n', 'N', 'Nzz', options)
 -- better indenting
 map("v", "<", "<gv", options)
 map("v", ">", ">gv", options)
+
 -- paste over currently selected text without yanking it
 map('v', 'p', '"_dP', options)
 
@@ -39,9 +40,12 @@ vim.api.nvim_set_keymap("x", "K", ":move '<-2<CR>gv-gv", options)
 vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", options)
 
 -- Move current line / block with Alt-j/k ala vscode.
-vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", options)
-vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", options)
-vim.api.nvim_set_keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", options)
-vim.api.nvim_set_keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", options)
-vim.api.nvim_set_keymap("x", "<A-j>", ":m '>+1<CR>gv-gv", options)
-vim.api.nvim_set_keymap("x", "<A-k>", ":m '<-2<CR>gv-gv", options)
+map("n", "<A-j>", ":m .+1<CR>==", options)
+map("n", "<A-k>", ":m .-2<CR>==", options)
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", options)
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", options)
+map("x", "<A-j>", ":m '>+1<CR>gv-gv", options)
+map("x", "<A-k>", ":m '<-2<CR>gv-gv", options)
+
+-- bufdelete Mappings
+map("n", "<Leader>x", ":Bdelete<CR>", options)

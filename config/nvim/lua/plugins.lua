@@ -7,6 +7,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path}) execute 'packadd packer.nvim'
 end
 
+require('user')
+
 return require('packer').startup(function()
   -- Packer can manage itself https://github.com/wbthomason/packer.nvim
   use 'wbthomason/packer.nvim'
@@ -21,7 +23,15 @@ return require('packer').startup(function()
   use 'famiu/nvim-reload'
 
   -- https://github.com/marko-cerovac/material.nvim
-  use 'marko-cerovac/material.nvim'
+  -- use {
+  --   'marko-cerovac/material.nvim',
+  --   disable = O.theme.material.active,
+  -- }
+
+  -- https://github.com/folke/tokyonight.nvim
+  use {
+    'folke/tokyonight.nvim'
+  }
 
   -- https://github.com/b3nj5m1n/kommentary
   use 'b3nj5m1n/kommentary'
@@ -97,6 +107,23 @@ return require('packer').startup(function()
       'sindrets/diffview.nvim'
     }
   }
+
+  -- https://github.com/p00f/nvim-ts-rainbow
+  use 'p00f/nvim-ts-rainbow'
+
+  -- https://github.com/kevinhwang91/nvim-bqf
+  use 'kevinhwang91/nvim-bqf'
+  -- only used for bqf filter view
+  use 'junegunn/fzf'
+
+  -- https://github.com/akinsho/nvim-bufferline.lua
+  use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+
+  -- https://github.com/famiu/bufdelete.nvim
+  use 'famiu/bufdelete.nvim'
 
   -- use {
   --   "lukas-reineke/indent-blankline.nvim",
