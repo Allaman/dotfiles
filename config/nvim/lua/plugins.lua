@@ -125,6 +125,17 @@ return require('packer').startup(function()
   -- https://github.com/famiu/bufdelete.nvim
   use 'famiu/bufdelete.nvim'
 
+  -- https://github.com/neovim/nvim-lspconfig
+  use 'neovim/nvim-lspconfig'
+
+  -- brauch ich????
+  -- https://github.com/glepnir/lspsaga.nvim
+  -- use 'glepnir/lspsaga.nvim'
+
+  -- https://github.com/simrat39/symbols-outline.nvim
+  use 'simrat39/symbols-outline.nvim'
+
+
   -- use {
   --   "lukas-reineke/indent-blankline.nvim",
   --   branch = master,

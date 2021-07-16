@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-map('n', '<C-p>', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'fd', '--type', 'file', '--follow'}})<cr>", options)
+map('n', '<C-p>', "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'fd', '--hidden', '--type', 'file', '--follow'}})<cr>", options)
 map('n', '<Leader>fr', '<cmd>Telescope oldfiles<cr>', options) -- last opened files
 map('n', '<Leader>rg', '<cmd>Telescope live_grep<cr>', options) -- search for a string in current working directory
 map('n', '<Leader>b', '<cmd>Telescope buffers<cr>', options) -- list buffers
