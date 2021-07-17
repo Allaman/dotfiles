@@ -39,6 +39,7 @@ o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.hlsearch = true -- highlight all matches on previous search pattern
 o.ignorecase = true -- ignore case in search patterns
 o.foldenable = false -- disable folding
+-- o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
 o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
 vim.wo.colorcolumn = "99999"
 o.wildmode = "full"
