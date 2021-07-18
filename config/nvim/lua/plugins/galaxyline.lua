@@ -131,7 +131,6 @@ table.insert(gls.right, {
   DiagnosticWarn = {
     provider = "DiagnosticWarn",
     icon = "  ",
-
     highlight = "StatusLineLspDiagnosticsWarning",
   },
 })
@@ -140,7 +139,6 @@ table.insert(gls.right, {
   DiagnosticInfo = {
     provider = "DiagnosticInfo",
     icon = "  ",
-
     highlight = "StatusLineLspDiagnosticsInformation",
   },
 })
@@ -149,65 +147,7 @@ table.insert(gls.right, {
   DiagnosticHint = {
     provider = "DiagnosticHint",
     icon = "  ",
-
     highlight = "StatusLineLspDiagnosticsHint",
-  },
-})
-
-table.insert(gls.right, {
-  TreesitterIcon = {
-    provider = function()
-      if next(vim.treesitter.highlighter.active) ~= nil then
-        return "  "
-      end
-      return ""
-    end,
-    separator = " ",
-    separator_highlight = "StatusLineSeparator",
-    highlight = "StatusLineTreeSitter",
-  },
-})
-
-local get_lsp_client = function(msg)
-  msg = msg or "LSP Inactive"
-  local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-  local clients = vim.lsp.get_active_clients()
-  if next(clients) == nil then
-    return msg
-  end
-  local lsps = ""
-  for _, client in ipairs(clients) do
-    local filetypes = client.config.filetypes
-    if filetypes and vim.fn.index(filetypes, buf_ft) ~= 1 then
-      -- print(client.name)
-      if lsps == "" then
-        -- print("first", lsps)
-        lsps = client.name
-      else
-        lsps = lsps .. ", " .. client.name
-        -- print("more", lsps)
-      end
-    end
-  end
-  if lsps == "" then
-    return msg
-  else
-    return lsps
-  end
-end
-
-table.insert(gls.right, {
-  ShowLspClient = {
-    provider = get_lsp_client,
-    condition = function()
-      local tbl = { ["dashboard"] = true, [" "] = true }
-      if tbl[vim.bo.filetype] then
-        return false
-      end
-      return true
-    end,
-    icon = "  ",
-    highlight = "StatusLineNC",
   },
 })
 
@@ -223,18 +163,6 @@ table.insert(gls.right, {
 table.insert(gls.right, {
   PerCent = {
     provider = "LinePercent",
-    separator = " ",
-    separator_highlight = "StatusLineSeparator",
-    highlight = "StatusLineNC",
-  },
-})
-
-table.insert(gls.right, {
-  Tabstop = {
-    provider = function()
-      return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
-    end,
-    condition = condition.hide_in_width,
     separator = " ",
     separator_highlight = "StatusLineSeparator",
     highlight = "StatusLineNC",

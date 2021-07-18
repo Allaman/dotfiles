@@ -254,6 +254,6 @@ map U unselect
 map A select-all
 
 # Advanced
-map <enter> shell
+# map <enter> shell
 map ex $$f
 #map X !$f

@@ -128,10 +128,6 @@ return require('packer').startup(function()
   -- https://github.com/neovim/nvim-lspconfig
   use 'neovim/nvim-lspconfig'
 
-  -- brauch ich????
-  -- https://github.com/glepnir/lspsaga.nvim
-  -- use 'glepnir/lspsaga.nvim'
-
   -- https://github.com/simrat39/symbols-outline.nvim
   use 'simrat39/symbols-outline.nvim'
 
@@ -188,5 +184,12 @@ return require('packer').startup(function()
 
   -- https://github.com/ray-x/lsp_signature.nvim
   use 'ray-x/lsp_signature.nvim'
+
+  -- https://github.com/akinsho/nvim-toggleterm.lua
+  use 'akinsho/nvim-toggleterm.lua'
+
+  -- brauch ich????
+  -- https://github.com/glepnir/lspsaga.nvim
+  -- use 'glepnir/lspsaga.nvim'
 end)
 
