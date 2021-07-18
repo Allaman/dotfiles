@@ -135,7 +135,7 @@ return require('packer').startup(function()
   -- https://github.com/simrat39/symbols-outline.nvim
   use 'simrat39/symbols-outline.nvim'
 
-
+  -- https://github.com/lukas-reineke/indent-blankline.nvim
   use {
     "lukas-reineke/indent-blankline.nvim",
     branch = lua,
@@ -185,5 +185,8 @@ return require('packer').startup(function()
       }
     end
   }
+
+  -- https://github.com/ray-x/lsp_signature.nvim
+  use 'ray-x/lsp_signature.nvim'
 end)
 
