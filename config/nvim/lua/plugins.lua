@@ -91,7 +91,6 @@ return require('packer').startup(function()
   'phaazon/hop.nvim',
   as = 'hop',
   config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
     require'hop'.setup {
         keys = 'etovxqpdygfblzhckisuran'
       }
@@ -187,6 +186,16 @@ return require('packer').startup(function()
 
   -- https://github.com/akinsho/nvim-toggleterm.lua
   use 'akinsho/nvim-toggleterm.lua'
+
+  -- https://github.com/blackCauldron7/surround.nvim
+  use {
+  "blackCauldron7/surround.nvim",
+  config = function()
+    vim.g.surround_mappings_style = "surround"
+    require'surround'.setup {}
+  end
+  }
+
 
   -- brauch ich????
   -- https://github.com/glepnir/lspsaga.nvim

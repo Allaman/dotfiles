@@ -7,7 +7,7 @@ local execute = vim.api.nvim_command
 vim.cmd "filetype indent plugin on"
 vim.cmd "set inccommand=split"
 o.updatetime = 300 -- faster completion
-o.timeoutlen =  300 -- time to wait for a mapped sequence to complete (in milliseconds)
+o.timeoutlen =  400 -- time to wait for a mapped sequence to complete (in milliseconds)
 o.ttimeoutlen = 0 -- Time in milliseconds to wait for a key code sequence to complete
 o.backup = false -- creates a backup file
 o.swapfile = true -- enable/disable swap file creation
