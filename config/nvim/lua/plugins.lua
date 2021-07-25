@@ -196,6 +196,8 @@ return require('packer').startup(function()
   end
   }
 
+  use 'sotte/presenting.vim'
+
 
   -- brauch ich????
   -- https://github.com/glepnir/lspsaga.nvim

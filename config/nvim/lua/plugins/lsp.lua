@@ -49,7 +49,8 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     settings = {
       gopls = { analyses = { unusedparams = false }, staticcheck = true },
-      yaml = { format = { singleQuote = true }, schemas = { kubernetes = "/*.yaml" } },
+      yaml = { format = { singleQuote = true } },
+      -- yaml = { format = { singleQuote = true }, schemas = { kubernetes = "/*.yaml" } },
       redhat = { telemetry = enabled },
     },
     flags = {

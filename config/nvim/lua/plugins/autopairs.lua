@@ -1,4 +1,5 @@
 require('nvim-autopairs').setup()
+enable_check_bracket_line = false
 local status_ok, autopairs = pcall(require, "nvim-autopairs")
 if not status_ok then
   return

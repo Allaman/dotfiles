@@ -1,14 +1,14 @@
 local map = vim.api.nvim_set_keymap
 map("i", "<C-Space>", "compe#complete()", { noremap = true, silent = true, expr = true })
-map("i", "<CR>", "compe#confirm('<CR>')", { noremap = true, silent = true, expr = true })
--- map("i", "<CR>", "compe#confirm(luaeval(\"require 'nvim-autopairs'.autopairs_cr()\"))", { noremap = true, silent = true, expr = true })
+-- map("i", "<CR>", "compe#confirm('<CR>')", { noremap = true, silent = true, expr = true })
+map("i", "<CR>", "compe#confirm(luaeval(\"require 'nvim-autopairs'.autopairs_cr()\"))", { noremap = true, silent = true, expr = true })
 
 require('compe').setup {
   enabled = true;
   autocomplete = true;
   debug = false;
   min_length = 1;
-  preselect = 'enable';
+  preselect = 'disable';
   throttle_time = 80;
   source_timeout = 200;
   resolve_timeout = 800;
@@ -33,11 +33,11 @@ require('compe').setup {
     -- nvim_lua = {kind = "  "},
     nvim_lua = false,
     spell = { kind = "   (Spell)" },
-    tags = false,
+    tags = true,
     -- vim_dadbod_completion = true,
     -- snippets_nvim = {kind = "  "},
     -- ultisnips = {kind = "  "},
-    -- treesitter = {kind = "  "},
+    treesitter = {kind = "  "},
     emoji = { kind = " ﲃ  (Emoji)", filetypes = { "markdown", "text" } },
     -- for emoji press : (idk if that in compe tho)
   },
