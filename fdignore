@@ -8,3 +8,5 @@ target/
 .cache,cache/
 workspace/go/pkg/*
 .local/share/Trash/
+cache/
+http-cache/
