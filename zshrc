@@ -48,6 +48,7 @@ colors
 
 ## Keybindings section
 bindkey -e # emacs style
+bindkey "^[[3~" delete-char                                  # Delete key
 bindkey '^[[2~' overwrite-mode                                  # Insert key
 bindkey '^P' history-beginning-search-backward               # CTRL+p
 bindkey '^N' history-beginning-search-forward                # CTRL+n
@@ -78,9 +79,9 @@ bindkey "^X^E" edit-command-line
 [ -f $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme ] && source $HOME/.shell/powerlevel10k/powerlevel10k.zsh-theme
 
 # source apps
-#command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 alias k=kubectl
-#complete -o default -F __start_kubectl k
+complete -o default -F __start_kubectl k
 #command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
 #command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
 #[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
@@ -98,6 +99,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
 
 enable-fzf-tab
+
+autoload bashcompinit
+bashcompinit
+export PATH="$PATH:$HOME/.bash-my-aws/bin"
+source ~/.bash-my-aws/aliases
+source ~/.bash-my-aws/bash_completion.sh
+
 autoload -Uz +X compinit && compinit
 
 # Profiling zsh
