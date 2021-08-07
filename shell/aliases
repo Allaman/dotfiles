@@ -125,6 +125,7 @@ alias cd5='cd ../../../../../'
 alias cdl='cd /$HOME/Downloads/'
 alias cdot='cd /$HOME/.dotfiles/'
 alias cws='cd /$HOME/workspace/'
+alias lf='lfrun'
 #}}}
 
 #-------- System Stuff {{{
@@ -187,6 +188,7 @@ alias yta='youtube-dl --add-metadata --audio-format mp3 --restrict-filenames -xi
 alias yt-sync-pl='youtube-dl -k -w --no-post-overwrites -i --proxy socks5://127.0.0.1:9050/ -o '"'"'%(title)s.%(ext)s'"'"' --extract-audio --audio-format mp3 --restrict-filenames https://www.youtube.com/playlist\?list\=PLdUJ0OYPYY8KzN3YiRP94pxUVzLBPDusa'
 alias list-printer='lpstat -l -p'
 alias default_printer='lpoptions -d'
+alias svgtopng='for file in *.svg; do inkscape $file --export-width=1920 --export-height=1200 -o ${file%svg}png; done'
 #}}}
 
 #-------- Listings {{{
