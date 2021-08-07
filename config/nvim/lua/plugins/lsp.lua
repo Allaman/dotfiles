@@ -36,8 +36,8 @@ end
 --[[
 https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 sudo npm i -g bash-language-server &&\
-  npm i -g dockerfile-language-server-nodejs &&\
-  npm i -g yaml-language-server &&\
+  sudo npm i -g dockerfile-language-server-nodejs &&\
+  sudo npm i -g yaml-language-server &&\
 go get golang.org/x/tools/gopls
 ]]
 
