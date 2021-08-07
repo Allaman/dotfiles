@@ -1,4 +1,5 @@
 set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
 # Basic Settings
 # https://github.com/gokcehan/lf/wiki/Tips#split-words-by-default-in-zsh
 set shell zsh
@@ -25,7 +26,7 @@ cmd open ${{
     case $(file --mime-type $f -b) in
 	      image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
         text/*) $EDITOR $fx;;
-        image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
+        image/x-xcf|image/svg+xml) setsid -f inkscape $f >/dev/null 2>&1 ;;
         image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
         audio/*) mpv --audio-display=no $f ;;
         video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
@@ -65,7 +66,7 @@ cmd sudomkfile ${{
   sudo $EDITOR $ans
 }}
 
-cmd bulkremane ${{
+cmd bulkrename ${{
   printf '%s\n' $fx | vidir -
 }}
 
@@ -148,6 +149,7 @@ cmd restore_trash ${{
 cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
+cmd yank-content $cat $fx | xclip -i -selection clipboard
 cmd select-all :unselect; invert
 
 # both dont work
@@ -242,12 +244,13 @@ map md mkdir
 map ms $mkscript
 map ch chmod
 map r rename
-map br bulkremane
+map br bulkrename
 map H top
 map L bottom
 map fd yank-dirname
 map fp yank-path
 map fb yank-basename
+map fc yank-content
 map R reload
 map C clear
 map U unselect
