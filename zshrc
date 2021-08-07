@@ -49,7 +49,9 @@ colors
 ## Keybindings section
 bindkey -e # emacs style
 bindkey "^[[3~" delete-char                                  # Delete key
-bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[2~' overwrite-mode                               # Insert key
+bindkey  "^[[H"   beginning-of-line                          # Home
+bindkey  "^[[F"   end-of-line                                # End
 bindkey '^P' history-beginning-search-backward               # CTRL+p
 bindkey '^N' history-beginning-search-forward                # CTRL+n
 # Use vim keys to select autocompletion
