@@ -30,6 +30,7 @@ export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
 command -v paru >/dev/null 2>&1 && export AUR_MANAGER=paru
 command -v go >/dev/null 2>&1 && export PATH=$PATH:$(go env GOPATH)/bin && export GOPATH=$HOME/go
 command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
+command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 # ruby gem
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
 # kubectl krew
