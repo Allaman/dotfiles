@@ -220,12 +220,6 @@ make-bak() {
 	cp -a "$1" "${1}_$(date --iso-8601=seconds)_bak"
 }
 
-to() {
-  fasdlist=$( fasd -d -l -r $1 | \
-    fzf --query="$1 " --select-1 --exit-0 --height=25% --reverse --tac --no-sort --cycle) &&
-    cd "$fasdlist"
-}
-
 # print a list of supported colors
 function lscolors {
 	((cols = $COLUMNS - 4))
