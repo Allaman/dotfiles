@@ -163,23 +163,6 @@ gtag() {
 }
 #}}}
 
-#-------- git checkout master function {{{
-gcm() {
-  git status 2>& /dev/null
-  if [ $? -ne 0 ]; then
-    echo "Not in a git repo"
-    return 1
-  fi
-  echo "Continue to checkout master?"
-  select choice in "Yes" "No"; do
-    case $choice in
-      Yes ) git checkout master; break;;
-      No ) exit;;
-    esac
-  done
-}
-#}}}
-
 #-------- docker exec into container {{{
 docker-attach() {
   docker exec -it $1 bash
