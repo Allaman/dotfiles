@@ -84,7 +84,7 @@ bindkey "^X^E" edit-command-line
 command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
 alias k=kubectl
 complete -o default -F __start_kubectl k
-#command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
+command -v helm >/dev/null 2>&1 && source <(helm completion zsh)
 #command -v awless > /dev/null 2>&1 && source <(awless completion zsh)
 #[ -f /usr/bin/aws_zsh_completer.sh ] && source /usr/bin/aws_zsh_completer.sh
 #[ -f $HOME/.local/bin/aws_zsh_completer.sh ] && source $HOME/.local/bin/aws_zsh_completer.sh
