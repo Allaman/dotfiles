@@ -22,7 +22,7 @@ fi
 export BROWSERCLI=lynx
 export BROWSER=firefox
 export TERMINAL=alacritty
-#export TERM=rxvt-unicode-256color
+# export TERM=screen-256color
 command -v vim >/dev/null 2>&1 && export EDITOR=vim
 command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
 export MAIL=/usr/bin/neomutt
