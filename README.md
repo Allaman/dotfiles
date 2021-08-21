@@ -18,3 +18,5 @@ My NeoVim config is in [its own repo](https://github.com/Allaman/nvim/)
 - [Package management](https://github.com/Allaman/ansible-role-packages)
 - [Binaries](https://github.com/Allaman/ansible-role-binaries)
 - [dotfiles](https://github.com/Allaman/ansible-role-dotfiles)
+
+[Theme](https://github.com/EdenEast/nightfox.nvim/tree/main/extra/nightfox)
