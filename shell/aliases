@@ -116,9 +116,9 @@ alias pdfkomp='gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -r150 -sOutputFile=AUSGANG
 alias pdfmerge='gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf *.pdf'
 alias genhandout='pdfjam --nup 2x3 --frame true --noautoscale false --delta "0.2cm 0.3cm" --scale 0.95'
 alias svgtopng='for file in *.svg; do inkscape $file --export-width=1920 --export-height=1200 -o ${file%svg}png; done'
-alias weather-garching='curl wttr.in/"Garching+b.+München"\?1\&lang=de'
-alias weather-eching='curl wttr.in/"Eching"\?1\&lang=de'
-alias weather-neuburg='curl wttr.in/"Neuburg+an+der+Donau"\?1\&lang=de'
+alias weather-garching='curl v2.wttr.in/"Garching+b.+München"\?1\&lang=de'
+alias weather-eching='curl v2.wttr.in/"Eching"\?1\&lang=de'
+alias weather-neuburg='curl v2.wttr.in/"Neuburg+an+der+Donau"\?1\&lang=de'
 alias colorlog="awk 'BEGIN { RED=\"\033[0;31m\"; BLACK=\"\033[39m\"; YELLOW=\"\033[33m\"; LIGHT_GREEN=\"\033[1;32m\"; GREEN=\"\033[0;32m\"; reset=\"$(tput sgr0)\" }
 
   /INFO/ {print GREEN \$0 reset; next}
@@ -140,6 +140,7 @@ alias dos2unix-folder='find . -type f -print0 | xargs -0 dos2unix'
 alias list-printer='lpstat -l -p'
 alias default_printer='lpoptions -d'
 alias externalip='echo $(curl -ss http://ipecho.net/plain)'
+alias SS='sudo systemctl'
 
 # Docker
 alias docker-stop-all='docker stop $(docker ps -a -q)'
