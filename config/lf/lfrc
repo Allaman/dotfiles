@@ -60,6 +60,10 @@ cmd chmod ${{
   lf -remote 'send reload'
 }}
 
+cmd openvim ${{
+    $EDITOR $fx
+  }}
+
 cmd sudomkfile ${{
   printf "File Name: "
   read ans
@@ -201,6 +205,7 @@ map + :video_preview
 
 # File Openers
 map ee $$EDITOR "$f"
+map ed openvim
 map O push :open-with<space>
 
 # Git
