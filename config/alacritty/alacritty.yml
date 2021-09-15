@@ -217,36 +217,8 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: true
 
-# Colors (Dracula)
-colors:
-  # Default colors
-  primary:
-    background: "0x282a36"
-    foreground: "0xf8f8f2"
-
-  # Normal colors
-  normal:
-    black: "0x000000"
-    red: "0xff5555"
-    green: "0x50fa7b"
-    yellow: "0xf1fa8c"
-    blue: "0xbd93f9"
-    magenta: "0xff79c6"
-    cyan: "0x8be9fd"
-    white: "0xbbbbbb"
-
-  # Bright colors
-  bright:
-    black: "0x555555"
-    red: "0xff5555"
-    green: "0x50fa7b"
-    yellow: "0xf1fa8c"
-    blue: "0xcaa9fa"
-    magenta: "0xff79c6"
-    cyan: "0x8be9fd"
-    white: "0xffffff"
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -542,32 +514,57 @@ mouse:
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
-# from https://github.com/EdenEast/nightfox.nvim/blob/main/extra/nightfox/nightfox_alacritty.yml
-colors:
-  # Default colors
-  primary:
-    background: '0x192330'
-    foreground: '0xCDCECF'
-  # Normal colors
-  normal:
-    black:   '0x141C26'
-    red:     '0xD6616B'
-    green:   '0x81B29A'
-    yellow:  '0xdbc074'
-    blue:    '0x719cd6'
-    magenta: '0x9D79D6'
-    cyan:    '0x63cdcf'
-    white:   '0xdfdfe0'
-  # Bright colors
-  bright:
-    black:   '0x7f8c98'
-    red:     '0xD6616B'
-    green:   '0x58cd8b'
-    yellow:  '0xFFE37E'
-    blue:    '0x84CEE4'
-    magenta: '0xB8A1E3'
-    cyan:    '0x59F0FF'
-    white:   '0xF2F2F2'
-  indexed_colors:
-    - { index: 16, color: '0xF4A261' }
-    - { index: 17, color: '0xD67AD2' }
+schemes:
+  material: &material # Default colors
+    primary:
+      background: "#263238"
+      foreground: "#eeffff"
+    # Normal colors
+    normal:
+      black: "#000000" # Arbitrary
+      red: "#e53935"
+      green: "#91b859"
+      yellow: "#ffb62c"
+      blue: "#6182b8"
+      magenta: "#ff5370" # Dark pink of the original material theme
+      cyan: "#39adb5"
+      white: "#a0a0a0" # Arbitrary
+    # Bright colors
+    bright:
+      black: "#4e4e4e" # Arbitrary
+      red: "#ff5370"
+      green: "#c3e88d"
+      yellow: "#ffcb6b"
+      blue: "#82aaff"
+      magenta: "#f07178" # Pink of the original material theme
+      cyan: "#89ddff"
+      white: "#ffffff" # Arbitrary
+  # from https://github.com/EdenEast/nightfox.nvim/blob/main/extra/nightfox/nightfox_alacritty.yml
+  nightfox: &nightfox # Default colors
+    primary:
+      background: "0x192330"
+      foreground: "0xCDCECF"
+    # Normal colors
+    normal:
+      black: "0x141C26"
+      red: "0xD6616B"
+      green: "0x81B29A"
+      yellow: "0xdbc074"
+      blue: "0x719cd6"
+      magenta: "0x9D79D6"
+      cyan: "0x63cdcf"
+      white: "0xdfdfe0"
+    # Bright colors
+    bright:
+      black: "0x7f8c98"
+      red: "0xD6616B"
+      green: "0x58cd8b"
+      yellow: "0xFFE37E"
+      blue: "0x84CEE4"
+      magenta: "0xB8A1E3"
+      cyan: "0x59F0FF"
+      white: "0xF2F2F2"
+    indexed_colors:
+      - { index: 16, color: "0xF4A261" }
+      - { index: 17, color: "0xD67AD2" }
+colors: *nightfox
