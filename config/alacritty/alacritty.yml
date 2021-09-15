@@ -515,7 +515,7 @@ selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
 schemes:
-  material: &material # Default colors
+  material: &material
     primary:
       background: "#263238"
       foreground: "#eeffff"
@@ -540,7 +540,7 @@ schemes:
       cyan: "#89ddff"
       white: "#ffffff" # Arbitrary
   # from https://github.com/EdenEast/nightfox.nvim/blob/main/extra/nightfox/nightfox_alacritty.yml
-  nightfox: &nightfox # Default colors
+  nightfox: &nightfox
     primary:
       background: "0x192330"
       foreground: "0xCDCECF"
@@ -567,4 +567,142 @@ schemes:
     indexed_colors:
       - { index: 16, color: "0xF4A261" }
       - { index: 17, color: "0xD67AD2" }
+      # Colors (Wombat)
+  wombat: &wombat
+    primary:
+      background: "#1f1f1f"
+      foreground: "#e5e1d8"
+    # Normal colors
+    normal:
+      black: "#000000"
+      red: "#f7786d"
+      green: "#bde97c"
+      yellow: "#efdfac"
+      blue: "#6ebaf8"
+      magenta: "#ef88ff"
+      cyan: "#90fdf8"
+      white: "#e5e1d8"
+    # Bright colors
+    bright:
+      black: "#b4b4b4"
+      red: "#f99f92"
+      green: "#e3f7a1"
+      yellow: "#f2e9bf"
+      blue: "#b3d2ff"
+      magenta: "#e5bdff"
+      cyan: "#c2fefa"
+      white: "#ffffff"
+      # Colors (Solarized Dark)
+  solarized_dark: &solarized_dark
+    primary:
+      background: "#002b36" # base03
+      foreground: "#839496" # base0
+    # Cursor colors
+    cursor:
+      text: "#002b36" # base03
+      cursor: "#839496" # base0
+    # Normal colors
+    normal:
+      black: "#073642" # base02
+      red: "#dc322f" # red
+      green: "#859900" # green
+      yellow: "#b58900" # yellow
+      blue: "#268bd2" # blue
+      magenta: "#d33682" # magenta
+      cyan: "#2aa198" # cyan
+      white: "#eee8d5" # base2
+    # Bright colors
+    bright:
+      black: "#002b36" # base03
+      red: "#cb4b16" # orange
+      green: "#586e75" # base01
+      yellow: "#657b83" # base00
+      blue: "#839496" # base0
+      magenta: "#6c71c4" # violet
+      cyan: "#93a1a1" # base1
+      white: "#fdf6e3" # base3
+      # Colors (Nord)
+  nord: &nord
+    primary:
+      background: "#2e3440"
+      foreground: "#d8dee9"
+    # normal colors
+    normal:
+      black: "#3b4252"
+      red: "#bf616a"
+      green: "#a3be8c"
+      yellow: "#ebcb8b"
+      blue: "#81a1c1"
+      magenta: "#b48ead"
+      cyan: "#88c0d0"
+      white: "#e5e9f0"
+    # bright colors
+    bright:
+      black: "#4c566a"
+      red: "#bf616a"
+      green: "#a3be8c"
+      yellow: "#ebcb8b"
+      blue: "#81a1c1"
+      magenta: "#b48ead"
+      cyan: "#8fbcbb"
+      white: "#eceff4"
+      # Colors (Gruvbox dark)
+  gruvbox: &gruvbox
+    primary:
+      # hard contrast background - '#1d2021'
+      background: &gruvbox_dark_bg "#282828"
+      # soft contrast background - '#32302f'
+      foreground: "#ebdbb2"
+      bright_foreground: "#fbf1c7"
+      dim_foreground: "#a89984"
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    # search:
+    #   matches:
+    #     foreground: '#000000'
+    #     background: '#ffffff'
+    #   focused_match:
+    #    foreground: CellBackground
+    #    background: CellForeground
+    #   bar:
+    #     background: ''
+    #     foreground: ''
+    # line_indicator:
+    #   foreground: None
+    #   background: None
+    selection:
+      text: CellBackground
+      background: CellForeground
+    bright:
+      black: "#928374"
+      red: "#fb4934"
+      green: "#b8bb26"
+      yellow: "#fabd2f"
+      blue: "#83a598"
+      magenta: "#d3869b"
+      cyan: "#8ec07c"
+      white: "#ebdbb2"
+    normal:
+      black: *gruvbox_dark_bg
+      red: "#cc241d"
+      green: "#98971a"
+      yellow: "#d79921"
+      blue: "#458588"
+      magenta: "#b16286"
+      cyan: "#689d6a"
+      white: "#a89984"
+    dim:
+      black: "#32302f"
+      red: "#9d0006"
+      green: "#79740e"
+      yellow: "#b57614"
+      blue: "#076678"
+      magenta: "#8f3f71"
+      cyan: "#427b58"
+      white: "#928374"
+    # indexed_colors: []
 colors: *nightfox
