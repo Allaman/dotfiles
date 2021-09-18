@@ -1,12 +1,14 @@
 # Dotfiles
 
-![](screenshot.png)
-
 ## Content
 
-This repo contains my public dotfiles.
+This repo contains my public
+
+![](./dotfiles.PNG)
 
 **Be aware that some configs require applications or scripts not in this repo -> adjust accordingly**
+
+![](screenshot.png)
 
 ## NeoVim
 
