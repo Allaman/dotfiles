@@ -886,7 +886,7 @@
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
   # Only show kubecontext when one of the specified commands is type
-  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito|kx|kns|k9s'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito|kx|kns|k9s|telepresence'
 }
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
