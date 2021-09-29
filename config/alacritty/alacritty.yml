@@ -11,7 +11,6 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -36,7 +35,6 @@ window:
   padding:
     x: 6
     y: 6
-
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
 
@@ -50,7 +48,6 @@ window:
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
   decorations: none
-
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -64,31 +61,26 @@ window:
 
   # Window title
   title: Alacritty
-
   # Window class (Linux/BSD only):
   class:
     # Application instance name
     instance: Alacritty
     # General application class
     general: Alacritty
-
-  # GTK theme variant (Linux/BSD only)
-  #
-  # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
-  # Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
-
+    # GTK theme variant (Linux/BSD only)
+    #
+    # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
+    # Set this to `None` to use the default theme variant.
+    #gtk_theme_variant: None
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
   history: 5000
-
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
   #multiplier: 3
-
-  # Scroll to the bottom when new text is written to the terminal.
-  #auto_scroll: false
+# Scroll to the bottom when new text is written to the terminal.
+#auto_scroll: false
 
 # Spaces per Tab (changes require restart)
 #
@@ -120,10 +112,8 @@ font:
     #family: "MesloLGS NF"
     # family: "Hack Nerd Font"
     family: "FiraCode Nerd Font"
-
     # The `style` can be specified to pick a specific face.
     style: Regular
-
   # Bold font face
   bold:
     # Font family
@@ -140,10 +130,8 @@ font:
     # family: TerminessTTF Nerd Font
     # family: "Hack Nerd Font"
     family: "FiraCode Nerd Font"
-
     # The `style` can be specified to pick a specific face.
     style: Bold
-
   # Italic font face
   italic:
     # Font family
@@ -160,10 +148,8 @@ font:
     # family: TerminessTTF Nerd Font
     # family: "Hack Nerd Font"
     family: "FiraCode Nerd Font"
-
     # The `style` can be specified to pick a specific face.
     style: Italic
-
   # Bold italic font face
   bold_italic:
     # Font family
@@ -180,45 +166,39 @@ font:
     #family: "MesloLGS NF"
     # family: "Hack Nerd Font"
     family: "FiraCode Nerd Font"
-
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
-
   # Point size
   size: 7.0
-
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 2
     y: 3
-
-  # Glyph offset determines the locations of the glyphs within their cells with
-  # the default being at the bottom. Increasing `x` moves the glyph to the right,
-  # increasing `y` moves the glyph upwards.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  #use_thin_strokes: true
+    # Glyph offset determines the locations of the glyphs within their cells with
+    # the default being at the bottom. Increasing `x` moves the glyph to the right,
+    # increasing `y` moves the glyph upwards.
+    #glyph_offset:
+    #  x: 0
+    #  y: 0
+# Thin stroke font rendering (macOS only)
+#
+# Thin strokes are suitable for retina displays, but for non-retina screens
+# it is recommended to set `use_thin_strokes` to `false`
+#
+# macOS >= 10.14.x:
+#
+# If the font quality on non-retina display looks bad then set
+# `use_thin_strokes` to `true` and enable font smoothing by running the
+# following command:
+#   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+#
+# This is a global setting and will require a log out or restart to take
+# effect.
+#use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -250,7 +230,6 @@ draw_bold_text_with_bright_colors: true
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1.0
-
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -259,7 +238,6 @@ background_opacity: 1.0
 
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
-
 cursor:
   # Cursor style
   #
@@ -268,11 +246,9 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: Block
-
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   #unfocused_hollow: true
-
 # Live config reload (changes require restart)
 #live_config_reload: true
 
@@ -491,29 +467,25 @@ cursor:
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: V, mods: Alt, action: Paste }
-  - { key: C, mods: Alt, action: Copy }
-  - { key: Insert, mods: Shift, action: PasteSelection }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Plus, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: L, mods: Control, action: ClearLogNotice }
-  - { key: L, mods: Control, chars: "\x0c" }
-  - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
-  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
-  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
-  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
-
+  - {key: V, mods: Alt, action: Paste}
+  - {key: C, mods: Alt, action: Copy}
+  - {key: Insert, mods: Shift, action: PasteSelection}
+  - {key: Key0, mods: Control, action: ResetFontSize}
+  - {key: Plus, mods: Control, action: IncreaseFontSize}
+  - {key: Minus, mods: Control, action: DecreaseFontSize}
+  - {key: L, mods: Control, action: ClearLogNotice}
+  - {key: L, mods: Control, chars: "\f"}
+  - {key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt}
+  - {key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt}
+  - {key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt}
+  - {key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt}
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
+  - {mouse: Middle, action: PasteSelection}
 mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
+  double_click: {threshold: 300}
+  triple_click: {threshold: 300}
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
-
 schemes:
   material: &material
     primary:
@@ -565,8 +537,8 @@ schemes:
       cyan: "0x59F0FF"
       white: "0xF2F2F2"
     indexed_colors:
-      - { index: 16, color: "0xF4A261" }
-      - { index: 17, color: "0xD67AD2" }
+      - {index: 16, color: "0xF4A261"}
+      - {index: 17, color: "0xD67AD2",}
       # Colors (Wombat)
   wombat: &wombat
     primary:
@@ -704,5 +676,5 @@ schemes:
       magenta: "#8f3f71"
       cyan: "#427b58"
       white: "#928374"
-    # indexed_colors: []
-colors: *nightfox
+      # indexed_colors: []
+colors: *nord
