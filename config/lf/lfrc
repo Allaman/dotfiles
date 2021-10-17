@@ -74,10 +74,17 @@ cmd bulkrename ${{
   printf '%s\n' $fx | vidir -
 }}
 
+cmd zoxide_jump ${{
+  printf "Jump to: "
+  read ans
+  res=$( zoxide query -l $ans | fzf --query="$ans " --select-1 --exit-0 --height=25% --reverse --no-sort --cycle)
+  lf -remote "send $id cd \"$res\""
+}}
+
 cmd fasd_jump ${{
   printf "Jump to: "
   read ans
-  res=$( fasd -d -l -r $ans | fzf --query="$ans " --select-1 --exit-0 --height=25% --reverse --tac --no-sort --cycle)
+  res=$( fasd -d -l -r $ans | fzf --query="$ans " --select-1 --exit-0 --height=25% --reverse --no-sort --cycle)
   lf -remote "send $id cd \"$res\""
 }}
 
@@ -242,7 +249,7 @@ map tr restore_trash
 #map b broot_jump
 #map f fzf_jump
 map cd $lf -remote "send $id select '$(fd . $HOME --type d --hidden --follow | fzf)'"
-map to fasd_jump
+map to zoxide_jump
 
 # Dragon Mapping
 map dr dragon
