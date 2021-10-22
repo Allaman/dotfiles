@@ -107,6 +107,7 @@ alias \
   vf.='vifm .'
 
 # Useful
+alias yt='mpv --vo=gpu --hwdec=vaapi --script-opts=ytdl_hook-ytdl_path=$HOME/.local/bin/yt-dlp'
 alias filediff='grep -v -F -x -f' # file1 file2 shows what is in 2 but not 1
 alias replace_ws_with_underscore='for f in *\ *; do mv "$f" "${f// /_}"; done'
 alias list-mailboxes='\find ~/data/pim/mail/ -type d -name cur -printf '"'"'%h '"'"' | sed -e '"'"'s_/home/michael/data/pim/mail/_+_g'"'"' | sed -e '"'"'s_ +_ \\\n+_g'"'"''
