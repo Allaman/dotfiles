@@ -103,7 +103,12 @@ export PATH="$PATH:$HOME/.bash-my-aws/bin"
 source ~/.bash-my-aws/aliases
 source ~/.bash-my-aws/bash_completion.sh
 
-autoload -Uz +X compinit && compinit
+autoload -Uz +X compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 
 # Profiling zsh
 # zprof
