@@ -1,5 +1,5 @@
 # Profiling zsh start
-#zmodload zsh/zprof
+# zmodload zsh/zprof
 stty -ixon                                                      # disable ctrl-s and ctrl-q
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,7 +24,7 @@ setopt share_history
 
 # case insensitive autocompletion
 zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=* l:|=*"
-zstyle ':completion:*' hosts off # ignore hosts file for ssh/scp autocompletion
+zstyle ':completion:*' hosts off                                # ignore hosts file for ssh/scp autocompletion
 ## Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -113,4 +113,4 @@ source ~/.bash-my-aws/bash_completion.sh
 autoload -Uz +X compinit && compinit
 
 # Profiling zsh
-#zprof
+# zprof
