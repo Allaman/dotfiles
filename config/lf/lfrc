@@ -194,8 +194,8 @@ map cd $lf -remote "send $id select '$(fd . $HOME --type d --hidden --follow | f
 map to zoxide_jump
 
 # Dragon Mapping
-map dr dragon
-map ds dragon-stay
+# map dr dragon
+# map ds dragon-stay
 map di dragon-individual
 
 # Basic Functions
