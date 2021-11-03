@@ -155,6 +155,9 @@ cmd select-all :unselect; invert
 
 cmd open-with %"$@" $fx
 
+cmd dir-size %dua "$f"
+cmd dir-size-interactive %$TERMINAL -e dua i "$f"
+cmd open-terminal-in-dir %$TERMINAL --working-directory "$f"
 # Bindings
 # Remove some defaults
 map m
@@ -171,6 +174,9 @@ map f
 map ee $$EDITOR "$f"
 map O push :open-with<space>
 
+map ds dir-size
+map da dir-size-interactive
+map do dir-open-in-terminal
 # Git
 map gp ${{clear; git pull || true; echo "press ENTER"; read ENTER}}
 map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
