@@ -158,6 +158,7 @@ cmd open-with %"$@" $fx
 cmd dir-size %dua "$f"
 cmd dir-size-interactive %$TERMINAL -e dua i "$f"
 cmd open-terminal-in-dir %$TERMINAL --working-directory "$f"
+
 # Bindings
 # Remove some defaults
 map m
@@ -177,11 +178,15 @@ map O push :open-with<space>
 map ds dir-size
 map da dir-size-interactive
 map do dir-open-in-terminal
-# Git
-map gp ${{clear; git pull || true; echo "press ENTER"; read ENTER}}
-map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
-map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
+# Git
+cmd git-pull ${{clear; git pull || true; echo "press ENTER"; read ENTER}}
+cmd git-status ${{clear; git status; echo "press ENTER"; read ENTER}}
+cmd git-log ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
+
+map gp git-pull
+map gs git-status
+map gl git-log
 
 # Archive Mappings
 map az zip
