@@ -45,7 +45,7 @@ cmd mkdir ${{
 cmd mkfile ${{
   printf "File Name: "
   read ans
-  $EDITOR $ans
+  touch $ans
 }}
 
 cmd chmod ${{
@@ -67,7 +67,7 @@ cmd openvim ${{
 cmd sudomkfile ${{
   printf "File Name: "
   read ans
-  sudo $EDITOR $ans
+  sudo touch $ans
 }}
 
 cmd bulkrename ${{
