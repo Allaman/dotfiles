@@ -81,35 +81,6 @@ cmd zoxide_jump ${{
   lf -remote "send $id cd \"$res\""
 }}
 
-cmd fasd_jump ${{
-  printf "Jump to: "
-  read ans
-  res=$( fasd -d -l -r $ans | fzf --query="$ans " --select-1 --exit-0 --height=25% --reverse --no-sort --cycle)
-  lf -remote "send $id cd \"$res\""
-}}
-
-cmd fzf_jump ${{
-  res="$(fd . | fzf --reverse --header='Jump to location')"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
-
-cmd broot_jump ${{
-  f=$(mktemp)
-  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
-  rm -f "$f"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
-
 # Dragon fucntions
 cmd dragon %dragon --on-top -a -x $fx
 cmd dragon-stay %dragon --on-top -a $fx
@@ -246,8 +217,6 @@ map tc clear_trash
 map tr restore_trash
 
 # Fuzzy finder
-#map b broot_jump
-#map f fzf_jump
 map cd $lf -remote "send $id select '$(fd . $HOME --type d --hidden --follow | fzf)'"
 map to zoxide_jump
 
