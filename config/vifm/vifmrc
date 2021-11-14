@@ -484,7 +484,7 @@ set grepprg='rg --files --no-ignore-vcs --hidden %i %a %s'
 
 " Add additional place to look for executables
 "
-let $PATH = $HOME.'/workspace/scripts:'.$PATH
+" let $PATH = $HOME.'/workspace/git.rootknecht.net/scripts/:'.$PATH
 
 " Block particular shortcut
 "

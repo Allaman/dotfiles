@@ -147,7 +147,7 @@ signal=10
 # Date Time
 # clickable pop up calendar
 [rofi-calendar]
-command=~/workspace/scripts/rofi-calendar.sh
+command=rofi-calendar.sh
 interval=5
 
 # OpenVPN support

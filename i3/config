@@ -290,7 +290,7 @@ exec --no-startup-id sxhkd
 exec --no-startup-id /usr/lib/kdeconnectd
 # exec --no-startup-id kdeconnect-indicator
 exec --no-startup-id keepassxc
-exec --no-startup-id $HOME/workspace/scripts/keyboard.sh
+exec --no-startup-id $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/_keyboard.sh
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia

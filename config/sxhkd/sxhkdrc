@@ -1,5 +1,8 @@
 # reload sxhd config
 
+# OBSOLET!
+# NOT IN USE ANYMORE
+
 super + Escape
   pkill -USR1 -x sxhkd
 
