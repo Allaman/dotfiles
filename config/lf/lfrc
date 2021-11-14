@@ -157,7 +157,14 @@ cmd open-with %"$@" $fx
 
 cmd dir-size %dua "$f"
 cmd dir-size-interactive %$TERMINAL -e dua i "$f"
-cmd open-terminal-in-dir %$TERMINAL --working-directory "$f"
+cmd open-terminal-in-dir ${{
+    if [ -f "$f" ]; then
+      dir="$(dirname -- "$(readlink -f -- "$f")")"
+    else
+      dir="$f"
+    fi
+    $TERMINAL --working-directory "$dir"
+  }}
 
 # Bindings
 # Remove some defaults
