@@ -2,7 +2,7 @@
 
 ## Content
 
-This repo contains my public
+This repo contains my public dotfiles. This includes configuration and scripts.
 
 ![](./dotfiles.PNG)
 
