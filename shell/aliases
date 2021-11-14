@@ -38,8 +38,8 @@ alias \
   gst='git status' \
   gs='git status' \
   gc='git commit' \
-  gpush='git push' \
-  gpull='git pull' \
+  push='git push' \
+  pull='git pull' \
   gd='git diff' \
   gl='git log --ext-diff -u' \
   gco='git checkout' \
