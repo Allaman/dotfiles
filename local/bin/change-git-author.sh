@@ -15,7 +15,7 @@ EOF
   select choice in "Yes" "No"; do
     case $choice in
       Yes ) git filter-repo --force --partial --mailmap my-mailmap; rm my-mailmap; echo "run git fetch && git push --foce-with-lease"; break;;
-      No ) exit;;
+      No ) rm my-mailmap; exit;;
     esac
   done
 }
