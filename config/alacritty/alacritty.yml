@@ -169,7 +169,7 @@ font:
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
   # Point size
-  size: 10.0
+  size: 8.0
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
@@ -229,7 +229,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+background_opacity: 0.7
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -467,23 +467,23 @@ cursor:
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: V, mods: Alt, action: Paste }
-  - { key: C, mods: Alt, action: Copy }
-  - { key: Insert, mods: Shift, action: PasteSelection }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Plus, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: L, mods: Control, action: ClearLogNotice }
-  - { key: L, mods: Control, chars: "\f" }
-  - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
-  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
-  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
-  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
+  - {key: V, mods: Alt, action: Paste}
+  - {key: C, mods: Alt, action: Copy}
+  - {key: Insert, mods: Shift, action: PasteSelection}
+  - {key: Key0, mods: Control, action: ResetFontSize}
+  - {key: Plus, mods: Control, action: IncreaseFontSize}
+  - {key: Minus, mods: Control, action: DecreaseFontSize}
+  - {key: L, mods: Control, action: ClearLogNotice}
+  - {key: L, mods: Control, chars: "\f"}
+  - {key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt}
+  - {key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt}
+  - {key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt}
+  - {key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt}
 mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+  - {mouse: Middle, action: PasteSelection}
 mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  double_click: {threshold: 300}
+  triple_click: {threshold: 300}
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 schemes:
@@ -537,8 +537,8 @@ schemes:
       cyan: "0x59F0FF"
       white: "0xF2F2F2"
     indexed_colors:
-      - { index: 16, color: "0xF4A261" }
-      - { index: 17, color: "0xD67AD2" }
+      - {index: 16, color: "0xF4A261"}
+      - {index: 17, color: "0xD67AD2",}
       # Colors (Wombat)
   wombat: &wombat
     primary:
@@ -690,5 +690,4 @@ schemes:
       magenta: "0xc678dd"
       cyan: "0x46d9ff"
       white: "0xbbc2cf"
-  colors: *doom-one
 colors: *doom-one
