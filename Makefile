@@ -5,12 +5,12 @@ help: ## This help.
 
 PUBLIC:=$$HOME/workspace/github.com/allaman/public-dotfiles/
 PRIVATE:=$$HOME/workspace/git.rootknecht.net/private-dotfiles/
-ALL_EXCLUDE:="-x README -x LICENSE -x screenshot.png"
-MAC_EXCLUDE:="-x i3 -x config/i3blocks -x config/i3status -x config/zathura -x config/sxhkd -x config/rofi -x Xresoources"
+ALL_EXCLUDE:="-x README.md -x LICENSE -x dotfiles.PNG -x screenshot.png -x Makefile"
+MAC_EXCLUDE:="-x i3 -x config/i3blocks -x config/i3status -x config/zathura -x config/sxhkd -x config/rofi -x Xresources"
 LINUX_EXCLUDE:=""
 
 mac: ## configuring dotfiles for mac
-	echo rcup -d $(PUBLIC) $(ALL_EXCLUDE) $(MAC_EXCLUDE)
+	rcup -d $(PUBLIC) $(ALL_EXCLUDE) $(MAC_EXCLUDE)
 
 linux: ## configuring dotfiles for linux
 	echo rcup -d $(PUBLIC) $(ALL_EXCLUDE) $(LINUX_EXCLUDE)
