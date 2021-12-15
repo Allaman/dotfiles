@@ -1,36 +1,39 @@
 # Package Management
-version=$(cat /etc/issue)
-if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
+if [[ "$OS_TYPE" != "darwin"* ]]
 then
-    alias \
-      pacup='sudo pacman -Syu' \
-      pacin='sudo pacman -S' \
-      pacls='pacman -Q' \
-      pacse='pacman -Ss' \
-      pacrm='sudo pacman -Rss' \
-      paccl='sudo pacman -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
-elif [[ $version =~ "SUSE" ]]
-then
-    alias \
-      pacup='sudo zypper up' \
-      pacin='sudo zypper in' \
-      pacls='rpm -qa' \
-      pacshow='sudo rpm -qi' \
-      pacfiles='sudo rpm -ql' \
-      pacse='zypper se' \
-      pacrm='sudo zypper rm -u' \
-      pacdisup='sudo zypper dup' \
-	    pacrepos='sudo zypper lr'
-else
-    alias \
-      pacup='sudo apt-get update && sudo apt-get upgrade' \
-      pacin='sudo apt-get install' \
-      pacls='dpkg --get-selections' \
-      pacse='sudo apt-cache search' \
-      pacrm='sudo apt-get remove' \
-      pacautorm='sudo apt-get autoremove' \
-      pacdisup='sudo apt-get update && sudo apt-get dist-upgrade' \
-      pacpurge='sudo apt-get purge'
+  version=$(cat /etc/issue)
+  if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
+  then
+      alias \
+        pacup='sudo pacman -Syu' \
+        pacin='sudo pacman -S' \
+        pacls='pacman -Q' \
+        pacse='pacman -Ss' \
+        pacrm='sudo pacman -Rss' \
+        paccl='sudo pacman -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
+  elif [[ $version =~ "SUSE" ]]
+  then
+      alias \
+        pacup='sudo zypper up' \
+        pacin='sudo zypper in' \
+        pacls='rpm -qa' \
+        pacshow='sudo rpm -qi' \
+        pacfiles='sudo rpm -ql' \
+        pacse='zypper se' \
+        pacrm='sudo zypper rm -u' \
+        pacdisup='sudo zypper dup' \
+        pacrepos='sudo zypper lr'
+  else
+      alias \
+        pacup='sudo apt-get update && sudo apt-get upgrade' \
+        pacin='sudo apt-get install' \
+        pacls='dpkg --get-selections' \
+        pacse='sudo apt-cache search' \
+        pacrm='sudo apt-get remove' \
+        pacautorm='sudo apt-get autoremove' \
+        pacdisup='sudo apt-get update && sudo apt-get dist-upgrade' \
+        pacpurge='sudo apt-get purge'
+  fi
 fi
 
 # Git
