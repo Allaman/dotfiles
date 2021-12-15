@@ -1,5 +1,5 @@
 # Package Management
-if [[ "$OS_TYPE" != "darwin"* ]]
+if [[ ! "$OS_TYPE" == "darwin"* ]]
 then
   version=$(cat /etc/issue)
   if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
