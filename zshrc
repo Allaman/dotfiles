@@ -101,8 +101,8 @@ enable-fzf-tab
 autoload bashcompinit
 bashcompinit
 export PATH="$PATH:$HOME/.bash-my-aws/bin"
-source ~/.bash-my-aws/aliases
-source ~/.bash-my-aws/bash_completion.sh
+[ -f $HOME/.bash-my-aws/aliases] && source ~/.bash-my-aws/aliases
+[ -f $HOME/.bash-my-aws/bash_completion.sh ] && source ~/.bash-my-aws/bash_completion.sh
 
 autoload -Uz +X compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
