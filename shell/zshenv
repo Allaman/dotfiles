@@ -2,7 +2,19 @@ if [ "$DESKTOP_SESSION" =~ "xfce" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+if [ "$OSTYPE" =~ "darwin" ]
+then
+  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.0/libexec/gnubin:/opt/homebrew/bin:$PATH
+  export LC_CTYPE=UTF-8
+fi
+
+command -v vim >/dev/null 2>&1 && export EDITOR=vim
+command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
+
 [ -d $HOME/workspace/git.rootknecht.net/scripts ] && export PATH=$PATH:$HOME/workspace/git.rootknecht.net/scripts
+[ -d $HOME/.jenv/bin ] && export PATH=$PATH:$HOME/.jenv/bin
+command -v jenv >/dev/null 2>&1 && eval "$(jenv init -)"
 [ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
 [ -d $HOME/.luarocks/bin ] && export PATH=$PATH:$HOME/.luarocks/bin
 [ -f $HOME/.shell/aliases ] && source $HOME/.shell/aliases
