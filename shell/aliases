@@ -1,6 +1,7 @@
-# Package Management
-if [[ ! "$OS_TYPE" == "darwin"* ]]
+# Linux only aliases
+if [[ ! "$OSTYPE" =~ "darwin" ]]
 then
+  # Package Management
   version=$(cat /etc/issue)
   if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
   then
@@ -34,6 +35,7 @@ then
         pacdisup='sudo apt-get update && sudo apt-get dist-upgrade' \
         pacpurge='sudo apt-get purge'
   fi
+  alias lf='lfrun'
 fi
 
 # Git
@@ -101,7 +103,6 @@ fi
 
 # CLI
 alias \
-  lf='lfrun' \
   nb='newsboat' \
   xo='mimeopen' \
   slack-id="slack-term -config ~/.config/slack-term/id-config" \
