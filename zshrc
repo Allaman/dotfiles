@@ -67,8 +67,8 @@ zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
 # source zsh
-[ -f $HOME/.profile ] && source $HOME/.profile
 [ -f $HOME/.shell/zshenv ] && source $HOME/.shell/zshenv
+[ -f $HOME/.profile ] && source $HOME/.profile
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 [ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -f $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
@@ -95,6 +95,9 @@ command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 bindkey '^ ' autosuggest-accept                                 # zsh autosuggestions completion
+
+# Change autosuggestion color see https://coderwall.com/p/pb1uzq/z-shell-colors
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=060'
 
 enable-fzf-tab
 
