@@ -2,7 +2,7 @@
 
 ## Content
 
-This repo contains my public dotfiles. This includes configuration and scripts.
+This repo contains my public dotfiles. This includes configuration and scripts. The config should be suitable for Linux and Mac machines.
 
 ![](./dotfiles.PNG)
 
@@ -10,15 +10,15 @@ This repo contains my public dotfiles. This includes configuration and scripts.
 
 ![](screenshot.png)
 
+[Theme](https://github.com/EdenEast/nightfox.nvim/tree/main/extra/nightfox)
+
 ## NeoVim
 
 My NeoVim config is in [its own repo](https://github.com/Allaman/nvim/)
 
-### This dotfile repo works best with my [Ansible](https://www.ansible.com/) roles:
+## Automatic configuration
 
-- [Shell setup](https://github.com/Allaman/ansible-role-dotfiles)
-- [Package management](https://github.com/Allaman/ansible-role-packages)
-- [Binaries](https://github.com/Allaman/ansible-role-binaries)
-- [dotfiles](https://github.com/Allaman/ansible-role-dotfiles)
+I use [Ansible](https://www.ansible.com/) for automatic configuration of my devices:
 
-[Theme](https://github.com/EdenEast/nightfox.nvim/tree/main/extra/nightfox)
+- [rice](https://github.com/Allaman/rice) for my Arch Linux based configuration
+- [mac-setup](https://github.com/Allaman/mac-setup) for my Mac based configuration
