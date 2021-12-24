@@ -2,7 +2,13 @@
 
 # Sync calendar and contacts via vdirsyncer
 
-source notify.sh
+if [[ "$OSTYPE" =~ "darwin"* ]]
+then
+  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.0/libexec/gnubin:/opt/homebrew/bin:$PATH
+  export LC_CTYPE=UTF-8
+fi
+
+source $HOME/.local/bin/notify.sh
 
 # Run only if user logged in (prevent cron errors)
 pgrep -u "${USER:=$LOGNAME}" >/dev/null || { echo "$USER not logged in; sync will not run."; exit ;}

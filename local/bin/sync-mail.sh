@@ -6,6 +6,13 @@
 # Notify in case of new mails
 # Run notmuch
 
+# Add MacOS specified PATHs
+if [[ "$OSTYPE" =~ "darwin"* ]]
+then
+  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.0/libexec/gnubin:/opt/homebrew/bin:$PATH
+  export LC_CTYPE=UTF-8
+fi
+
 # Run only if user logged in (prevent cron errors)
 pgrep -u "${USER:=$LOGNAME}" >/dev/null || { echo "$USER not logged in; sync will not run."; exit ;}
 # Run only if not already running in other instance
@@ -14,17 +21,28 @@ pgrep -x mbsync >/dev/null && { echo "mbsync is already running." ; exit ;}
 MBSYNCRC="$HOME/.mbsyncrc"
 SYNC_INTERVAL=600
 
-displays="$(pgrep -a Xorg | grep -wo "[0-9]*:[0-9]\+" | sort -u)"
-notify() {
-  for x in $displays; do
-    export DISPLAY=$x
-    notify-send --app-name="mailsync" "mailsync" "📬 $2 new mail(s) in \`$1\` account."
-  done ;}
-  messageinfo() {
+if [[ "$OSTYPE" == *"linux"* ]]
+then
+  displays="$(pgrep -a Xorg | grep -wo "[0-9]*:[0-9]\+" | sort -u)"
+  notify() {
     for x in $displays; do
       export DISPLAY=$x
-      notify-send --app-name="mailsync" "📧$from:" "$subject"
+      notify-send --app-name="mailsync" "mailsync" "📬 $2 new mail(s) in \`$1\` account."
     done ;}
+    messageinfo() {
+      for x in $displays; do
+        export DISPLAY=$x
+        notify-send --app-name="mailsync" "📧$from:" "$subject"
+      done ;}
+else
+  notify() {
+    osascript -e "display notification \"$2 new mail(s) in $1\" with title \"mailsync\""
+  }
+  messageinfo() {
+    osascript -e "display notification \"$from\" with title \"mailsync\""
+  }
+fi
+
 
 # Check account for new mail. Notify if there is new content.
 syncandnotify() {
