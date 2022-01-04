@@ -40,6 +40,12 @@ then
   fi
 fi
 
+# NNN
+
+export NNN_OPTS=idRU
+export NNN_TRASH=1 # trash-cli
+export NNN_PLUG='t:autojump;d:diffs'
+
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
 export LESS_TERMCAP_md=$'\E[01;32m'
