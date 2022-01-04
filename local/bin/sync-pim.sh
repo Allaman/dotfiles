@@ -11,9 +11,9 @@ fi
 source $HOME/.local/bin/notify.sh
 
 # Run only if user logged in (prevent cron errors)
-pgrep -u "${USER:=$LOGNAME}" >/dev/null || { echo "$USER not logged in; sync will not run."; exit ;}
+pgrep -u "${USER:=$LOGNAME}" >/dev/null || { notify "$USER not logged in; sync will not run."; exit ;}
 # Run only if not already running in other instance
-pgrep -x vdirsyncer >/dev/null && { echo "vdirsyncer is already running." ; exit ;}
+pgrep -x vdirsyncer >/dev/null && { notify "vdirsyncer is already running." ; exit ;}
 
 SYNC_INTERVAL=3600
 
