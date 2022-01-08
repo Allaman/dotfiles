@@ -111,6 +111,16 @@ alias \
   vf='vifm ~' \
   vf.='vifm .'
 
+# hledger
+alias \
+  ledger-is-yearly='hledger is -Y -S' \
+  ledger-is-quarterly='hledger is -Q -S' \
+  ledger-is-monthly-html='hledger is -M -S -o monthly.html' \
+  ledger-is-weekly='hledger is -Q -S -o weekly.html' \
+  ledger-is-daily='hledger is -Q -S -o daily.html' \
+  ledger-show-accounts='hledger accounts' \
+  ledger-show-stats='hledger stats'
+
 # Useful
 alias yt='mpv --vo=gpu --hwdec=vaapi --script-opts=ytdl_hook-ytdl_path=$HOME/.local/bin/yt-dlp'
 alias filediff='grep -v -F -x -f' # file1 file2 shows what is in 2 but not 1
