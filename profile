@@ -1,4 +1,4 @@
-if [ "$OSTYPE" == "linux"* ]
+if [[ "$OSTYPE" =~ "linux" ]]
 then
   export TERM=screen-256color
   export TERMINAL=alacritty

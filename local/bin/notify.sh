@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function notify {
-  if [[ "$OSTYPE" == "darwin"* ]]
+  if [[ "$OSTYPE" =~ "darwin"* ]]
     then
       osascript -e "display notification \"$1\" with title \"Notify\""
     else

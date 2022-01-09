@@ -21,7 +21,7 @@ pgrep -x mbsync >/dev/null && { echo "mbsync is already running." ; exit ;}
 MBSYNCRC="$HOME/.mbsyncrc"
 SYNC_INTERVAL=600
 
-if [[ "$OSTYPE" == *"linux"* ]]
+if [[ "$OSTYPE" =~  *"linux"* ]]
 then
   displays="$(pgrep -a Xorg | grep -wo "[0-9]*:[0-9]\+" | sort -u)"
   notify() {
