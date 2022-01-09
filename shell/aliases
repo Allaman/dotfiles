@@ -69,9 +69,15 @@ alias \
   ls='ls -hN --color=auto --group-directories-first' \
   ll='ls -lh' \
   lla='ls -alh' \
-  lsym='ls -l `\find . -maxdepth 1 -type l -print`' \
-  ccopy='xclip -selection clipboard' \
-  cpaste='xclip -selection clipboard -o'
+  lsym='ls -l `\find . -maxdepth 1 -type l -print`'
+  if [[ "$OSTYPE" =~ "darwin"* ]]
+  then
+    alias ccopy='pbcopy'
+    alias cpaste='pbpaste'
+  else
+    alias ccopy='xclip -selection clipboard'
+    alias cpaste='xclip -selection clipboard -o'
+  fi
 
 # Better options
 alias \
