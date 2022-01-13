@@ -1,42 +1,18 @@
-# Linux only aliases
-if [[ ! "$OSTYPE" =~ "darwin" ]]
-then
-  # Package Management
-  version=$(cat /etc/issue)
-  if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
-  then
-      alias \
-        pacup='sudo pacman -Syu' \
-        pacin='sudo pacman -S' \
-        pacls='pacman -Q' \
-        pacse='pacman -Ss' \
-        pacrm='sudo pacman -Rss' \
-        paccl='sudo pacman -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
-  elif [[ $version =~ "SUSE" ]]
-  then
-      alias \
-        pacup='sudo zypper up' \
-        pacin='sudo zypper in' \
-        pacls='rpm -qa' \
-        pacshow='sudo rpm -qi' \
-        pacfiles='sudo rpm -ql' \
-        pacse='zypper se' \
-        pacrm='sudo zypper rm -u' \
-        pacdisup='sudo zypper dup' \
-        pacrepos='sudo zypper lr'
-  else
-      alias \
-        pacup='sudo apt-get update && sudo apt-get upgrade' \
-        pacin='sudo apt-get install' \
-        pacls='dpkg --get-selections' \
-        pacse='sudo apt-cache search' \
-        pacrm='sudo apt-get remove' \
-        pacautorm='sudo apt-get autoremove' \
-        pacdisup='sudo apt-get update && sudo apt-get dist-upgrade' \
-        pacpurge='sudo apt-get purge'
-  fi
-  alias lf='lfrun'
-fi
+# brew
+alias \
+  pacup='brew upgrade' \
+  pacin='brew install' \
+  pacls='brew list' \
+  pacse='brew search' \
+  pacrm='brew uninstall'
+
+# Suffix alias
+alias -s txt=nvim
+alias -s {js,json}=nvim
+alias -s md=nvim
+alias -s {toml}=nvim
+alias -s {yml,yaml}=nvim
+alias -s lua=nvim
 
 # Git
 alias \
@@ -52,7 +28,13 @@ alias \
   gcs='git checkout staging' \
   gcd='git checkout develop' \
   gcp='git checkout production' \
-  gcn='git checkout -b'
+  gcn='git checkout -b' \
+
+# Github
+alias \
+  ghweb='gh browse' \
+  ghstat='gh auth status' \
+  ghpr='gh pr list'
 
 # Shell
 alias \
@@ -111,6 +93,7 @@ fi
 alias \
   nb='newsboat' \
   xo='mimeopen' \
+  nova='$HOME/workspace/git.rootknecht.net/scripts/fzf-nova/fzf-nova' \
   slack-id="slack-term -config ~/.config/slack-term/id-config" \
   slack-idz="slack-term -config ~/.config/slack-term/idz-config" \
   to='zi' \
@@ -163,6 +146,7 @@ alias list-printer='lpstat -l -p'
 alias default_printer='lpoptions -d'
 alias externalip='echo $(curl -ss http://ipecho.net/plain)'
 alias SS='sudo systemctl'
+alias envs='printenv | fzf'
 
 # Docker
 alias docker-stop-all='docker stop $(docker ps -a -q)'
@@ -196,3 +180,42 @@ which helm > /dev/null && alias srchelm='source <(helm completion zsh)'
 which awless > /dev/null && alias srcawless='source <(awless completion zsh)'
 which aws_zsh_completer.sh > /dev/null && alias srcaws='source aws_zsh_completer.sh'
 
+# Linux only aliases
+if [[ ! "$OSTYPE" =~ "darwin" ]]
+then
+  # Package Management
+  version=$(cat /etc/issue)
+  if [[ $version =~ "Manjaro" || $version =~ "Arch Linux" ]]
+  then
+      alias \
+        pacup='sudo pacman -Syu' \
+        pacin='sudo pacman -S' \
+        pacls='pacman -Q' \
+        pacse='pacman -Ss' \
+        pacrm='sudo pacman -Rss' \
+        paccl='sudo pacman -Rsn $(${AUR_MANAGER:-pacman} -Qdtq)'
+  elif [[ $version =~ "SUSE" ]]
+  then
+      alias \
+        pacup='sudo zypper up' \
+        pacin='sudo zypper in' \
+        pacls='rpm -qa' \
+        pacshow='sudo rpm -qi' \
+        pacfiles='sudo rpm -ql' \
+        pacse='zypper se' \
+        pacrm='sudo zypper rm -u' \
+        pacdisup='sudo zypper dup' \
+        pacrepos='sudo zypper lr'
+  else
+      alias \
+        pacup='sudo apt-get update && sudo apt-get upgrade' \
+        pacin='sudo apt-get install' \
+        pacls='dpkg --get-selections' \
+        pacse='sudo apt-cache search' \
+        pacrm='sudo apt-get remove' \
+        pacautorm='sudo apt-get autoremove' \
+        pacdisup='sudo apt-get update && sudo apt-get dist-upgrade' \
+        pacpurge='sudo apt-get purge'
+  fi
+  alias lf='lfrun'
+fi
