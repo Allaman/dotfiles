@@ -1,6 +1,3 @@
-export TERM=xterm-kitty
-export TERMINAL=kitty
-
 # NNN
 export NNN_OPTS=aidRU
 export NNN_TRASH=1 # trash-cli
@@ -18,10 +15,19 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
-export BROWSER="open -a firefox"
 export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
 command -v go >/dev/null 2>&1 && export GOPATH=$HOME/.local/share/go && export PATH=$PATH:$(go env GOPATH)/bin
 command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
+
+# macons only
+if [[ "$OSTYPE" =~ "darwin" ]]
+then
+  export TERM=xterm-kitty
+  export TERMINAL=kitty
+  alias ssh='kitty +kitten ssh'
+  export BROWSER="open -a firefox"
+  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+fi
 
 export EXCLUDE_STRING=.git,node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*,.terraform/*,.gem/*,.cache,**/cache/*,**go/pkg/*
 
