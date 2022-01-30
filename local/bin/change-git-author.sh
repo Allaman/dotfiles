@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ⚠️ USE WITH EXTREME CARE ⚠️
 change ()
@@ -20,4 +20,4 @@ EOF
   done
 }
 
-change $1 $2 $3
+change "$1" "$2" "$3"
