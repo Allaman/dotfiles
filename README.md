@@ -10,8 +10,6 @@ This repo contains my public dotfiles. This includes configuration and scripts. 
 
 ![](screenshot.png)
 
-[Theme](https://github.com/EdenEast/nightfox.nvim/tree/main/extra/nightfox)
-
 ## NeoVim
 
 My NeoVim config is in [its own repo](https://github.com/Allaman/nvim/)
