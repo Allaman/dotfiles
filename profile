@@ -22,8 +22,14 @@ command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between -
 # macons only
 if [[ "$OSTYPE" =~ "darwin" ]]
 then
-  export TERM=xterm-kitty
-  export TERMINAL=kitty
+  if [[ x"$KITTY_PID" == "x" ]]
+  then
+    export TERMINAL=xterm
+    export TERM=xterm
+  else
+    export TERMINAL=kitty
+    export TERM=xterm-kitty
+  fi
   alias ssh='kitty +kitten ssh'
   export BROWSER="open -a firefox"
   export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
