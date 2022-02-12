@@ -29,6 +29,7 @@ alias \
   gcd='git checkout develop' \
   gcp='git checkout production' \
   gcn='git checkout -b' \
+  gt='gitui'
 
 # Github
 alias \
