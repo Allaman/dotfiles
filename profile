@@ -15,7 +15,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
-export LEDGER_FILE=$HOME/data/buchhaltung/ledger/main.ledger
+export LEDGER_DIR=$HOME/data/obsidian/privat/ledger/
+export LEDGER_FILE=${LEDGER_DIR}main.ledger
 command -v go >/dev/null 2>&1 && export GOPATH=$HOME/.local/share/go && export PATH=$PATH:$(go env GOPATH)/bin
 command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 

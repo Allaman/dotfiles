@@ -103,13 +103,13 @@ alias \
 
 # hledger
 alias \
-  ledger-is-yearly='hledger is -Y -S' \
-  ledger-is-quarterly='hledger is -Q -S' \
-  ledger-is-monthly-html='hledger is -M -S -o monthly.html' \
-  ledger-is-weekly='hledger is -Q -S -o weekly.html' \
-  ledger-is-daily='hledger is -Q -S -o daily.html' \
-  ledger-show-accounts='hledger accounts' \
-  ledger-show-stats='hledger stats'
+  ledger-is-yearly='hledger -f $LEDGER_DIR/all.ledger is -Y -S' \
+  ledger-is-quarterly='hledger -f $LEDGER_DIR/all.ledger is -Q -S' \
+  ledger-is-monthly-html='hledger -f $LEDGER_DIR/all.ledger is -M -S -o monthly.html' \
+  ledger-is-weekly='hledger -f $LEDGER_DIR/all.ledger is -W -S -o weekly.html' \
+  ledger-is-daily='hledger -f $LEDGER_DIR/all.ledger is -D -S -o daily.html' \
+  ledger-show-accounts='hledger -f $LEDGER_DIR/all.ledger accounts' \
+  ledger-show-stats='hledger -f $LEDGER_DIR/all.ledger stats'
 
 # Useful
 alias yt='mpv --vo=gpu --hwdec=vaapi --script-opts=ytdl_hook-ytdl_path=$HOME/.local/bin/yt-dlp'
