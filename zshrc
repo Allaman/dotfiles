@@ -89,6 +89,7 @@ export _ZO_DATA_DIR=$HOME/.zoxide
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 command -v fuck > /dev/null 2>&1 && eval "$(thefuck --alias)"
 command -v direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
+command -v flux > /dev/null 2>&1 && eval "$(flux completion zsh)"
 [ -d $HOME/.shell/forgit ] && source $HOME/.shell/forgit/forgit.plugin.zsh
 [ -d $HOME/.shell/kube-fzf ] && export PATH=$PATH:$HOME/.shell/kube-fzf/
 [ -d $HOME/.local/sdkman/ ] && export SDKMAN_DIR="$HOME/.local/sdkman" && source $HOME/.local/sdkman/bin/sdkman-init.sh
