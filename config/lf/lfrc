@@ -124,10 +124,10 @@ cmd restore_trash ${{
   trash-restore
 }}
 
-cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
-cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
-cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
-cmd yank-content $cat $fx | xclip -i -selection clipboard
+cmd yank-dirname $dirname -- "$f" | head -c-1 | ccopy
+cmd yank-path $printf '%s' "$fx" | ccopy
+cmd yank-basename $basename -a -- $fx | head -c-1 | ccopy
+cmd yank-content $cat $fx | ccopy
 cmd select-all :unselect; invert
 
 # both dont work
