@@ -55,7 +55,7 @@ bindkey "^[[H"  beginning-of-line                            # Home
 bindkey "^[[F"  end-of-line                                  # End
 bindkey '^P' history-beginning-search-backward               # CTRL+p
 bindkey '^N' history-beginning-search-forward                # CTRL+n
-bindkey -s '^n' 'nova^M'                                     # Run nova with CTRL-n
+bindkey -s '^f' 'nova^M'                                     # Run nova with CTRL-f
 # Use vim keys to select autocompletion
 _comp_options+=(globdots)		# Include hidden files.
 bindkey -M menuselect 'h' vi-backward-char
