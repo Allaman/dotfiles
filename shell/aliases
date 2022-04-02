@@ -23,7 +23,7 @@ alias \
   pull='git pull' \
   gd='git diff' \
   gl='git log --ext-diff -u' \
-  gco='git checkout' \
+  gco='fzf-git-checkout' \
   gcm='git checkout master' \
   gcs='git checkout staging' \
   gcd='git checkout develop' \
