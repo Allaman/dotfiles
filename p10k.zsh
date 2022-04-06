@@ -39,9 +39,9 @@
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    os_icon                  # os identifier
+    os_icon                   # os identifier
     vpn_ip                    # virtual private network indicator
-    status                   # exit code of the last command
+    status                    # exit code of the last command
     #context                  # user@hostname
     dir                       # current directory
     vcs                       # git status
@@ -63,14 +63,17 @@
     #nvm                      # node.js version from nvm (https://github.com/nvm-sh/nvm)
     #nodeenv                  # node.js environment (https://github.com/ekalinin/nodeenv)
     # node_version            # node.js version
-    # go_version              # go version (https://golang.org)
+    go_version                # go version (https://golang.org)
+    gcloud                    # gcloud project
     # rust_version            # rustc version (https://www.rust-lang.org)
     # dotnet_version          # .NET version (https://dotnet.microsoft.com)
     #rbenv                    # ruby version from rbenv (https://github.com/rbenv/rbenv)
     #rvm                      # ruby version from rvm (https://rvm.io)
     kubecontext               # current kubernetes context (https://kubernetes.io/)
     terraform                 # terraform workspace (https://www.terraform.io)
+    terraform_version         # terraform cli version
     aws                       # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+    java_version              # java version
     # aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
     # azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     #context                  # user@hostname
@@ -813,10 +816,21 @@
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
   (( ! $+functions[p10k] )) || p10k reload
 
-  # Custom prefix.
   # typeset -g POWERLEVEL9K_KUBECONTEXT_PREFIX='%244Fat '
-  # Only show kubecontext when one of the specified commands is type
+  # Only show kubecontext when one of the specified commands is typed
   typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito|kx|kns|k9s|telepresence'
+
+  # Only show terraform version when one of the specified commands is typed
+  typeset -g POWERLEVEL9K_TERRAFORM_VERSION_SHOW_ON_COMMAND='terraform'
+
+  # Only show gcloud context when one of the specified commands is typed
+  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='terraform|gcloud'
+  # Less verbose gcloud context output
+  typeset -g POWERLEVEL9K_GCLOUD_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT//\%/%%}'
+
+  # Only show java version when one of the specified commands is typed
+  typeset -g POWERLEVEL9K_JAVA_VERSION_SHOW_ON_COMMAND='java|mvn|./mvnw|gradle'
+
 }
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
