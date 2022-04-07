@@ -12,6 +12,18 @@ This repo contains my public dotfiles. This includes configuration and scripts. 
 
 ![](screenshot.png)
 
+## Features
+
+Heavily focused on a terminal based and keyboard centric workflow ⌨️
+
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt with a lot of useful information right at your fingertips ⚙️
+- Terminal wizardry with a mature [Tmux](https://github.com/tmux/tmux/wiki) configuration 🪄
+- Fast GPU accelerated terminal emulators with [kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://github.com/alacritty/alacritty), and [wezterm](https://github.com/wez/wezterm) 🖥️
+- [Lf](https://github.com/gokcehan/lf) for raw performance file managing and integrated bash scripting configuration. Backups in this repo: [nnn](https://github.com/jarun/nnn), [vifm](https://vifm.info/), and [ranger](https://github.com/ranger/ranger) 📁
+- Manage your git repos with [gitui](https://github.com/extrawurst/gitui) and [tig](https://github.com/jonas/tig) 🔖
+- An impressive zsh configuration with plenty of mappings, shortcuts, and settings to improve your productivity 🐚
+- and more
+
 ## NeoVim
 
 My NeoVim config is in [its own repo](https://github.com/Allaman/nvim/)
