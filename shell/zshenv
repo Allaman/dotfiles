@@ -20,7 +20,6 @@ command -v jenv >/dev/null 2>&1 && eval "$(jenv init -)"
 [ -f $HOME/.shell/aliases ] && source $HOME/.shell/aliases
 [ -f $HOME/.shell/kubectl_aliases ] && source $HOME/.shell/kubectl_aliases
 [ -f $HOME/.shell/funcs ] && source $HOME/.shell/funcs
-[ -d $HOME/./shell/fzf-tab/ ] && source $HOME/.shell/fzf-tab/fzf-tab.plugin.zsh
 
 export LF_ICONS="\
 di=🗀 :\
