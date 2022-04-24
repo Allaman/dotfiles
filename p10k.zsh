@@ -56,7 +56,7 @@
     command_execution_time    # duration of the last command
     # background_jobs           # presence of background jobs
     direnv                    # direnv status (https://direnv.net/)
-    #virtualenv               # python virtual environment (https://docs.python.org/3/library/venv.html)
+    virtualenv               # python virtual environment (https://docs.python.org/3/library/venv.html)
     #anaconda                 # conda environment (https://conda.io/)
     #pyenv                    # python environment (https://github.com/pyenv/pyenv)
     #nodenv                   # node.js version from nodenv (https://github.com/nodenv/nodenv)
@@ -818,7 +818,7 @@
 
   # typeset -g POWERLEVEL9K_KUBECONTEXT_PREFIX='%244Fat '
   # Only show kubecontext when one of the specified commands is typed
-  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubectx|oc|istioctl|kogito|kx|kns|k9s|telepresence'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='k|kubectl|helm|kubens|kubeseal|kubectx|oc|istioctl|kogito|kx|kns|k9s|telepresence'
 
   # Only show terraform version when one of the specified commands is typed
   typeset -g POWERLEVEL9K_TERRAFORM_VERSION_SHOW_ON_COMMAND='terraform'
