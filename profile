@@ -36,9 +36,10 @@ then
   export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 fi
 
-export EXCLUDE_STRING=.git,node_modules/*,**/.git/*,.git/*,target/*,.idea/*,.vscode/*,.terraform/*,.gem/*,.cache,**/cache/*,**go/pkg/*
+export EXCLUDE_STRING=.git/*,node_modules/*,target/*,.idea/*,.vscode/*,.terraform/*,.gem/*,.cache,**/cache/*,**go/pkg/*,lib/*,bin/*,include/*
 
 # fzf
+# WARNING: fd is filtered by fdignore!
 export FZF_COMPLETION_TRIGGER=',,'
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # The first argument to the function ($1) is the base path to start traversal
@@ -55,7 +56,6 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute:nvim {} > /dev/tty'"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # Preview directories with tree
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-#command -v rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs --glob "!{$EXCLUDE_STRING}"'
 command -v fd >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden'
 command -v fd >/dev/null 2>&1 && export FZF_ALT_C_COMMAND='fd --type directory --follow --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -67,22 +67,14 @@ then
   export TERMINAL=alacritty
   export BROWSER=firefox
   export BROWSERCLI=lynx
-export MAIL=/usr/bin/neomutt
+  export MAIL=/usr/bin/neomutt
   # Apps and Paths
-  export QT_QPA_PLATFORMTHEME="qt5ct"
-  export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
   command -v paru >/dev/null 2>&1 && export AUR_MANAGER=paru
   command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
-  # i3wm SSH keys
-  if [ "$0" = "/etc/lightdm/Xsession" -a "$DESKTOP_SESSION" = "i3" ]; then
-    export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gnupg)
-  fi
   # KDE SSH keys
   [ -S /run/user/1000/ssh-agent.socket ] && export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
   [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
-  [ -f /usr/bin/ksshaskpass ] && export GIT_ASKPASS=/usr/bin/ksshaskpass
-  # ruby gem
-  export PATH=$PATH:~/.gem/ruby/2.7.0/bin
+
   # basedir defaults, in case they're not already set up.
   # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
   if [[ -z "$XDG_DATA_HOME" ]]; then
