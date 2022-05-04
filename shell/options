@@ -7,12 +7,11 @@ setopt rcexpandparam                                            # Array expensio
 setopt nocheckjobs                                              # Don't warn about running processes when exiting
 setopt numericglobsort                                          # Sort filenames numerically when it makes sense
 setopt nobeep                                                   # No beep
-setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt autocd                                                   # if only directory path is entered, cd there.
-setopt histappend
-setopt inc_append_history
-setopt share_history
+setopt histappend                                               # Don't erase history
+setopt inc_append_history                                       # Add immediately
+setopt share_history                                            # Share history between session/terminals
 
 # case insensitive autocompletion
 zstyle ":completion:*" matcher-list "" "m:{a-z}={A-Z}" "m:{a-zA-Z}={A-Za-z}" "r:|[._-]=* r:|=* l:|=*"
