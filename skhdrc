@@ -1,0 +1,22 @@
+# A list of all built-in modifier and literal keywords can
+# be found at https://github.com/koekeishiya/skhd/issues/1
+
+cmd - return : open -na /Applications/Alacritty.app
+
+cmd - d : open -na /Applications/Alacritty.app --args -t fzf-nova -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/fzf-nova
+
+cmd - e : open -na /Applications/Alacritty.app --args -t files -e zsh -ic lf
+
+cmd + shift -l : open -na /Applications/Alacritty.app --args -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
+
+cmd + shift -h : open -na /Applications/Alacritty.app --args -e hledger add -f $HOME/data/obsidian/privat/ledger/main.ledger
+
+cmd + shift -m : open -na /Applications/Alacritty.app --args -o window.startup_mode=Maximized -e neomutt
+
+cmd - 1 : yabai -m space --focus prev
+
+cmd - 2 : yabai -m space --focus next
+
+cmd + shift - 1  : yabai -m window --space prev
+
+cmd + shift - 2  : yabai -m window --space next
