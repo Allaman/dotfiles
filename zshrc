@@ -11,8 +11,8 @@ fi
 
 source ~/.shell/options
 source ~/.shell/plugins
-source ~/.shell/bindings
 source ~/.shell/tools
+source ~/.shell/bindings
 
 autoload -Uz +X compinit
 compinit; # new auto completions are not available
