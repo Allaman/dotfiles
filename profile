@@ -24,9 +24,9 @@ command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between -
 if [[ "$OSTYPE" =~ "darwin" ]]
 then
   if [[ x"$KITTY_PID" == "x" ]]
-  then
+  then # not kitty
     export TERMINAL=xterm
-    export TERM=xterm
+    export TERM=xterm-256color
   else
     export TERMINAL=kitty
     export TERM=xterm-kitty
