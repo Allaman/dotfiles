@@ -94,8 +94,7 @@ key_bindings:
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Plus, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: L, mods: Control, action: ClearLogNotice }
-  - { key: L, mods: Control, chars: "\\f" }
+  - { key: N,mods: Command,chars: "\x1bn"} # to be able to switch tmux windows with alt-n
   - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
   - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
   - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
