@@ -1,3 +1,14 @@
+# This file is sourced by all instances of Zsh and I want
+# this config to be always available
+
+command -v vim >/dev/null 2>&1 && export EDITOR=vim
+command -v nvim >/dev/null 2>&1 && export EDITOR=nvim
+
+[ -d $HOME/workspace/git.rootknecht.net/scripts ] && export PATH=$PATH:$HOME/workspace/git.rootknecht.net/scripts
+[ -d $HOME/.local/bin ] && export PATH=$PATH:$HOME/.local/bin
+[ -f $HOME/.shell/aliases ] && source $HOME/.shell/aliases
+[ -f $HOME/.shell/funcs ] && source $HOME/.shell/funcs
+
 # NNN
 export NNN_OPTS=aidRU
 export NNN_TRASH=1 # trash-cli
@@ -17,29 +28,11 @@ export LESS=-r
 
 export LEDGER_DIR=$HOME/data/obsidian/privat/ledger/
 export LEDGER_FILE=${LEDGER_DIR}main.ledger
-command -v go >/dev/null 2>&1 && export GOPATH=$HOME/.local/share/go && export PATH=$PATH:$(go env GOPATH)/bin
-command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
-
-# macons only
-if [[ "$OSTYPE" =~ "darwin" ]]
-then
-  if [[ x"$KITTY_PID" == "x" ]]
-  then # not kitty
-    export TERMINAL=xterm
-    export TERM=xterm-256color
-  else
-    export TERMINAL=kitty
-    export TERM=xterm-kitty
-  fi
-  alias ssh='kitty +kitten ssh'
-  export BROWSER="open -a firefox"
-  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-fi
 
 export EXCLUDE_STRING=.git/*,node_modules/*,target/*,.idea/*,.vscode/*,.terraform/*,.gem/*,.cache,**/cache/*,**go/pkg/*,lib/*,bin/*,include/*
 
 # fzf
-# WARNING: fd is filtered by fdignore!
+# WARNING: fd is filtered by ~/.fdignore!
 export FZF_COMPLETION_TRIGGER=',,'
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # The first argument to the function ($1) is the base path to start traversal
@@ -60,17 +53,34 @@ command -v fd >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='fd --type file --fo
 command -v fd >/dev/null 2>&1 && export FZF_ALT_C_COMMAND='fd --type directory --follow --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# linux only
+if [[ "$OSTYPE" =~ "darwin" ]]
+then
+  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.0/libexec/gnubin:/opt/homebrew/bin:$PATH
+  export LC_CTYPE=UTF-8
+  if [[ x"$KITTY_PID" == "x" ]]
+  then # not kitty
+    export TERMINAL=xterm
+    export TERM=xterm-256color
+  else
+    export TERMINAL=kitty
+    export TERM=xterm-kitty
+  fi
+  alias ssh='kitty +kitten ssh'
+  export BROWSER="open -a firefox"
+  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+fi
+
 if [[ "$OSTYPE" =~ "linux" ]]
 then
+  if [[ "$DESKTOP_SESSION" =~ "xfce" ]];then
+      eval $(gnome-keyring-daemon --start)
+      export SSH_AUTH_SOCK
+  fi
   export TERM=screen-256color
   export TERMINAL=alacritty
   export BROWSER=firefox
   export BROWSERCLI=lynx
   export MAIL=/usr/bin/neomutt
-  # Apps and Paths
-  command -v paru >/dev/null 2>&1 && export AUR_MANAGER=paru
-  command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
   # KDE SSH keys
   [ -S /run/user/1000/ssh-agent.socket ] && export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
   [ -f /usr/bin/ksshaskpass ] && export SSH_ASKPASS=/usr/bin/ksshaskpass
@@ -100,4 +110,47 @@ then
   fi
 fi
 
-# vim: ft=sh
+export LF_ICONS="\
+di=🗀 :\
+fi=🗎:\
+ln=:\
+or=:\
+ex=:\
+*.vimrc=:\
+*.viminfo=:\
+*.gitignore=:\
+*.c=:\
+*.cc=:\
+*.clj=:\
+*.coffee=:\
+*.cpp=:\
+*.css=:\
+*.d=:\
+*.dart=:\
+*.erl=:\
+*.exs=:\
+*.fs=:\
+*.go=:\
+*.h=:\
+*.hh=:\
+*.hpp=:\
+*.hs=:\
+*.html=:\
+*.java=:\
+*.jl=:\
+*.js=:\
+*.json=:\
+*.lua=:\
+*.md=:\
+*.php=:\
+*.pl=:\
+*.pro=:\
+*.py=:\
+*.rb=:\
+*.rs=:\
+*.scala=:\
+*.ts=:\
+*.vim=:\
+*.pdf=:\
+*.nix=:\
+"

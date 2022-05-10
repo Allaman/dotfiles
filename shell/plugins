@@ -1,9 +1,5 @@
 # vim: set ft=zsh:
 
-[ -f $HOME/.shell/zshenv ] && source $HOME/.shell/zshenv
-[ -f $HOME/.profile ] && source $HOME/.profile
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-[ -f $HOME/.fzf/shell/key-bindings.zsh ] && source $HOME/.fzf/shell/key-bindings.zsh
 [ -d $HOME/.shell/fast-syntax-Highlighting ] && source $HOME/.shell/fast-syntax-Highlighting/fast-syntax-highlighting.plugin.zsh
 [ -f $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $HOME/.shell/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $HOME/.shell/zsh-history-substring-search/zsh-history-substring-search.zsh
