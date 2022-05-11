@@ -7,11 +7,13 @@ cmd - d : open -na /Applications/Alacritty.app --args -t fzf-nova -e zsh -ic $HO
 
 cmd - e : open -na /Applications/Alacritty.app --args -t files -e zsh -ic lf
 
-cmd + shift -l : open -na /Applications/Alacritty.app --args -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
+cmd + shift -l : open -na /Applications/Alacritty.app --args -t ledger -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
 
-cmd + shift -h : open -na /Applications/Alacritty.app --args -e hledger add -f $HOME/data/obsidian/privat/ledger/main.ledger
+cmd + shift -h : open -na /Applications/Alacritty.app --args -t ledger -e hledger add -f $HOME/data/obsidian/privat/ledger/main.ledger
 
-cmd + shift -m : open -na /Applications/Alacritty.app --args -o window.startup_mode=Maximized -e neomutt
+cmd + shift -m : open -na /Applications/Alacritty.app --args -t MAIL -o window.startup_mode=Maximized -e neomutt
+
+cmd + shift -n : open -na /Applications/Alacritty.app --args -t projects -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/_projects.sh
 
 cmd - 1 : yabai -m space --focus prev
 
