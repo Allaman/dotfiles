@@ -2207,7 +2207,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
@@ -5944,7 +5944,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
