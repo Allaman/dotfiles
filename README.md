@@ -34,3 +34,11 @@ I use [Ansible](https://www.ansible.com/) for automatic configuration of my devi
 
 - [rice](https://github.com/Allaman/rice) for my Arch Linux based configuration
 - [mac-setup](https://github.com/Allaman/mac-setup) for my Mac based configuration
+
+## NOTE
+
+Karabiner does not work this way, see https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/#about-symbolic-link
+
+```sh
+ln -s $HOME/workspace/github.com/allaman/public-dotfiles/config/karabiner $HOME/.config
+```
