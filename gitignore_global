@@ -1,3 +1,5 @@
 .envrc
 .idea/
 .DS_Store
+*.pem
+*.key
