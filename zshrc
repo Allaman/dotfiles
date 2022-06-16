@@ -17,5 +17,22 @@ source $HOME/.shell/bindings
 
 autoload -Uz +X compinit
 
+trap_exit_tmux ()
+{
+  # switch only when current session has only one window and one pane
+  if [ $(tmux list-panes | wc -l) -eq 1 ] && [ $(tmux list-windows | wc -l) -eq 1 ]; then
+    tmux switch-client -t 0
+  fi
+}
+
+if [[ $- == *i* ]]
+then
+  # activate trap only when inside tmux so that I can open Terminals that don't trigger the trap
+  if [[ $TERM_PROGRAM = "tmux" ]]
+  then
+    trap trap_exit_tmux EXIT
+  fi
+fi
+
 # Profiling zsh
 # zprof
