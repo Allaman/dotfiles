@@ -109,6 +109,8 @@ sketchybar --bar                height=25                                       
                                 background.padding_right=0                                        \
                                 drawing=off
 
+HAS_BATTERY=$(if [ "$(pmset -g batt | grep "Battery")" = "" ]; then echo "false"; else echo "true"; fi)
+
 ##### Adding Right left #####
 source $ITEM_DIR/apple.sh
 source $ITEM_DIR/spaces.sh
