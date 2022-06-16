@@ -62,10 +62,10 @@ then
     export TERMINAL=xterm
     export TERM=xterm-256color
   else
+    alias ssh='kitty +kitten ssh'
     export TERMINAL=kitty
     export TERM=xterm-kitty
   fi
-  alias ssh='kitty +kitten ssh'
   export BROWSER="open -a firefox"
   export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 fi
