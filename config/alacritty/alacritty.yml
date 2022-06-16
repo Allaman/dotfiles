@@ -96,6 +96,7 @@ key_bindings:
   - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: N, mods: Command, chars: "\x1bn" } # to be able to switch tmux windows with alt-n
   - { key: P, mods: Command, chars: "\x1bp" } # to be able to switch tmux windows with alt-p
+  - { key: Space, mods: Alt, chars: "\x20" } # https://stackoverflow.com/questions/8694442/bash-piping-in-osx-prompts-command-not-found-sometimes -> send normal space
   - { key: Space, mods: Control, chars: "\x00" } # for ctrl-space autosuggestion
   - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
   - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
@@ -105,7 +106,6 @@ schemes:
     primary:
       background: "#263238"
       foreground: "#eeffff"
-    # Normal colors
     normal:
       black: "#000000" # Arbitrary
       red: "#e53935"
@@ -115,7 +115,6 @@ schemes:
       magenta: "#ff5370" # Dark pink of the original material theme
       cyan: "#39adb5"
       white: "#a0a0a0" # Arbitrary
-    # Bright colors
     bright:
       black: "#4e4e4e" # Arbitrary
       red: "#ff5370"
@@ -130,7 +129,6 @@ schemes:
     primary:
       background: "#1f1f1f"
       foreground: "#e5e1d8"
-    # Normal colors
     normal:
       black: "#000000"
       red: "#f7786d"
@@ -140,7 +138,6 @@ schemes:
       magenta: "#ef88ff"
       cyan: "#90fdf8"
       white: "#e5e1d8"
-    # Bright colors
     bright:
       black: "#b4b4b4"
       red: "#f99f92"
@@ -150,16 +147,13 @@ schemes:
       magenta: "#e5bdff"
       cyan: "#c2fefa"
       white: "#ffffff"
-      # Colors (Solarized Dark)
   solarized_dark: &solarized_dark
     primary:
       background: "#002b36" # base03
       foreground: "#839496" # base0
-    # Cursor colors
     cursor:
       text: "#002b36" # base03
       cursor: "#839496" # base0
-    # Normal colors
     normal:
       black: "#073642" # base02
       red: "#dc322f" # red
@@ -169,7 +163,6 @@ schemes:
       magenta: "#d33682" # magenta
       cyan: "#2aa198" # cyan
       white: "#eee8d5" # base2
-    # Bright colors
     bright:
       black: "#002b36" # base03
       red: "#cb4b16" # orange
@@ -179,12 +172,10 @@ schemes:
       magenta: "#6c71c4" # violet
       cyan: "#93a1a1" # base1
       white: "#fdf6e3" # base3
-      # Colors (Nord)
   nord: &nord
     primary:
       background: "#2e3440"
       foreground: "#d8dee9"
-    # normal colors
     normal:
       black: "#3b4252"
       red: "#bf616a"
@@ -194,7 +185,6 @@ schemes:
       magenta: "#b48ead"
       cyan: "#88c0d0"
       white: "#e5e9f0"
-    # bright colors
     bright:
       black: "#4c566a"
       red: "#bf616a"
@@ -204,12 +194,9 @@ schemes:
       magenta: "#b48ead"
       cyan: "#8fbcbb"
       white: "#eceff4"
-      # Colors (Gruvbox dark)
   gruvbox: &gruvbox
     primary:
-      # hard contrast background - '#1d2021'
       background: &gruvbox_dark_bg "#282828"
-      # soft contrast background - '#32302f'
       foreground: "#ebdbb2"
       bright_foreground: "#fbf1c7"
       dim_foreground: "#a89984"
@@ -262,7 +249,6 @@ schemes:
       magenta: "#8f3f71"
       cyan: "#427b58"
       white: "#928374"
-      # indexed_colors: []
   doom-one: &doom-one
     primary:
       background: "0x282c34"
@@ -280,7 +266,6 @@ schemes:
     primary:
       background: "0x192330"
       foreground: "0xcdcecf"
-      # Normal colors
     normal:
       black: "0x393b44"
       red: "0xc94f6d"
@@ -290,7 +275,6 @@ schemes:
       magenta: "0x9d79d6"
       cyan: "0x63cdcf"
       white: "0xdfdfe0"
-      # Bright colors
     bright:
       black: "0x575860"
       red: "0xd16983"
@@ -303,4 +287,32 @@ schemes:
     indexed_colors:
       - { index: 16, color: "0xf4a261" }
       - { index: 17, color: "0xd67ad2" }
-colors: *nightfox
+  catpppuccin: &catppuccin
+    primary:
+      background: "0x1E1D2F"
+      foreground: "0xD9E0EE"
+    cursor:
+      text: "0x1E1D2F"
+      cursor: "0xF5E0DC"
+    normal:
+      black: "0x6E6C7E"
+      red: "0xF28FAD"
+      green: "0xABE9B3"
+      yellow: "0xFAE3B0"
+      blue: "0x96CDFB"
+      magenta: "0xF5C2E7"
+      cyan: "0x89DCEB"
+      white: "0xD9E0EE"
+    bright:
+      black: "0x988BA2"
+      red: "0xF28FAD"
+      green: "0xABE9B3"
+      yellow: "0xFAE3B0"
+      blue: "0x96CDFB"
+      magenta: "0xF5C2E7"
+      cyan: "0x89DCEB"
+      white: "0xD9E0EE"
+    indexed_colors:
+      - { index: 16, color: "0xF8BD96" }
+      - { index: 17, color: "0xF5E0DC" }
+colors: *catppuccin
