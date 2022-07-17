@@ -55,7 +55,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 if [[ "$OSTYPE" =~ "darwin" ]]
 then
-  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.0/libexec/gnubin:/opt/homebrew/bin:$PATH
+  export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin/:/opt/homebrew/Cellar/coreutils/9.1/libexec/gnubin:/opt/homebrew/bin:$PATH
   export LC_CTYPE=UTF-8
   if [[ x"$KITTY_PID" == "x" ]]
   then # not kitty
