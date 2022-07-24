@@ -206,7 +206,7 @@ make-bak() {
 }
 
 # print a list of supported colors
-function lscolors {
+function print_colors {
 	((cols = $COLUMNS - 4))
 	s=$(printf %${cols}s)
 	for i in {000..$(tput colors)}; do
