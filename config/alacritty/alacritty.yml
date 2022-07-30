@@ -4,6 +4,9 @@
 env:
   TERM: xterm-256color
 window:
+  padding:
+   x: 0
+   y: 0
   opacity: 1.0
   # Window decorations
   #
@@ -36,7 +39,7 @@ font:
     family: "Hack Nerd Font Mono"
   bold_italic:
     family: "Hack Nerd Font Mono"
-  size: 14
+  size: 13
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
