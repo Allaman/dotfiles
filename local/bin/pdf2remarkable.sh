@@ -176,7 +176,7 @@ EOF
 
     # Transfer files
     echo "Transferring $filename as $uuid"
-    scp -r ${tmpdir}/* "${TARGET_DIR}"
+    scp -qr ${tmpdir}/* "${TARGET_DIR}"
     rm -rf ${tmpdir}/*
 done
 
