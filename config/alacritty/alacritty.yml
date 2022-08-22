@@ -87,6 +87,9 @@ hints:
         key: R
         mods: Control|Shift
 
+mouse:
+    hide_when_typing: true
+
 mouse_bindings:
   - { mouse: Left, action: Copy }
   - { mouse: Middle, action: PasteSelection }
