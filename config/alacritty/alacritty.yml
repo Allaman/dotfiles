@@ -1,12 +1,11 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 # https://github.com/alacritty/alacritty/blob/master/alacritty.yml
-
 env:
   TERM: xterm-256color
 window:
   padding:
-   x: 0
-   y: 0
+    x: 0
+    y: 0
   opacity: 1.0
   # Window decorations
   #
@@ -28,7 +27,6 @@ window:
     general: Alacritty
 scrolling:
   history: 5000 # Specifying '0' will disable scrolling.
-
 # Font configuration
 font:
   normal:
@@ -43,31 +41,24 @@ font:
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 2
-    y: 3
-
+    x: 3
+    y: 0
 draw_bold_text_with_bright_colors: true # If `true`, bold text is drawn using the bright color variants.
-
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true # When set to `true`, selected text will be copied to the primary clipboard.
-
 cursor:
   style: Block
   unfocused_hollow: true # If this is `true`, the cursor will be rendered as a hollow box when the window is not focused.
-
 # Send ESC (\x1b) before characters when alt is pressed.
 # fixes not being able type @ and | with altgr
 alt_send_esc: false
-
 hints:
   alphabet: "jfkdlsahgurieowpq"
   enabled:
-    - regex:
-        "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-        [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+    - regex: "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\0-\x1F\x7F-\x9F<>\"\\s{-}\\^⟨⟩`]+"
       action: Copy
       post_processing: false
       mouse:
@@ -86,27 +77,23 @@ hints:
       binding:
         key: R
         mods: Control|Shift
-
 mouse:
-    hide_when_typing: true
-
+  hide_when_typing: true
 mouse_bindings:
-  - { mouse: Left, action: Copy }
-  - { mouse: Middle, action: PasteSelection }
-
+  - {mouse: Left, action: Copy}
+  - {mouse: Middle, action: PasteSelection}
 key_bindings:
-  - { key: V, mods: Alt, action: Paste }
-  - { key: C, mods: Alt, action: Copy }
-  - { key: Key0, mods: Control, action: ResetFontSize }
-  - { key: Plus, mods: Control, action: IncreaseFontSize }
-  - { key: Minus, mods: Control, action: DecreaseFontSize }
-  - { key: N, mods: Command, chars: "\x1bn" } # to be able to switch tmux windows with alt-n
-  - { key: P, mods: Command, chars: "\x1bp" } # to be able to switch tmux windows with alt-p
-  - { key: Space, mods: Alt, chars: "\x20" } # https://stackoverflow.com/questions/8694442/bash-piping-in-osx-prompts-command-not-found-sometimes -> send normal space
-  - { key: Space, mods: Control, chars: "\x00" } # for ctrl-space autosuggestion
-  - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
-  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
-
+  - {key: V, mods: Alt, action: Paste}
+  - {key: C, mods: Alt, action: Copy}
+  - {key: Key0, mods: Control, action: ResetFontSize}
+  - {key: Plus, mods: Control, action: IncreaseFontSize}
+  - {key: Minus, mods: Control, action: DecreaseFontSize}
+  - {key: N, mods: Command, chars: "\en"} # to be able to switch tmux windows with alt-n
+  - {key: P, mods: Command, chars: "\ep"} # to be able to switch tmux windows with alt-p
+  - {key: Space, mods: Alt, chars: " "} # https://stackoverflow.com/questions/8694442/bash-piping-in-osx-prompts-command-not-found-sometimes -> send normal space
+  - {key: Space, mods: Control, chars: "\0"} # for ctrl-space autosuggestion
+  - {key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt}
+  - {key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt}
 schemes:
   material: &material
     primary:
@@ -291,8 +278,8 @@ schemes:
       cyan: "0x7ad4d6"
       white: "0xe4e4e5"
     indexed_colors:
-      - { index: 16, color: "0xf4a261" }
-      - { index: 17, color: "0xd67ad2" }
+      - {index: 16, color: "0xf4a261"}
+      - {index: 17, color: "0xd67ad2"}
   catpppuccin: &catppuccin
     primary:
       background: '#303446' # base
@@ -326,36 +313,36 @@ schemes:
       text: '#303446' # base
       background: '#F2D5CF' # rosewater
     normal:
-      black:   '#51576D' # surface1
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#51576D' # surface1
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#B5BFE2' # subtext1
+      cyan: '#81C8BE' # teal
+      white: '#B5BFE2' # subtext1
     bright:
-      black:   '#626880' # surface2
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#626880' # surface2
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#A5ADCE' # subtext0
+      cyan: '#81C8BE' # teal
+      white: '#A5ADCE' # subtext0
     dim:
-      black:   '#51576D' # surface1
-      red:     '#E78284' # red
-      green:   '#A6D189' # green
-      yellow:  '#E5C890' # yellow
-      blue:    '#8CAAEE' # blue
+      black: '#51576D' # surface1
+      red: '#E78284' # red
+      green: '#A6D189' # green
+      yellow: '#E5C890' # yellow
+      blue: '#8CAAEE' # blue
       magenta: '#F4B8E4' # pink
-      cyan:    '#81C8BE' # teal
-      white:   '#B5BFE2' # subtext1
+      cyan: '#81C8BE' # teal
+      white: '#B5BFE2' # subtext1
     indexed_colors:
-      - { index: 16, color: '#EF9F76' }
-      - { index: 17, color: '#F2D5CF' }
+      - {index: 16, color: '#EF9F76'}
+      - {index: 17, color: '#F2D5CF'}
     indexed_colors:
-      - { index: 16, color: "0xF8BD96" }
-      - { index: 17, color: "0xF5E0DC" }
-colors: *catppuccin
+      - {index: 16, color: "0xF8BD96"}
+      - {index: 17, color: "0xF5E0DC"}
+colors: *doom-one
