@@ -39,7 +39,7 @@
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    os_icon                   # os identifier
+    # os_icon                   # os identifier
     vpn_ip                    # virtual private network indicator
     status                    # exit code of the last command
     #context                  # user@hostname
