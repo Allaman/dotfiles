@@ -9,7 +9,7 @@ command -v flux > /dev/null 2>&1 && eval "$(flux completion zsh)"
 command -v go >/dev/null 2>&1 && export GOPATH=$HOME/.local/share/go && export PATH=$PATH:$(go env GOPATH)/bin
 command -v dyff > /dev/null 2>&1 && export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
 command -v paru >/dev/null 2>&1 && export AUR_MANAGER=paru
-command -v rustc >/dev/null 2>&1 && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" && export PATH=$PATH:~/.cargo/bin
+[ -d $HOME/.cargo/bin ] && export PATH=$PATH:~/.cargo/bin
 [ -d $HOME/.luarocks/bin ] && export PATH=$PATH:$HOME/.luarocks/bin
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 [ -d $HOME/.shell/forgit ] && source $HOME/.shell/forgit/forgit.plugin.zsh
