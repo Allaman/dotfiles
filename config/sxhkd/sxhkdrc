@@ -17,31 +17,29 @@ alt + d
 alt + space
   #/home/michael/workspace/scripts/rofi-menu
   xterm -T fzf-nova -geometry 90x25+350+200 -fs 16 -e /home/michael/workspace/scripts/rofi-nova/rofi-nova
-  #alacritty -t fzf-nova -e $HOME/workspace/scripts/rofi-nova/rofi-nova
+  #kitty -T fzf-nova -e $HOME/workspace/scripts/rofi-nova/rofi-nova
 
 # Terminal
 alt + Return
-  alacritty
+  kitty
 
-#super + e
-#  alacritty -d 120 60 -t files -e /home/michael/workspace/scripts/vifmrun
 super + e
-  alacritty -t files -e "/bin/zsh" "--login" "-c" "lf"
+  kitty -T files -e "/bin/zsh" "--login" "-c" "lf"
 
 # super + l
 #   betterlockscreen -l dim
 
 # Applications
 super + shift + m
-	alacritty -o window.startup_mode=Maximized -e neomutt
+	kitty -T MAIL --start-as maximized -e neomutt
 super + shift + n
-	alacritty -o window.startup_mode=Maximized -e newsboat
+	kitty -T MAIL --start-as maximized -e newsboat
 super + shift + l
-	alacritty -e nvim $HOME/data/obsidian/ledger/main.ledger
+	kitty -e nvim $HOME/data/obsidian/ledger/main.ledger
 super + shift + h
-	alacritty -e hledger add -f $HOME/data/obsidian/ledger/main.ledger
+	kitty -e hledger add -f $HOME/data/obsidian/ledger/main.ledger
 super + shift + t
-	alacritty -o window.startup_mode=Maximized -e htop
+	kitty -T htop --start-as maximized -e htop
 alt + shift +s
         xfce4-settings-manager
 alt + shift + c

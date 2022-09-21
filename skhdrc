@@ -1,19 +1,23 @@
 # A list of all built-in modifier and literal keywords can
 # be found at https://github.com/koekeishiya/skhd/issues/1
 
-cmd - return : open -na /Applications/Alacritty.app
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 
-cmd - d : open -na /Applications/Alacritty.app --args -t fzf-nova -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/fzf-nova
+cmd - 0 : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
 
-cmd - e : open -na /Applications/Alacritty.app --args -t files -e zsh -ic lf
+cmd - d : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T fzf-nova -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/fzf-nova
 
-cmd + shift -l : open -na /Applications/Alacritty.app --args -t ledger -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
+cmd - e : /Applications/kitty.app/Contents/MacOS/kitty -T files -e zsh -ic lf
 
-cmd + shift -h : open -na /Applications/Alacritty.app --args -t ledger -e hledger add -f $HOME/data/obsidian/privat/ledger/main.ledger
+cmd + shift -l : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T ledger -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
 
-cmd + shift -m : open -na /Applications/Alacritty.app --args -t MAIL -o window.startup_mode=Maximized -e neomutt
+cmd + shift -h : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T ledger -e hledger add -f $HOME/data/obsidian/privat/ledger/main.ledger
 
-cmd + shift -n : open -na /Applications/Alacritty.app --args -t projects -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/_projects.sh
+cmd + shift -m : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T MAIL --start-as maximized -e neomutt
+
+cmd + shift -n : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T projects -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/_projects.sh
+
+cmd + shift -t : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T htop --start-as maximized -e htop
 
 cmd - 1 : yabai -m space --focus prev
 

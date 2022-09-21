@@ -76,7 +76,7 @@ then
       export SSH_AUTH_SOCK
   fi
   export TERM=screen-256color
-  export TERMINAL=alacritty
+  export TERMINAL=kitty
   export BROWSER=firefox
   export BROWSERCLI=lynx
   export MAIL=/usr/bin/neomutt

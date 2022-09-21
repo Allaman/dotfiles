@@ -11,7 +11,7 @@ bw: 4;
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
 show-icons: true;
-terminal: "alacritty";
+terminal: "kitty";
 ssh-client: "ssh";
 ssh-command: "{terminal} -e {ssh-client} {host}";
 /*	run-command: "{cmd}";*/
