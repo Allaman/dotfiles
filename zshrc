@@ -15,6 +15,13 @@ source $HOME/.shell/plugins
 source $HOME/.shell/tools
 source $HOME/.shell/bindings
 
+if [[ "$OSTYPE" =~ "darwin" ]]
+then
+  # when put in zshenv it gets overwritten by tmux which calls /etc/profile again (login shell)
+  export PATH=$HOME/Library/Python/3.10/bin:/opt/homebrew/opt/gnu-tar/libexec/gnubin:/opt/homebrew/Cellar/coreutils/9.1/libexec/gnubin:/opt/homebrew/bin:/opt/homebrew/opt/mysql-client/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH
+
+fi
+
 autoload -Uz +X compinit
 
 trap_exit_tmux ()
