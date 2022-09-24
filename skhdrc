@@ -17,8 +17,6 @@ cmd + shift -m : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T MAIL --sta
 
 cmd + shift -n : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T projects -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/_projects.sh
 
-cmd + shift -t : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T htop --start-as maximized -e htop
-
 cmd - 1 : yabai -m space --focus prev
 
 cmd - 2 : yabai -m space --focus next
