@@ -5,6 +5,7 @@ alias \
   pacup='brew upgrade' \
   pacin='brew install' \
   pacls='brew list' \
+  paclls='brew leaves' \
   pacse='brew search' \
   pacrm='brew uninstall'
 
