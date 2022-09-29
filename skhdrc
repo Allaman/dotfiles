@@ -3,8 +3,6 @@
 
 cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 
-cmd - 0 : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -e nvim $HOME/data/obsidian/privat/ledger/main.ledger
-
 cmd - d : /Applications/kitty.app/Contents/MacOS/kitty -d ~ -T fzf-nova -e zsh -ic $HOME/workspace/git.rootknecht.net/scripts/fzf-nova/fzf-nova
 
 cmd - e : /Applications/kitty.app/Contents/MacOS/kitty -T files -e zsh -ic lf
