@@ -62,7 +62,8 @@ then
     export TERMINAL=xterm
     export TERM=xterm-256color
   else
-    alias ssh='kitty +kitten ssh'
+    # not compatible with my ssh config to start tmux after connecting
+    # alias ssh='kitty +kitten ssh'
     export TERMINAL=kitty
     export TERM=xterm-kitty
   fi
