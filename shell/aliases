@@ -100,6 +100,7 @@ alias \
   slack-id="slack-term -config ~/.config/slack-term/id-config" \
   slack-idz="slack-term -config ~/.config/slack-term/idz-config" \
   to='zi' \
+  cm='chezmoi' \
   vf='vifm ~' \
   vf.='vifm .'
 
