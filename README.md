@@ -1,3 +1,5 @@
+# OBSOLET in FAVOR OF https://github.com/Allaman/dots
+
 # Dotfiles
 
 ## Content
